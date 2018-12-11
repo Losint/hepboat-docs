@@ -1,11 +1,11 @@
 # Table of contents
 
 * [Home](README.md)
-* [What is Heimdallr](src.md)
+* [What is HepBoat](src.md)
 * [Summary](summary.md)
 * [General Configuration](general.md)
 * [Moderator Command Quick-Reference](moderator.md)
-* [Setting Up Heimdallr](setup.md)
+* [Setting Up HepBoat](setup.md)
 * [Plugins](plugins/README.md)
   * [Commands Plugin](plugins/commands-plugin.md)
   * [Censor Plugin](plugins/censor.md)
