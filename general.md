@@ -5,7 +5,7 @@
 ```text
 web:
   80351110224678912: admin #b1nzy
-  108598213681922048: editor #wolfiri
+  108598213681922048: editor #JakeyPrime
   232921983317180416: viewer #rowboat
 ```
 
@@ -16,7 +16,7 @@ User ID is used to assign ranks. There are three ranks you can assign: admin, ed
 ## Nickname
 
 ```text
-nickname: R0WB0AT
+nickname: H4PB0AT
 ```
 
 Set a nickname for the bot! Nickname is applied upon reload of the bot.

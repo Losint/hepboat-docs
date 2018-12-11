@@ -1,6 +1,6 @@
-# What is Heimdallr
+# What is HepBoat
 
-Heimdallr is a fork of b1nzy's rowboat, a utilitarian and administration assistant for Discord. It's a bot that was built to be highly configurable, and allow server admins to modify functionality based on the requirements of individual servers. The freely hosted version of Rowboat is private, and only added on high-traffic servers. Heimdallr is open-source.
+HepBoat is a fork of b1nzy's rowboat, a utilitarian and administration assistant for Discord. It's a bot that was built to be highly configurable, and allow server admins to modify functionality based on the requirements of individual servers. The freely hosted version of Rowboat is private, and only added on high-traffic servers. HepBoat is open-source.
 
 ## Use Cases
 
@@ -10,7 +10,7 @@ By using Rowboat's support for multiple mod logs, admins are able to split and c
 
 #### Spam Prevention
 
-By turning on spam prevention, Heimdallr takes a huge burden off moderators and ensures the server is safe even when nobody is watching. With the high level of configurability it is able to ensure a level of security which does not impact normal chat, but catches bad actors quickly and efficiently.
+By turning on spam prevention, HepBoat takes a huge burden off moderators and ensures the server is safe even when nobody is watching. With the high level of configurability it is able to ensure a level of security which does not impact normal chat, but catches bad actors quickly and efficiently.
 
 ## User Testimonials
 
@@ -70,4 +70,5 @@ By turning on spam prevention, Heimdallr takes a huge burden off moderators and 
   * Server information
   * User search
   * CAT PHOTOS
+  * FLOOFS!
 

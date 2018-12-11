@@ -1,16 +1,16 @@
-# Setting Up Heimdallr
+# Setting Up HepBoat
 
 ## Adding the Bot
 
-Heimdallr is only available to servers that meet certain criteria:
+HepBoat is only available to servers that meet certain criteria:
 
 * The server does not promote or promulgate NSFW content
-* Heimdallr will be used to moderate, not simply as a fixture or for "testing"
-* Has been reviewed and approved by Tobiah\#0001
+* HepBoat will be used to moderate, not for "testing"
+* Has been reviewed and approved by JakeyPrime\#0001
 
 ## How to Set Up
 
-Once rowboat has been added to your server, go to [https://mod.warframe.gg/](https://mod.warframe.gg) to edit your server's configuration. Use the sidebar to read about each plugin, then use the example below along with the information in the sidebar to set up your own customized rowboat configuration.
+Once HepBoat has been added to your server (you can find a link at the top of the page), go to [https://mod.imjake.me/](https://mod.imjake.me) to edit your server's configuration. Use the sidebar to read about each plugin, then use the example below along with the information in the sidebar to set up your own customized rowboat configuration.
 
 Below is a blank configuration example with web, utilities, admin, infractions, modlog, spam, and censor set up. While you can simply copy-paste this to your own server's configuration and fill in the blanks to have a perfectly usable rowboat, it's highly encouraged that you read through the full documentation to understand each component and customize rowboat to your server's needs.
 
@@ -27,7 +27,7 @@ commands:
 levels:
   000000000000000000: 000 # Role
 
-nickname: R0WB0AT
+nickname: H4PB0AT
 
 plugins:
 
@@ -99,7 +99,7 @@ levels:
   77190254141911040: 50     # Moderator Role Id
   335114792820015106: 10    # Bot Role Id
 
-nickname: C3PHAL0N
+nickname: H4PB0AT
 
 plugins:
   admin:
@@ -138,7 +138,7 @@ plugins:
         timestamps: true
   utilities: {}
 web:
-  76685590585671680: admin      # Tobiah
+  148359099782791168: admin      # JakeyPrime - Change This
 ```
 
 ### Example just to get going
@@ -148,11 +148,11 @@ commands:
   prefix: '!'
 ​
 levels:
-  180768265633660928: 100   # Your role id
+  148359099782791168: 100   # Your role id
 ​
 plugins:
   utilities: {}
 web:
-  76685590585671680: admin      # Tobiah
+  148359099782791168: admin      # JakeyPrime - Change This
 ```
 

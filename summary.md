@@ -2,7 +2,7 @@
 
 [Introduction](src.md)
 
-* [Setting Up Rowboat](setup.md)
+* [Setting Up HepBoat](setup.md)
 * [General Configuration](general.md)
 * [Moderator Command Reference](moderator.md)
 * [Plugins](summary.md)
