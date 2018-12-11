@@ -2,7 +2,6 @@
 
 * [Home](README.md)
 * [What is HepBoat](src.md)
-* [Summary](summary.md)
 * [General Configuration](general.md)
 * [Moderator Command Quick-Reference](moderator.md)
 * [Setting Up HepBoat](setup.md)

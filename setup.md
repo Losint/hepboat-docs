@@ -5,12 +5,16 @@
 HepBoat is only available to servers that meet certain criteria:
 
 * The server does not promote or promulgate NSFW content
-* HepBoat will be used to moderate, not for "testing"
-* Has been reviewed and approved by JakeyPrime\#0001
+* HepBoat will be used to moderate, not "just for fun". We may provide one additional whitelist to a test server.
+* Servers who accept that our team will only provide support for bot issues, not with setting the bot up. If you need assistance, join the support server listed above.
 
 ## How to Set Up
 
-Once HepBoat has been added to your server (you can find a link at the top of the page), go to [https://mod.imjake.me/](https://mod.imjake.me) to edit your server's configuration. Use the sidebar to read about each plugin, then use the example below along with the information in the sidebar to set up your own customized rowboat configuration.
+Firstly, you will need to be on the whitelist, there is a link above that lets you send me a message to get you added. If you invite the bot, and you aren't on the whitelist it will immediately leave.
+
+Once the bot is in your server, go into a chat the bot has access to, and do `@hepboat setup` it should reply with a pass and fail message, ignore this, you're good to go!
+Then, go to [https://mod.imjake.me/](https://mod.imjake.me) to edit your server's configuration. Use the sidebar to read about each plugin, then use the example below along with the information in the sidebar to set up your own customized HepBoat configuration.
+The bot will not do anything out of the box, you'll have to continue below to enable and disable which parts of the bot you want, as you can see, it's completely modular. 
 
 Below is a blank configuration example with web, utilities, admin, infractions, modlog, spam, and censor set up. While you can simply copy-paste this to your own server's configuration and fill in the blanks to have a perfectly usable rowboat, it's highly encouraged that you read through the full documentation to understand each component and customize rowboat to your server's needs.
 
@@ -148,7 +152,7 @@ commands:
   prefix: '!'
 ​
 levels:
-  148359099782791168: 100   # Your role id
+  148359099782791168: 100   # Your role id or individual admin ID's
 ​
 plugins:
   utilities: {}
