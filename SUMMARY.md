@@ -18,5 +18,4 @@
   * [Tags Plugin](plugins/tags-plugin.md)
   * [Custom Commands Plugin](plugins/custom-commands-plugin.md)
 * [Changelog](changelog.md)
-* [CLI Interface](cli-interface.md)
 
