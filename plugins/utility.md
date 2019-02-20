@@ -23,11 +23,91 @@ The utility plugin provides a number of useful and fun commands
 | `!avatar {user}` | Displays user's avater | Default | `!avatar b1nzy` |
 | `!announce {channel} {message}` | Announce message to channel. Channel must have configuration in the utility plugin configuration | Admin | `!announce #community-news it's a me, mario!` |
 
-## Configuration Example
+## Configuration Options
 
-```text
-utilities: {}
+| Option | Description | Type | Default |
+| :--- | :--- | :--- | :--- |
+| announce | Channels that can be announced into | dict | empty |
+| auto\_clean | Channels that can be autocleaned | dict | empty |
+| reaction\_roles | MessageID of message to attach reactions with roles against | dict | empty |
+
+## Announce Configuration Options
+
+| Option | Description | Type | Default |
+| :--- | :--- | :--- | :--- |
+| webhook\_id | ID of webhook to post to | str | empty |
+| webhook\_color | Color of webhook embed | int | 0x000000 |
+| webhook\_name | Username for webhook | str | Guild Name |
+| webhook\_avatar | Avatar URL for webhook "user" | str | None |
+
+## Autoclean  Configuration Options
+
+| Option | Description | Type | Default |
+| :--- | :--- | :--- | :--- |
+| timeout | Time to wait before deleting \(seconds\) | int | None |
+
+## Reaction Roles Configuration Options
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Option</th>
+      <th style="text-align:left">Description</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">emoji</td>
+      <td style="text-align:left">
+        <p>Dict containing the emoji id and a list of role ids. (It is also possible
+          to include an inbuilt emoji name in place of the emoji id)</p>
+        <p>Also note that if one of the roles is set to either of below it will force
+          that reaction to only allow join or leave of such roles:</p>
+        <ul>
+          <li><code>join_only</code>
+          </li>
+          <li><code>leave_only</code>
+          </li>
+        </ul>
+      </td>
+      <td style="text-align:left">dict</td>
+      <td style="text-align:left">empty</td>
+    </tr>
+  </tbody>
+</table>## Configuration Example
+
+```yaml
+utilities:
+  announce:
+    32490583480348083409:
+      webhook_id: 304958304934209534
+      webhook_color: 0xffffff
+      webhook_name: HepBoat
+      webhook_avatar: https://i.imgur.com/3cOLFsb.png
+  auto_clean:
+    32490583480348083409:
+      timeout: 3600
+  reaction_roles:
+      540540948065550348:
+        emoji:
+          506810410650042389:
+            - 540558688960774165
+          506810368740556802:
+            - 540558657243447306
+          510489235267125260: 
+            - 540565706190749700
+            - 540565747840188448
+          zero:
+            - 238947234897234897
+            - 238947234897234487
+          one:
+            - 238947234897234845
+          regional_indicator_j:
+            - join_only
+            - 1328971238971239871
+          regional_indicator_l:
+            - leave_only
+            - 1328971238971239871
 ```
-
-There is no further configuration for this plugin.
-
