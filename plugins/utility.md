@@ -85,29 +85,8 @@ utilities:
       webhook_id: 304958304934209534
       webhook_color: 0xffffff
       webhook_name: HepBoat
-      webhook_avatar: https://i.imgur.com/3cOLFsb.png
+      webhook_avatar: http://i.imjake.me/files/xoi30.png
   auto_clean:
     32490583480348083409:
       timeout: 3600
-  reaction_roles:
-      540540948065550348:
-        emoji:
-          506810410650042389:
-            - 540558688960774165
-          506810368740556802:
-            - 540558657243447306
-          510489235267125260: 
-            - 540565706190749700
-            - 540565747840188448
-          zero:
-            - 238947234897234897
-            - 238947234897234487
-          one:
-            - 238947234897234845
-          regional_indicator_j:
-            - join_only
-            - 1328971238971239871
-          regional_indicator_l:
-            - leave_only
-            - 1328971238971239871
 ```
