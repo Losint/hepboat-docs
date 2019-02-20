@@ -11,11 +11,13 @@
   * [Spam Plugin](plugins/spam.md)
   * [ModLog Plugin](plugins/modlog.md)
   * [Starboard Plugin](plugins/starboard.md)
+  * [Autolevelling Plugin](plugins/autolevel-plugin.md)
   * [Reddit Plugin](plugins/reddit.md)
   * [Admin Plugin](plugins/admin.md)
   * [Utility Plugin](plugins/utility.md)
   * [Infractions Plugin](plugins/infractions.md)
   * [Tags Plugin](plugins/tags-plugin.md)
+  * [Twitch Plugin](plugins/twitch-plugin.md)
   * [Custom Commands Plugin](plugins/custom-commands-plugin.md)
 * [Changelog](changelog.md)
 
