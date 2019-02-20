@@ -13,6 +13,10 @@ description: >-
 | lockdown | A mapping of commands and channels to whitelist | dict | empty |
 | prefix | A mapping of channels to Censor Configurations | dict | empty |
 | overrides | Command overrides  | dict | empty |
+| exclude\_msg\_user | Ignore logging for users | snowflake list | empty |
+| dm\_denied | Whether or not to DM a user when their command is denied | bool | True |
+| global\_blacklist | A list of users ignored from using the bot globally. Only applies if set in the control guild, not per-server. | list | empty |
+| local\_blacklist | A list of users ignored from using the bot on this server. | list | empty |
 
 ## Lockdown Configuration Options
 
@@ -23,6 +27,10 @@ description: >-
 | plugin.name | Name of the plugin to whitelist | string | empty |
 | out | Output options | dict | empty |
 | out -&gt; channels | list of channels to whitelist | snowflake list | empty |
+| out -&gt; category | list of channel categories to whitelist | snowflake list | empty |
+| out -&gt; roles | list of roles to whitelist | snowflake list | empty |
+| out -&gt; exclude\_channels | list of channels to blacklist | snowflake list | empty |
+| out -&gt; exclude\_category | list of channel categories to blacklist | snowflake list | empty |
 | out -&gt; roles | whitelisted roles | snowflake list | empty |
 
 `name` allows for a command name, custom command/tag name, or `tags-usr` to represent the level for all tags.
@@ -64,8 +72,17 @@ description: >-
     - group: infractions
       out:
         channels: [510415911560282132, 511870279157284874]
+        category: [32498723498049874]
+        roles: [9872389732498023409]
     - plugin.name: admin
       out:
         channels: [510415911560282132, 511870279157284874]
+    dm_denied: true
+    global_blacklist:
+      - 76012696633348096
+      - 76685590585671680
+    local_blacklist:
+      - 132256368353607681
+      - 324841099090853888
 ```
 

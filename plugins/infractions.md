@@ -16,12 +16,12 @@ The infractions plugin provides a set of useful moderator commands. These comman
 | `!unban {user} [reason]` | Unbans a user | Moderator | `!unban 232921983317180416` |
 | `!softban {user} [reason]` | Softbans \(bans/unbans\) a user and deletes the user's messages sent within the last 7 days | Moderator | `!softban 232921983317180416 spamming` OR `!softban @rowboat#0001 spamming` |
 | `!tempban {user} {duration} [reason]` | Temporarily bans a user | Moderator | `!tempban 232921983317180416 5h spamming` OR `!tempban @rowboat#0001 5h spamming` |
-| `!infractions archive` | Creates a CSV file of all infractions on the server | Administrator | `!infractions archive` |
-| `!infractions search {query}` | Searches infractions database for given query | Moderator | `!infractions search 232921983317180416` OR `!infractions search rowboat#0001` OR `!infractions search spamming` |
-| `!infractions info {inf#}` | Presents information on the given infraction | Moderator | `!infractions info 1274` |
+| `!inf archive` | Creates a CSV file of all infractions on the server | Administrator | `!infractions archive` |
+| `!inf search {query}` | Searches infractions database for given query | Moderator | `!inf search 232921983317180416` OR `!inf search rowboat#0001` OR `!inf search spamming` |
+| `!inf info {inf#}` | Presents information on the given infraction | Moderator | `!inf info 1274` |
 | `!inf delete {inf#}` | Delete infraction | Admin | `!inf delete 1274` |
-| `!infractions duration {inf#} {duration}` | Updates the duration of the given infraction. Duration starts from time of initial action | Moderator | `!infractions duration 1274 5h` |
-| `!infractions reason {inf#} {reason}` | Updates the reason of a given infraction | Moderator | `!infractions reason 1274 rude behaviour towards staff` |
+| `!inf duration {inf#} {duration}` | Updates the duration of the given infraction. Duration starts from time of initial action | Moderator | `!inf duration 1274 5h` |
+| `!inf reason {inf#} {reason}` | Updates the reason of a given infraction | Moderator | `!inf reason 1274 rude behaviour towards staff` |
 | `!slowmo {time in seconds}` | Sets the slowmode time for the channel | Moderator | `!slowmo 10` |
 | `!slowmo 0` | Turn off slowmode for the channel | Moderator | `!slowmo 0` |
 | `!report {message}` | Send a report to a report channel | Everyone | `!report @Tobiah is being a meanie` |
@@ -36,6 +36,11 @@ The infractions plugin provides a set of useful moderator commands. These comman
 | `!hardmute enable {user} {reason}` | Hard mutes a user | Mod | `!hardmute enable @user1 being really silly` |
 | `!hardmute temp {user} {duration} {reason}` | Hard mutes a user temporarily | Mod | `!hardmute temp @user1 6h being really silly` |
 | `!hardmute disable {user}` | Disables an active hard mute on a user | Mod | `!hardmute disable @user1` |
+| `!mban {users] -r [reason]` | Bans multiple users from the server | Moderator | `!mban 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
+| `!munban {users] -r [reason]` | Unbans multiple users from the server | Moderator | `!munban 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
+| `!mmute {users] -r [reason]` | Mutes multiple users on the server | Moderator | `!mmute 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
+| `!munmute {users] -r [reason]` | Unmute multiple users on the server | Moderator | `!munmute 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
+| `!timeleft` | Allow muted user to check their remaining time in their mute | Default | `!timeleft` |
 
 ## Configuration Options
 
@@ -105,4 +110,3 @@ Valid Actions: `WARN`, `TEMPMUTE`, `MUTE`, `TEMPBAN`, `BAN`
       BAN:
         format: true
 ```
-

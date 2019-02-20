@@ -28,6 +28,5 @@ docker-compose exec web ./manage.py wh-rmv GUILD_ID_HERE FLAG_HERE
 
 | Option | Description |
 | :--- | :--- |
-| MODLOG\_CUSTOM\_FORMAT | Allows the modlog custom format |
-| MUSIC | Does nothing |
-
+| `MODLOG_CUSTOM_FORMAT` | Allows the modlog custom format |
+| `MUSIC` | Does nothing |

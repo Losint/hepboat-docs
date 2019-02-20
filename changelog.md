@@ -1,5 +1,117 @@
 # Changelog
 
+#### 19 Feb 2019
+
+* Bug fixes for undefined prefixes in channel configs
+* Bug fixes for nickname censor
+* Control messages for reloading plugins
+* Control messages for guild join/leave
+* Change default logging to WARNING, command to change log level at will
+* \(In progress\) Webhooks for twitch notifications
+
+#### 17 Feb 2019
+
+* Auto level VC issues are fixed
+* Twitch plugin
+  * Can set configs to strings now. This means you can have the same channel multiple times
+    * Allows setting channel\_id in each config to specify the channel id
+  * Fixed regex issues when specifying custom messages
+  * Embeds and message now use the display name not the login name
+* Discord invites in censor plugin are escaped
+* Clean all and clear will no longer delete pinned messages
+* Cleaned up role reactions
+  * Reactions that should not be on a message will be removed \(Slowly so it doesn't hit rate limits\)
+  * Specifying `join_only` or `leave_only` as an emoji list item will set that reaction to only allow the role to be joined or left but not both.
+* Reworked most of the mass infraction commands. No timeouts will occur meaning you can mass ban etc quickly as expected.
+* Tags with PNG and JPEG should correctly attach the picture and NOT include the URL
+
+#### 15 Feb 2019
+
+* Twitch plugin!! xD
+
+#### 14 Feb 2019
+
+* Updated auto level to include guild rank, top command and the ability for global admins to import points from tatsumaki and mee6
+
+#### 31 Jan 2019
+
+* Reddit notify role
+* Fixed some reddit plugin unescape issues
+* `clean` deletes command
+* Announcement config and command to send announcements to a channel
+* Autoclean configuration
+* Reaction based roles
+
+#### 29 Jan 2019
+
+* New plugin!! Autolevel that reward roles for users participation in chat!
+
+#### 27 Jan 2019
+
+* Antiraid! Check the censor plugin for details
+
+#### 24 Jan 2019
+
+* Added roles, categories to command lockdown
+* Added channel and category blacklists to command lockdown
+
+#### 20 Jan 2019
+
+* Welcome message config - per-channel, dm or not, replacements for server/user/channel
+
+#### 18 Jan 2019
+
+* We're in 2019, oops, Tobiah put Jan 2018.
+* Better spotify support for info command
+* Duck command _cringe_
+* Automatically add roles on user join with `onjoin_roles` in admin plugin
+
+#### 14 Jan 2019
+
+* Mobile modding, requires `mobile_mod_channel` to be configured in the admin plugin, allows initiation of mod actions via `!minfo {user id}` or reacting with 🔗 \(link emote\) on a message. The bot will walk the mod through moderation options
+
+#### 10 Jan 2019
+
+* `shut`/`unshut` commands to force everyone to PTT \(once discord fixes its bug, it will make no one able to speak\)
+* `force setup` for a guild in cases where admins on the server cannot run it or there is an error doing it the traditional way.
+
+#### 4 Jan 2019
+
+* Cease/uncease \(yeet/yote\) commands to lock down channel or guild easily.
+* Move archive and backup commands to admin level
+* Global admin command override
+* Advanced user info search
+* Advanced infraction search
+* Advanced user infraction lookup
+* Bot status setting
+* Documentation for whitelisting/unwhitelisting
+* Guild Flag editing
+* Mass unban/ban/mute/unmute commands
+* Document some sql plugin commands
+* SQL optimizations
+* Frontend statistics support
+* `!timeleft` to allow muted users to check remaining time
+
+#### 18 Dec 2018
+
+* Added control messages for dm's to the bot
+* Added control message for global admin going live
+* Added override command for global admins to have to use override command to enable override mode in specific servers or all. \(Sends a control message, no more than 3600s\)
+
+#### 14 Dec 2018
+
+* Added `dm_denied` option, allowing server owners to have the bot DM the users who attempt to use commands that are denied, or to leave it silent. \(True notifies, False does not\)
+* Added `global_blacklist` and `local_blacklist`, allowing bot owner and server owners, respectively, to provide a list of users for the bot to ignore globally and per-server, respectively.
+
+#### 10 Dec 2018
+
+* Added  exclude\_msg\_usr to allow excluding a user from logging
+* Alias for `clean all` as `clear`
+
+#### 6 Dec 2018
+
+* Added channel\_whitelist config option to spam filtering
+
 #### 6 Dec 2018
 
 * Added channel\_whitelist config option to spam filtering

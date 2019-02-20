@@ -21,6 +21,7 @@ The utility plugin provides a number of useful and fun commands
 | `!seen {user}` | Returns the timestamp of when the bot last saw a message from given user | Default | `!seen 232921983317180416` OR `!seen @rowboat#0001` |
 | `!server [guild]` | Returns information on the current server or the Server ID if given | Default | `!server` OR `!server 290923757399310337` |
 | `!avatar {user}` | Displays user's avater | Default | `!avatar b1nzy` |
+| `!announce {channel} {message}` | Announce message to channel. Channel must have configuration in the utility plugin configuration | Admin | `!announce #community-news it's a me, mario!` |
 
 ## Configuration Example
 

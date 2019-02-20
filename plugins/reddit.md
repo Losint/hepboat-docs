@@ -16,6 +16,7 @@ The Reddit plugin provides a feed of new posts on specified subreddits.
 | mode | Format of the entries. Options: PRETTY, PLAIN | str | pretty |
 | nsfw | Whether to include NSFW posts | bool | false |
 | include\_stats | Whether to include stats for each thread | bool | false |
+| notify\_role | Role to notify of posts to this subreddit | snowflake | empty |
 
 ## Configuration Example
 
@@ -27,5 +28,6 @@ The Reddit plugin provides a feed of new posts on specified subreddits.
         mode: pretty
         nsfw: false
         include_stats: true
+        notify_role: 148516565858385920
 ```
 

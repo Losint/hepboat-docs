@@ -362,6 +362,3 @@ commands:
     out:
       channels: [504782681263964123] # User commands channel
 ```
-
-
-

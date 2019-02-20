@@ -92,4 +92,3 @@ The modlog plugin provides a mechanisim for logging various events and actions t
           ```
           {after!s}
 ```
-
