@@ -20,8 +20,6 @@ By turning on spam prevention, HepBoat takes a huge burden off moderators and en
 
 ## Plugins
 
-## Plugins
-
 * Administration
   * Banning, kicking, muting
   * Managing and tracking infractions and reasons per user and moderator
