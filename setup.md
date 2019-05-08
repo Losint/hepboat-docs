@@ -109,11 +109,8 @@ plugins:
   admin:
     confirm_actions: true
     confirm_actions_reaction: true
-    mute_role: 335132902025330688 # Mute Role
-    reason_edit_level: 60
-    temp_mute_role: 335132902025330688
-  
-    
+    allow_say: true
+        
   infractions:
     confirm_actions: true
     confirm_actions_expiry: 10

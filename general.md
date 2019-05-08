@@ -6,7 +6,7 @@
 web:
   80351110224678912: admin #b1nzy
   108598213681922048: editor #JakeyPrime
-  232921983317180416: viewer #rowboat
+  84912325282254848: viewer #Alchameth
 ```
 
 Web determines which users are able to view the configuration dashboard for the server. Commenting a line with the Username above each ID helps with organization.
@@ -16,7 +16,7 @@ User ID is used to assign ranks. There are three ranks you can assign: admin, ed
 ## Nickname
 
 ```text
-nickname: H4PB0AT
+nickname: H3PB0AT
 ```
 
 Set a nickname for the bot! Nickname is applied upon reload of the bot.
@@ -42,9 +42,9 @@ Levels can be assigned anywhere from 0 to 100, keeping in mind the default permi
 commands:
   prefix: '!'
   overrides:
-  - {plugin.name: 'utilities', out: {level: 10}}
-  - {group: 'clean', out: {level: 40}}
-  - {name: 'mute', out: {level: 40}}
+  - plugin.name: 'utilities', out: {level: 10}
+  - group: 'clean', out: {level: 40}
+  - name: 'mute', out: {level: 40}
 ```
 
 Here, you can change your prefix, which is the symbol which begins each command. For example: !ban, !!ban, $ban, ^ban, rb!ban
