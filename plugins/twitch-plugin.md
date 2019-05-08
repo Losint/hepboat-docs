@@ -1,5 +1,7 @@
 # Twitch Plugin
 
+## Twitch Plugin is currently not working correctly. This will be fixed as soon as possible, and in the meantime, has been disabled. Sorry for any inconvenience caused!
+
 The twitch plugin provides an advanced system to announce twitch streams within your guild. Two major options exist where the first is the traditional method of defining a list of streams to announce when they are live, the second method allows for dynamic stream announcements based off members of your guild who are streaming.
 
 This includes the dynamic assignment of roles which can be used to hoist currently streaming members higher in the guild member list. Other options include custom message announcements, and basic regex for stream title and game to ensure only specified streams are announced for your guild.
@@ -191,14 +193,7 @@ twitch:
         XB1 @ 1 is now live!
 ```
 
-## Notes
-
-The twitch plugin requires an option to be set in the `config.yaml` for the twitch client ID API key.
-
-```yaml
-stream:
-  TWITCH_CLIENT_ID: '987dfs876876978sdf8799'
-```
+## Please Note
 
 Announces can only occur once per hour per user into a channel. If the stream is not restarted after the hour it will not re-announce.
 

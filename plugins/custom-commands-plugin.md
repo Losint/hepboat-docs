@@ -249,17 +249,6 @@ All commands in custom commands are configured to ADMIN \(level 100\) due to how
 | react &lt;searchstr&gt; &lt;emoji\_id&gt; | Will react to all instances of &lt;searchstr&gt; with the emoji. The emoji\_id must include the name such as `smile:501155013431787530` |
 | reply &lt;searchstr&gt; \[reply\] | Will reply to all instances of &lt;searchstr&gt; with the reply message. |
 
-## Enable Options
-
-In config.yaml the following configuration must be defined within the plugins to enable this feature within the bot:
-
-```yaml
-bot:
-  commands_enabled: true
-  plugins:
-    - rowboat.plugins.custcommands
-```
-
 ## Configuration Options
 
 Guild level configuration to enable the custom commands feature within the guild:
@@ -290,7 +279,7 @@ commands:
 
 ### Guild Hardening Options
 
-The configuration for this plugin uses the commands plugin within core.py to apply overrides and lockdowns to both command levels and channel lockdowns.
+The configuration for this plugin uses the commands plugin within the core of the bot to apply overrides and lockdowns to both command levels and channel lockdowns.
 
 <table>
   <thead>

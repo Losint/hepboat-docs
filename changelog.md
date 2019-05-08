@@ -1,5 +1,19 @@
 # Changelog
 
+#### 6 March 2019
+
+* `v-snap` command for mods to get list of users currently in voice chat with them. \(helpful for checking later when there's issues going on\)
+
+#### 22 Feb 2019
+
+* Ability to turn off twitch announcing the stream, still granting a role if one is specified to grant to those streaming.
+
+#### 20 Feb 2019
+
+* Twitch notification webhooks
+* Twitch notification streamer name/avatar
+* Twitch notification footer \(twitch logo, Live @ time\)
+
 #### 19 Feb 2019
 
 * Bug fixes for undefined prefixes in channel configs

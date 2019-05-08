@@ -13,6 +13,8 @@ Web determines which users are able to view the configuration dashboard for the 
 
 User ID is used to assign ranks. There are three ranks you can assign: admin, editor, viewer. Admin can add more users \(including other Admins\), edit, and view the dashboard. Editor can edit and view the dashboard. Viewer can only view.
 
+Adding any users to your config as soon above, will grant you the "Verified HepBoat User" role in our support guild, which you can join at the "Support Server" linked above. This will give you access to a chat to talk with other HepBoat users, and get support from our amazing HepBoat support team.
+
 ## Nickname
 
 ```text
