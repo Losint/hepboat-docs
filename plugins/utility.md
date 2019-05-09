@@ -29,7 +29,6 @@ The utility plugin provides a number of useful and fun commands
 | :--- | :--- | :--- | :--- |
 | announce | Channels that can be announced into | dict | empty |
 | auto\_clean | Channels that can be autocleaned | dict | empty |
-| reaction\_roles | MessageID of message to attach reactions with roles against | dict | empty |
 
 ## Announce Configuration Options
 

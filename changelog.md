@@ -1,5 +1,12 @@
 # Changelog
 
+#### 9 May 2019
+
+* Huge amount of bug fixes and improvements
+* Added some command aliases for the lazy, yours to discover!
+* Added some "HepBoat is typing" indicators for commands that may run for a long time
+* An entire badge system? Check your local info command today!
+
 #### 6 March 2019
 
 * `v-snap` command for mods to get list of users currently in voice chat with them. \(helpful for checking later when there's issues going on\)
