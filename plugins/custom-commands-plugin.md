@@ -61,7 +61,9 @@ All commands in custom commands are configured to ADMIN \(level 100\) due to how
         </td>
     </tr>
   </tbody>
-</table>## Command Options
+</table>
+
+## Command Options
 
 ### Type
 
@@ -238,7 +240,9 @@ All commands in custom commands are configured to ADMIN \(level 100\) due to how
       </td>
     </tr>
   </tbody>
-</table>### Listen Commands
+</table>
+
+### Listen Commands
 
 #### MessageCreate
 

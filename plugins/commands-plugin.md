@@ -68,15 +68,21 @@ description: >-
     lockdown:
     - name: info
       out:
-        channels: [510415911560282132, 511870279157284874]
+        channels: 
+          - 510415911560282132
+          - 511870279157284874
     - group: infractions
       out:
-        channels: [510415911560282132, 511870279157284874]
+        channels: 
+          - 510415911560282132 
+          - 511870279157284874
         category: [32498723498049874]
         roles: [9872389732498023409]
     - plugin.name: admin
       out:
-        channels: [510415911560282132, 511870279157284874]
+        channels: 
+          - 510415911560282132
+          - 511870279157284874
     dm_denied: true
     global_blacklist:
       - 76012696633348096

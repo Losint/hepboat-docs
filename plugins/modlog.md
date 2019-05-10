@@ -69,7 +69,7 @@ The modlog plugin provides a mechanisim for logging various events and actions t
 
 ## Configuration Example
 
-```text
+```yaml
   modlog:
     channels:
       289494042000228352:
@@ -92,3 +92,242 @@ The modlog plugin provides a mechanisim for logging various events and actions t
           ```
           {after!s}
 ```
+
+## Custom Mod Log Format
+
+After you have run the `@HepBoat#0361 setup` command you will need to contact a Global Administrator to get the custom formats enabled in your guild. You may then follow the configuration bellow to fully customize the modlog to your liking.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Option</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">{e.author!s}</td>
+      <td style="text-align:left">
+        <p>username#discriminator</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">{e.author.id}</td>
+      <td style="text-align:left">
+        <p>user id</p>
+      </td>
+    </tr> 
+    <tr>
+      <td style="text-align:left">{e.channel.mention}</td>
+      <td style="text-align:left">
+        <p>channel mention</p>
+      </td>
+    </tr> 
+    <tr>
+      <td style="text-align:left">{e.channel}</td>
+      <td style="text-align:left">
+        <p>channel name</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">{e.user!s}</td>
+      <td style="text-align:left">
+        <p>username#discriminator if they leave</p>
+      </td>
+    </tr> 
+    <tr>
+      <td style="text-align:left">{e.user.id} </td>
+      <td style="text-align:left">
+        <p>user id if they leave</p>
+      </td>
+    </tr>  
+    <tr>
+      <td style="text-align:left">{actor!s} </td>
+      <td style="text-align:left">
+        <p>command author</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">{reason!s}</td>
+      <td style="text-align:left">
+        <p>infraction reason</p>
+      </td>
+    </tr> 
+      <td style="text-align:left">{expires} </td>
+      <td style="text-align:left">
+        <p>expiration date</p>     
+  </tbody>
+</table>
+
+## Example Custom Mod Log Configuration
+
+```yaml
+    custom:
+      CENSORED:
+        emoji: no_entry_sign
+        format: |-
+          **{e.author!s}**'s message (**ID**: {e.author.id}) censored in channel **{e.channel.mention}** ({e.channel}):
+          {c.details}:
+          ```
+          {c.content!s}
+          ```
+      GUILD_BAN_ADD:
+        emoji: hammer
+        format: |-
+          BAN
+          **User**: {e.user!s}
+          **ID**: {e.user.id}'
+      GUILD_MEMBER_ADD:
+        emoji: wave
+        format: |-
+          **{e.user!s}** (**ID**: {e.user.id}) (<@{e.user.id}>) has joined the server. Say hi or ban! {new} (created {created})
+      GUILD_MEMBER_REMOVE:
+        emoji: outbox_tray
+        format: |-
+          **{e.user!s}** has left the server
+      GUILD_SOFTBAN_ADD:
+        emoji: hammer
+        format: |-
+          SOFT-BAN
+          **User**: {e.user!s}
+          **Moderator**: {actor!s}
+          **ID**: {e.user.id}
+          **Reason**: {reason!s}
+      GUILD_TEMPBAN_ADD: 
+        emoji: hammer
+        format: |-
+          TEMPORARY BAN
+          **User**: {e.user!s}
+          **ID**: {e.user.id}
+          **Moderator**: {actor!s}
+          **Expires at**: {expires} GMT+0
+          **Reason**: {reason!s}
+      MEMBER_BAN:
+        emoji: hammer
+        format: |-
+          BAN
+          **User**: {user!s}
+          **Moderator**: {actor!s}
+          **ID**: {user_id}
+          **Reason**: {reason!s}
+      MEMBER_KICK:
+        emoji: boot
+        format: |-
+          KICK
+          **User**: {member!s}
+          **Moderator**: {actor!s}
+          **ID**: {member.id}
+          **Reason**: {reason!s}
+      MEMBER_MUTED: 
+        emoji: no_mouth
+        format: |-
+          MUTE
+          **User**: {member!s}
+          **Moderator**: {actor!s}
+          **ID**: {member.id}
+          **Reason**: {reason!s}
+      MEMBER_ROLE_ADD: 
+        emoji: key
+        format: |-
+          **Role Added:** {role.name}
+          **To**: {member!s}
+          **By:** {actor!s}
+          **ID**: {member.id}
+          **Reason**: {reason!s}
+      MEMBER_ROLE_REMOVE:
+        emoji: key
+        format: |-
+          **Role Removed:** {role.name}
+          **To**: {member!s}
+          **By:** {actor!s}
+          **ID**: {member.id}
+          **Reason**: {reason!s}
+      MEMBER_SOFTBAN:
+        emoji: hammer
+        format: |-
+          SOFT-BAN
+          **User**: {member!s}
+          **Moderator**: {actor!s}
+          **ID**: {member.id}
+          **Reason**: {reason!s}
+      MEMBER_TEMPBAN:
+        emoji: hammer
+        format: |-
+          TEMPORARY BAN
+          **User**: {member!s}
+          **Moderator**: {actor!s}
+          **ID**: {member.id}
+          **Expires at**: {expires} GMT+0
+          **Reason**: {reason!s}
+      MEMBER_TEMPBAN_EXPIRE:
+        emoji: hammer
+        format: |-
+          UNBAN
+          **User**: {user!s}
+          **ID of infraction**: {inf.id}
+          **ID**: {user_id}
+      MEMBER_TEMPMUTE_EXPIRE:
+        emoji: open_mouth
+        format: |-
+          MUTE EXPIRED
+          **User**: {member!s}
+          **ID of infraction**: {inf.id}
+          **ID**: {member.id}
+      MEMBER_TEMP_MUTED:
+        emoji: no_mouth
+        format: |-
+          TEMP MUTE
+          **User**: {member!s} | <@{member.id}>
+          **Moderator**: {actor!s}
+          **ID**: {member.id}
+          **Expires**: {expires} GMT+0
+          **Reason**: {reason!s}
+      MEMBER_UNMUTED:
+        emoji: open_mouth
+        format: |-
+          UNMUTED
+          **User**: {member!s}
+          **Moderator**: {actor!s}
+          **ID**: {member.id}
+      MEMBER_WARNED:
+        emoji: warning
+        format: |-
+          WARNING
+          **User**: {member!s} | <@{member.id}>
+          **Moderator**: {actor!s}
+          **ID**: {member.id}
+          **Reason**: {reason!s}
+      MESSAGE_DELETE:
+        emoji: wastebasket
+        format: |-
+          **{author!s}'s** (**ID:** {author.id}) messages was deleted in **{e.channel.mention}** ({e.channel}):
+          ```
+          {msg!s}
+          ```
+          {attachments}
+      MESSAGE_DELETE_BULK:
+        emoji: wastebasket
+        format: |-
+          {count} messages deleted in **{channel.mention}** ({channel})
+          (<{log}>)
+      MESSAGE_EDIT:
+        emoji: pencil
+        format: |-
+          **{e.author!s}'s** (**ID:** {e.author.id}) messages was edited in **{e.channel.mention}** ({e.channel} | {e.channel.id}):
+          **Before:**
+          ```
+          {before!s}
+          ```
+          **After:**
+          ```
+          {after!s}
+          ```       
+      SLOWMODE_ON:
+        emoji: snail
+        format: |-
+          Slowmode set to {time!s}s in <#{channel.id}> by **{actor!s}**
+          `{reason!s}`
+      SLOWMODE_OFF:
+        emoji: runner
+        format: |-
+          Slowmode disabled in <#{channel.id}> by **{actor!s}** ```

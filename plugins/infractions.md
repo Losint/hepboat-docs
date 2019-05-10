@@ -6,18 +6,18 @@ The infractions plugin provides a set of useful moderator commands. These comman
 
 | Name | Description | Default Level | Usage |
 | :--- | :--- | :--- | :--- |
-| `!warn {user} [reason]` | Adds a warning infraction to a user | Moderator | `!warn 232921983317180416 1st warning, spamming emoji` OR `!warn @rowboat#0001 2nd warning, going off-topic` |
-| `!mute {user} [reason]` | Mutes a user. This will only work if `mute_role` is set in the config | Moderator | `!mute 232921983317180416 spamming` OR  `!tempmute @rowboat#0001 60m spamming` |
-| `!unmute {user}` | Unmutes a user | Moderator | `!unmute 232921983317180416` |
-| `!tempmute {user} {duration} [reason]` | Temporarily mutes a user. Will only work if `temp_mute_role` or `mute_role` is set in the config | Moderator | `!tempmute 232921983317180416 30m spamming` OR `!tempmute @rowboat#0001 30m spamming` |
-| `!kick {user} [reason]` | Kicks the user from the server | Moderator | `!kick 232921983317180416 spamming` OR `!kick @rowboat#0001 spamming` |
+| `!warn {user} [reason]` | Adds a warning infraction to a user | Moderator | `!warn 520047158104424488 1st warning, spamming emoji` OR `!warn @HepBoat#0361 2nd warning, going off-topic` |
+| `!mute {user} [reason]` | Mutes a user. This will only work if `mute_role` is set in the config | Moderator | `!mute 520047158104424488 spamming` OR  `!tempmute @HepBoat#0361 60m spamming` |
+| `!unmute {user}` | Unmutes a user | Moderator | `!unmute 520047158104424488` |
+| `!tempmute {user} {duration} [reason]` | Temporarily mutes a user. Will only work if `temp_mute_role` or `mute_role` is set in the config | Moderator | `!tempmute 520047158104424488 30m spamming` OR `!tempmute @HepBoat#0361 30m spamming` |
+| `!kick {user} [reason]` | Kicks the user from the server | Moderator | `!kick 520047158104424488 spamming` OR `!kick @HepBoat#0361 spamming` |
 | `!mkick {users] -r [reason]` | Kicks multiple users from the server | Moderator | `!mkick 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
-| `!ban {user} [reason]` | Bans a user from the server | Moderator | `!ban 232921983317180416 spamming` OR `!ban @rowboat#0001 spamming` |
-| `!unban {user} [reason]` | Unbans a user | Moderator | `!unban 232921983317180416` |
-| `!softban {user} [reason]` | Softbans \(bans/unbans\) a user and deletes the user's messages sent within the last 7 days | Moderator | `!softban 232921983317180416 spamming` OR `!softban @rowboat#0001 spamming` |
-| `!tempban {user} {duration} [reason]` | Temporarily bans a user | Moderator | `!tempban 232921983317180416 5h spamming` OR `!tempban @rowboat#0001 5h spamming` |
+| `!ban {user} [reason]` | Bans a user from the server | Moderator | `!ban 520047158104424488 spamming` OR `!ban @HepBoat#0361 spamming` |
+| `!unban {user} [reason]` | Unbans a user | Moderator | `!unban 520047158104424488` |
+| `!softban {user} [reason]` | Softbans \(bans/unbans\) a user and deletes the user's messages sent within the last 7 days | Moderator | `!softban 520047158104424488 spamming` OR `!softban @HepBoat#0361 spamming` |
+| `!tempban {user} {duration} [reason]` | Temporarily bans a user | Moderator | `!tempban 520047158104424488 5h spamming` OR `!tempban @HepBoat#0361 5h spamming` |
 | `!inf archive` | Creates a CSV file of all infractions on the server | Administrator | `!infractions archive` |
-| `!inf search {query}` | Searches infractions database for given query | Moderator | `!inf search 232921983317180416` OR `!inf search rowboat#0001` OR `!inf search spamming` |
+| `!inf search {query}` | Searches infractions database for given query | Moderator | `!inf search 520047158104424488` OR `!inf search HepBoat#0361` OR `!inf search spamming` |
 | `!inf info {inf#}` | Presents information on the given infraction | Moderator | `!inf info 1274` |
 | `!inf delete {inf#}` | Delete infraction | Admin | `!inf delete 1274` |
 | `!inf duration {inf#} {duration}` | Updates the duration of the given infraction. Duration starts from time of initial action | Moderator | `!inf duration 1274 5h` |
@@ -83,30 +83,107 @@ Valid Actions: `WARN`, `TEMPMUTE`, `MUTE`, `TEMPBAN`, `BAN`
     vc_mute_channel: 77177426521624576
     notify:
       WARN:
-        format: |-
-          {action!s}
-          You have been **{action!s}**
-          **Guild**: {guild.name}
-          **Moderator**: {actor!s}
-          **Reason**: {reason!s}
+        format: true
       TEMPMUTE:
-        format: |-
-          {action!s}
-          You have been **{action!s}**
-          **Guild**: {guild.name}
-          **Moderator**: {actor!s}
-          **Expires**: {expires} GMT+0
-          **Reason**: {reason!s}
+        format: true
       MUTE:
         format: false
       TEMPBAN:
-        format: |-
-          {action!s}
-          You have been **{action!s}**
-          **Guild**: {guild.name}
-          **Moderator**: {actor!s}
-          **Expires**: {expires} GMT+0
-          **Reason**: {reason!s}
-      BAN:
+        format: true
+      Kick:  
         format: true
 ```
+
+## Custom Infractions Format
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Option</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">{e.author!s}</td>
+      <td style="text-align:left">
+        <p>username#discriminator</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">{e.author.id}</td>
+      <td style="text-align:left">
+        <p>user id</p>
+      </td>
+    </tr> 
+    <tr>
+      <td style="text-align:left">{e.channel.mention}</td>
+      <td style="text-align:left">
+        <p>channel mention</p>
+      </td>
+    </tr> 
+    <tr>
+      <td style="text-align:left">{e.channel}</td>
+      <td style="text-align:left">
+        <p>channel name</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">{e.user!s}</td>
+      <td style="text-align:left">
+        <p>username#discriminator if they leave</p>
+      </td>
+    </tr> 
+    <tr>
+      <td style="text-align:left">{e.user.id} </td>
+      <td style="text-align:left">
+        <p>user id if they leave</p>
+      </td>
+    </tr>  
+    <tr>
+      <td style="text-align:left">{actor!s} </td>
+      <td style="text-align:left">
+        <p>command author</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">{reason!s}</td>
+      <td style="text-align:left">
+        <p>infraction reason</p>
+      </td>
+    </tr> 
+      <td style="text-align:left">{expires} </td>
+      <td style="text-align:left">
+        <p>expiration date</p>     
+  </tbody>
+</table>
+
+## Custom Format Configuration Example
+
+```yaml
+    notify:
+      WARN:
+        emoji: warning
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+      TEMPMUTE:
+        emoji: no_mouth
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}` until **{expires}** GMT+0.
+      MUTE:
+        emoji: no_mouth
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+      TEMPBAN:
+        emoji: tools
+        format: |-
+          You have been **{action!s}** until **{expires} GMT+0 in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+      BAN:
+        emoji: tools
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`
+      KICK:
+        emoji: boot
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+          ```

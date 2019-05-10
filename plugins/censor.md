@@ -114,14 +114,28 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
       50:
         filter_zalgo: true
         filter_invites: true
-        invites_guild_whitelist: [205769246008016897, 272885620769161216]
-        invites_whitelist: ['discord-developers', 'discord-testers', 'discord-api', 'events', 'discord-linux', 'gamenight', 'discord-feedback']
+        invites_guild_whitelist: 
+          - 205769246008016897
+          - 272885620769161216
+        invites_whitelist: 
+          - 'discord-developers'
+          - 'discord-testers'
+          - 'discord-api'
+          - 'events'
+          - 'discord-linux'
+          - 'gamenight'
+          - 'discord-feedback'
         invites_blacklist: []
         filter_domains: true
         domains_whitelist: []
         domains_blacklist: ['website.net']
-        blocked_tokens: ['token1', 'token2']
-        blocked_words: ['word1', 'word2', 'word3']
+        blocked_tokens: 
+          - 'token1'
+          - 'token2'
+        blocked_words: 
+          - 'word1'
+          - 'word2'
+          - 'word3'
         blocked_nicknames: ['blurb']
         zalgo_channel_whitelist: [510413274060161024]
         invites_channel_whitelist: [510413274060161024]
@@ -139,7 +153,7 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
           lockdown_duration: 300
           raidrole: 538720817773805569
           notifyrole: 536728730714898442
-     channels:
+    channels:
       290923757399310337:
         blocked_words: ['word4']
 ```

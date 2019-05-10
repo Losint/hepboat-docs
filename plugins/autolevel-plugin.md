@@ -136,7 +136,9 @@ The HepBoat autoleveling system also provides a means to have multiple guild lev
       </td>
     </tr>
   </tbody>
-</table>## Configuration Options
+</table>
+
+## Configuration Options
 
 <table>
   <thead>
@@ -281,7 +283,9 @@ The HepBoat autoleveling system also provides a means to have multiple guild lev
       <td style="text-align:left">None</td>
     </tr>
   </tbody>
-</table>##  Multiplier Sub Configuration
+</table>
+
+##  Multiplier Sub Configuration
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
@@ -347,13 +351,3 @@ autolevel:
       keep_previous: true
     
 ```
-
-## Notes
-
-The autolevel plugin requires an option to be set in the `config.yaml` for the Tatsumaki API key.
-
-```yaml
-other:
-  TATSUMAKI_API_KEY: '3298472389-4723948723-498723'
-```
-

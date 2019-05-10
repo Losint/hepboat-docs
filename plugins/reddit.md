@@ -13,14 +13,14 @@ The Reddit plugin provides a feed of new posts on specified subreddits.
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
 | channel | Sets which channel the feed should post subreddit threads to | dict | empty |
-| mode | Format of the entries. Options: PRETTY, PLAIN | str | pretty |
+| mode | Format of the entries. Options: `PRETTY, PLAIN` | str | pretty |
 | nsfw | Whether to include NSFW posts | bool | false |
 | include\_stats | Whether to include stats for each thread | bool | false |
 | notify\_role | Role to notify of posts to this subreddit | snowflake | empty |
 
 ## Configuration Example
 
-```text
+```yaml
   reddit:
     subs:
       discordapp:

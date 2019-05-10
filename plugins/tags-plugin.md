@@ -32,9 +32,14 @@ A tag can also be run directly with its name and the guild prefix such as `!myta
 
 ## Hardening Example
 
-Tags can be hardened by using the Commands Plugin option for overrides and lockdown. The name `tags-usr` can be defined to specify all created tags running directly. An example of a hardened configuration is as follows
+Tags can be hardened by using the Commands Plugin option for overrides and lockdown. 
 
-```text
+The name `tags-usr` can be defined to specify all created tags running directly.
+
+The name `mytag` can be defined to specify a specific created tag.
+
+ An example of a hardened configuration is as follows
+```yaml
 commands:
   overrides:
   - name: tags-usr
@@ -51,7 +56,7 @@ commands:
 
 If you want to leak channels you can leak the name as the override or lockdown such as below
 
-```text
+```yaml
 commands:
   overrides:
   - name: tags-usr
