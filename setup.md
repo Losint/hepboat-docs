@@ -13,47 +13,80 @@ HepBoat is only available to servers that meet certain criteria:
 Firstly, you will need to be on the whitelist, there is a link above that lets you send me a message to get you added. If you invite the bot, and you aren't on the whitelist it will immediately leave.
 
 Once the bot is in your server, go into a chat the bot has access to, and do `@hepboat setup` it should reply with a pass and fail message, ignore this, you're good to go!
-Then, go to [https://mod.imjake.me/](https://mod.imjake.me) to edit your server's configuration. Use the sidebar to read about each plugin, then use the example below along with the information in the sidebar to set up your own customized HepBoat configuration.
+Then, go to [https://mod.teamhydra.dev//](https://mod.teamhydra.dev/) to edit your server's configuration. Use the sidebar to read about each plugin, then use the example below along with the information in the sidebar to set up your own customized HepBoat configuration.
 The bot will not do anything out of the box, you'll have to continue below to enable and disable which parts of the bot you want, as you can see, it's completely modular. 
 
 Below is a blank configuration example with web, utilities, admin, infractions, modlog, spam, and censor set up. While you can simply copy-paste this to your own server's configuration and fill in the blanks to have a perfectly usable rowboat, it's highly encouraged that you read through the full documentation to understand each component and customize rowboat to your server's needs.
 
+## Example HepBoat Configuration
+
 ```yaml
-web:
-  000000000000000000: admin   # Username
-  000000000000000000: editor  # Username
-  000000000000000000: viewer  # Username
+web: 
+  148359099782791168: admin    # JakeyPrime # Change this
+  84912325282254848: editor    # Alchameth  # Change this
 
 commands:
   prefix: '!'
-  overrides: []
+  overrides: # In the overrides below I have included lockdowns and restrictions for the custom commands plugin; you're advised to keep it as is whether you use it or not. Make sure to also override any commands you create that you do not want users to be using. 
+  - group: cc
+    out:
+      roles:
+        - 00000000000000000  # Admin
+  - name: cc-usr
+    out:
+      roles:
+        - 00000000000000000  # Admin        
+  lockdown: 
+  - group: cc
+    out:
+      channels: [000000000000000000]        # Admin commands channel
+      
+nickname: 'HepBoat'
 
 levels:
-  000000000000000000: 000 # Role
-
-nickname: H4PB0AT
-
-plugins:
-
+  000000000000000000: 100       # Admin ID
+  000000000000000000: 99        # Server admin bot role ID
+  000000000000000000: 60        # Senior Moderator role ID
+  000000000000000000: 50        # Moderator role ID
+  000000000000000000: 46        # AI - Bots roles ID
+  000000000000000000: 10        # Trusted role ID
+  000000000000000000: 0         # Everyone ID
+ 
+plugins: 
   utilities: {}
-
-  admin: {}
-
-  infractions:
-    mute_role: 000000000000000000 # Muted
-
-  modlog:
-    channels:
-      00000000000000000000000: # We recommend adding comments to mark ids with names
-        exclude: []
-        include: []
-    ignored_users: []
+  
+  admin:
+    persist:
+      roles: true
+      role_ids:         # Roles to recover after leaving and joining back 
+      - 000000000000000000      #  MAKE SURE TO INCLUDE THE MUTED ROLE IN HERE
+      nickname: true
+      voice: true
+  
+  censor: # You're advised to add malicious websites under domain blacklist and racial slurs and offensive words under words & token filtering
+    levels:
+      45:
+        filter_zalgo: true
+        filter_invites: true
+        invites_whitelist: []
+        invites_blacklist: []
+        filter_domains: true
+        domains_whitelist: []
+        domains_blacklist: [] 
+        blocked_tokens: [] 
+        blocked_words: []
+        blocked_nicknames: []
+        block_zalgo_nicknames: true
 
   spam:
     levels:
-      0:
-        punishment: TEMPMUTE
-        punishment_duration: 120
+      45:
+        punishment: TEMPMUTE # Change that if you wish : "TEMPMUTE, MUTE, KICK, BAN"
+        punishment_duration: 300
+        clean: true
+        clean_count: 50
+        clean_duration: 500
+        channel_whitelist: [] # If you want to whitelist channels for anti-spam to not apply. You can also whitelist PER ANTI SPAM TYPE by adding "channel_whitelist: [ID] in the same column as count/interval.
         max_messages:
           count: 10
           interval: 7
@@ -73,28 +106,97 @@ plugins:
           count: 5
           interval: 30
 
-  censor:
-    levels:
-      0:
-        filter_invites: true
-        invites_whitelist: 
-          - 'discord-developers'
-          - 'discord-testers'
-          - 'discord-api'
-          - 'events'
-          - 'discord-linux'
-          - 'gamenight'
-          - 'discord-feedback'
-        blocked_words: ['word1', 'word2', 'word3']
+  infractions:
+    confirm_actions: true
+    confirm_actions_reaction: true
+    confirm_actions_expiry: 5
+    mute_role: 000000000000000000       # Muted Role
+    tempmute_role: 000000000000000000       # Muted Role
+    reason_edit_level: 100
+    show_moderator: true
+    silence_level: 100
+    report_channel: 535051955639418890 # Channel for reports to go to    
+    notify: # 
+      WARN:
+        emoji: warning
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+      TEMPMUTE:
+        emoji: no_mouth
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}` until **{expires}** GMT+0.
+      MUTE:
+        emoji: no_mouth
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+      TEMPBAN:
+        emoji: tools
+        format: |-
+          You have been **{action!s}** until **{expires} GMT+0 in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+      BAN:
+        emoji: tools
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}` 
+      KICK:
+        emoji: boot
+        format: |-
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`. 
+ 
+modlog: # This plugin is for logging events on your discord. The current setup is a message log channel, a user join/leave channel and a channel for all other actions, as well as a public action log. Delete a category below if you don't want it included. If you're not sure, ping Alchameth#8808 on discord.
+    channels:
+      000000000000000000:     # Message Logs
+        exclude: []
+        include: 
+          - MESSAGE_DELETE
+          - MESSAGE_DELETE_BULK
+          - MESSAGE_EDIT
+          - CENSORED
+        timestamps: true
+        timezone: GMT+0
+      000000000000000000:     #Server Logs
+        exclude: 
+          - MESSAGE_DELETE
+          - MESSAGE_DELETE_BULK
+          - MESSAGE_EDIT
+        include: []
+        timestamps: true
+        timezone: GMT+0        
+      000000000000000000:     # User-Logs
+        exclude: []
+        include: 
+          - GUILD_MEMBER_ADD
+          - GUILD_MEMBER_REMOVE
+        timestamps: true
+        timezone: GMT+0
+      000000000000000000:     # Action-Log - Your public moderation log where the server can see actions taken.
+        exclude: []
+        include: 
+          - MEMBER_KICK
+          - GUILD_BAN_ADD
+          - GUILD_BAN_REMOVE
+          - MEMBER_TEMPBAN
+          - MEMBER_SOFTBAN
+          - MEMBER_BAN
+          - MEMBER_MUTED
+          - MEMBER_TEMP_MUTED
+          - MEMBER_WARNED          
+    ignored_users: []
+    new_member_threshold: 86400 # time in seconds
+  
+  tags:
+    max_tag_length: 1000 # Set it as long as you want or remove
+    min_level_remove_others: 50 # To allow only level 50 and above to remove (in this config, moderators)   
 ```
-
-
 
 ## Example Minimum config
 
 ```yaml
+web:
+  148359099782791168: admin      # JakeyPrime - Change This
+
 commands:
   prefix: '!'
+  overrides: {}
 
 levels:
   180768265633660928: 100   # Server Admin Role Id
@@ -109,7 +211,6 @@ plugins:
   admin:
     confirm_actions: true
     confirm_actions_reaction: true
-    allow_say: true
         
   infractions:
     confirm_actions: true
@@ -138,22 +239,21 @@ plugins:
         compact: false
         timestamps: true
   utilities: {}
-web:
-  148359099782791168: admin      # JakeyPrime - Change This
 ```
 
 ### Example just to get going
 
-```text
+```yaml
 commands:
   prefix: '!'
 ​
 levels:
-  148359099782791168: 100   # Your role id or individual admin ID's
+  148359099782791168: 100 # Your role id or individual admin ID's
 ​
 plugins:
   utilities: {}
+
 web:
-  148359099782791168: admin      # JakeyPrime - Change This
+  148359099782791168: admin # JakeyPrime - Change This
 ```
 
