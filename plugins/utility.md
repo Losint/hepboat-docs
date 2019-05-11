@@ -26,6 +26,7 @@ The utility plugin provides a number of useful and fun commands
 | `!about` | Returns a list of servers and uptime | Default | `!about`
 | `!help` | Returns an embed with a documentation link and homepage | Default | `!help`
 | `!uptime` | Returns uptime command | Default | `!uptime` 
+| `!ping` | Returns a phrase to indicate bot responsiveness | Default | `!ping` 
 
 ## Configuration Options
 
@@ -43,123 +44,53 @@ The utility plugin provides a number of useful and fun commands
 | webhook\_name | Username for webhook | str | Guild Name |
 | webhook\_avatar | Avatar URL for webhook "user" | str | None |
 
-## Info Command Badges explanation
+# Info Command Badges explanation
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Option</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-<t>
-  <th style="text-align:left">Staff</th>
-</t>  
-  <tbody>
-    <tr>
-      <td style="text-align:left">![dev](https://cdn.discordapp.com/emojis/534956228816797697.png?v=1)</td>
-      <td style="text-align:left">
-        <p>HepBoat Developer</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">![Support Team](https://cdn.discordapp.com/emojis/575946300638625792.png?v=1)</td>
-      <td style="text-align:left">
-        <p>HepBoat Support Team</p>
-      </td>
-    </tr> 
-    <tr>
-      <td style="text-align:left">![Support God](https://cdn.discordapp.com/emojis/575946300638625792.png?v=1)</td>
-      <td style="text-align:left">
-        <p>HepBoat Support God</p>
-      </td>
-    </tr> 
-<t>
-  <th style="text-align:left">User Titles</th>
-</t>
-    <tr>
-      <td style="text-align:left">Helper</td>
-      <td style="text-align:left">
-        <p>HepBoat Helper - Not Staff</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Guru</td>
-      <td style="text-align:left">
-        <p>HepBoat Guru - Not Staff</p>
-      </td>
-    </tr> 
-    <tr>
-      <td style="text-align:left">![Reddit](https://cdn.discordapp.com/emojis/575965161333194753.png?v=1)</td>
-      <td style="text-align:left">
-        <p>Discordapp Reddit Team - Not Staff</p>
-      </td>
-    </tr>  
-<t>
-  <th style="text-align:left">Donor Tiers</th>
-</t>     
-    <tr>
-      <td style="text-align:left">donor</td>
-      <td style="text-align:left">
-        <p>Base donor tier to show donor section profile, added when people donate</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">![Donor 1](https://cdn.discordapp.com/emojis/575971423269683200.png?v=1)</td>
-      <td style="text-align:left">
-        <p>Tiers of one time donations, separate from premium program SoonTM</p>
-      </td>
-    </tr> 
-      <td style="text-align:left">![Donor 2](https://cdn.discordapp.com/emojis/575971422204067840.png?v=1)</td>
-      <td style="text-align:left">
-        <p>Tiers of one time donations, separate from premium program SoonTM</p>    
-    <tr>
-    </tr> 
-      <td style="text-align:left">![Donor 3](https://cdn.discordapp.com/emojis/575971421939826706.png?v=1)</td>
-      <td style="text-align:left">
-        <p>Tiers of one time donations, separate from premium program SoonTM</p>    
-    <tr>  
-    </tr> 
-      <td style="text-align:left">![Donor 4](https://cdn.discordapp.com/emojis/575971421960929282.png?v=1)</td>
-      <td style="text-align:left">
-        <p>Tiers of one time donations, separate from premium program SoonTM</p>    
-    <tr> 
-    </tr> 
-      <td style="text-align:left">![Donor 5](https://cdn.discordapp.com/emojis/575972858514112512.png?v=1)</td>
-      <td style="text-align:left">
-        <p>Tiers of one time donations, separate from premium program SoonTM</p>    
-    <tr>             
-      <td style="text-align:left">![Sponsor](https://cdn.discordapp.com/emojis/575972858514112512.png?v=1)</td>
-      <td style="text-align:left">
-        <p>Big Boi</p>
-      </td>
-    </tr> 
-<t>
-  <th style="text-align:left">Automatic</th>
-</t>
-    <tr>
-      <td style="text-align:left">![Global Admin](https://cdn.discordapp.com/emojis/534956228816797697.png?v=1)</td>
-      <td style="text-align:left">Global Administrator of HepBoat
-      </td>                
-    <tr>
-      <td style="text-align:left">![Hydra Server Admin](https://cdn.discordapp.com/emojis/575946300638625792.png?v=1)</td>
-      <td style="text-align:left">Administrator of the Team Hydra Discord Server
-      </td>
-    <tr>
-      <td style="text-align:left">![Hydra Server Mod](https://cdn.discordapp.com/emojis/575946300638625792.png?v=1)</td>
-      <td style="text-align:left">Moderator of the Team Hydra Discord Server        
-      </td> 
-    <tr>
-      <td style="text-align:left">Server Owner</td>
-      <td style="text-align:left">Owner of a server using HepBoat        
-      </td>  
-    <tr>
-      <td style="text-align:left">User</td>
-      <td style="text-align:left">User of HepBoat      
-      </td>                 
-    </tr> 
-  </tbody>
-</table>
+### Staff
+
+![dev](https://cdn.discordapp.com/attachments/466804131965829130/576683733894037514/534956228816797697.png) - HepBoat Developer - Staff
+
+![Support Team](https://cdn.discordapp.com/attachments/466804131965829130/576683725929316361/575946300638625792.png) - Support Team - Staff
+
+![Support God](https://cdn.discordapp.com/attachments/466804131965829130/576683725929316361/575946300638625792.png) - HepBoat Support God - Staff
+
+### Donators
+
+![Reddit](https://cdn.discordapp.com/attachments/466804131965829130/576683736364744716/575965161333194753.png)- Discordapp Reddit Team - Not Staff
+
+Donor - Base donor tier to show donor section profile, added when people donate
+
+![Donor 1](https://cdn.discordapp.com/attachments/466804131965829130/576683732740866048/575971423269683200.png) - Tiers of one time donations, separate from premium program SoonTM
+ 
+![Donor 2](https://cdn.discordapp.com/attachments/466804131965829130/576683731603947521/575971422204067840.png) - Tiers of one time donations, separate from premium program SoonTM  
+ 
+![Donor 3](https://cdn.discordapp.com/attachments/466804131965829130/576683729699864576/575971421939826706.png) - Tiers of one time donations, separate from premium program SoonTM   
+
+![Donor 4](https://cdn.discordapp.com/attachments/466804131965829130/576683728483516446/575971421960929282.png) - Tiers of one time donations, separate from premium program SoonTM    
+ 
+![Donor 5](https://cdn.discordapp.com/attachments/466804131965829130/576683727221030912/575972858514112512.png) - Tiers of one time donations, separate from premium program SoonTM  
+  
+![Sponsor](https://cdn.discordapp.com/attachments/466804131965829130/576683727221030912/575972858514112512.png) - Sponsor; Someone who greatly contributes towards the bot
+
+![Zira Premium](https://cdn.discordapp.com/attachments/466804131965829130/576683724259983370/549209441220952064.png) - User that is part of the Premium Zira program
+
+Helper - HepBoat Helper - Not Staff
+
+Guru - HepBoat Guru - Not Staff
+
+### Automatic
+
+![Global Admin](https://cdn.discordapp.com/attachments/466804131965829130/576683733894037514/534956228816797697.png) -  Global Administrator of HepBoat
+
+![Hydra Server Admin](https://cdn.discordapp.com/attachments/466804131965829130/576683725929316361/575946300638625792.png) - Administrator of the Team Hydra Discord Server
+
+![Hydra Server Mod](https://cdn.discordapp.com/attachments/466804131965829130/576683725929316361/575946300638625792.png) - Moderator of the Team Hydra Discord Server        
+
+![Zira Premium](https://cdn.discordapp.com/attachments/466804131965829130/576683724259983370/549209441220952064.png) - Premium Users of Zira bot
+
+Server Owner - Owner of a server using HepBoat        
+
+User - User of HepBoat      
 
 
 ## Autoclean  Configuration Options
@@ -170,23 +101,9 @@ The utility plugin provides a number of useful and fun commands
 
 ## Reaction Roles Configuration Options
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Option</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">[Zira](https://zira.ovh/)</td>
-      <td style="text-align:left">
-        <p>The reaction role function was removed due to high load on the bot. However, if you'd still like to use reaction roles, our dedicated bot for that [Zira](https://zira.ovh/) is an amazing choice with rich features and fast responsiveness. Join the [Team Hydra Discord Server]() to learn more.</p>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+## [Zira](https://zira.ovh/)
+
+The reaction role function was removed due to high load on the bot. However, if you'd still like to use reaction roles, our dedicated bot for that [Zira](https://zira.ovh/) is an amazing choice with rich features and fast responsiveness. Join the [Team Hydra Discord Server](https://discordapp.com/invite/2wP2yjy) to learn more.
 
 ## Configuration Example
 

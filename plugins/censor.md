@@ -115,28 +115,30 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
         filter_zalgo: true
         filter_invites: true
         invites_guild_whitelist: 
-          - 205769246008016897
-          - 272885620769161216
+          - 205769246008016897 # Guild 1
+          - 272885620769161216 # Guild 2
         invites_whitelist: 
-          - 'discord-developers'
-          - 'discord-testers'
-          - 'discord-api'
-          - 'events'
-          - 'discord-linux'
-          - 'gamenight'
-          - 'discord-feedback'
+          -  discord-developers
+          -  discord-testers
+          -  discord-api
+          -  events
+          -  discord-linux
+          -  gamenight
+          -  discord-feedback
         invites_blacklist: []
         filter_domains: true
         domains_whitelist: []
-        domains_blacklist: ['website.net']
+        domains_blacklist: 
+          -  website.com
+          -  weirdlink.net
         blocked_tokens: 
-          - 'token1'
-          - 'token2'
+          -  token1
+          -  token2
         blocked_words: 
-          - 'word1'
-          - 'word2'
-          - 'word3'
-        blocked_nicknames: ['blurb']
+          -  word1
+          -  word2
+          -  word3
+        blocked_nicknames: [blurb]
         zalgo_channel_whitelist: [510413274060161024]
         invites_channel_whitelist: [510413274060161024]
         domains_channel_whitelist: [510413274060161024]
@@ -155,7 +157,7 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
           notifyrole: 536728730714898442
     channels:
       290923757399310337:
-        blocked_words: ['word4']
+        blocked_words: [word4]  
 ```
 
 Note: Every censor configuration setting can be applied to either `levels` or `channels`

@@ -95,7 +95,9 @@ All commands in custom commands are configured to ADMIN \(level 100\) due to how
       </td>
     </tr>
   </tbody>
-</table>### Listen Type
+</table>
+ 
+### Listen Type
 
 | Name | Info |
 | :--- | :--- |
@@ -285,54 +287,28 @@ commands:
 
 The configuration for this plugin uses the commands plugin within the core of the bot to apply overrides and lockdowns to both command levels and channel lockdowns.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Overrides</th>
-      <th style="text-align:left">Info</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">cc-usr</td>
-      <td style="text-align:left">
-        <p>cc-usr is applied to all created custom commands. It is recommended to
-          set this to the following configuration as otherwise by default ANY custom
-          command that has been created can be run by any user as the default level
-          is 0</p>
-        <p><code>commands:</code>
-        </p>
-        <p><code>  overrides:</code>
-        </p>
-        <p><code>  - name: cc-usr</code>
-        </p>
-        <p><code>    out:</code>
-        </p>
-        <p> <code>     level: 100</code>
-        </p>
-        <p><code></code>
-        </p>
-        <p>This should also be channel locked as a recommendation:</p>
-        <p><code>commands:</code>
-        </p>
-        <p><code>  lockdown</code>
-        </p>
-        <p><code>  - name: cc-usr<br />    out:</code>
-        </p>
-        <p><code>      channels: [504782681263964162] # Admin commands channel</code>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <custcmdname>
-      </td>
-      <td style="text-align:left">When you have created a custom command you should use similar config as
-        shown above in cc-usr example with a level of 0 or the required level including
-        lockdown configuration</td>
-    </tr>
-  </tbody>
-</table> When a command is created it will automatically be locked to level 100 permissions and within the admin channel only. From here if required you can leak the individual commands out as follows.  
+cc-usr is applied to all created custom commands. It is recommended to set this to the following configuration as otherwise by default ANY custom command that has been created can be run by any user as the default level is 0
+commands:
+
+```yaml      
+overrides:
+  - name: cc-usr
+    out:
+      level: 100
+```      
+
+This should also be channel locked as a recommendation:
+commands:
+
+```yaml
+lockdown
+  - name: cc-usr
+    out:
+      channels: [504782681263964162] # Admin commands channel
+```
+When you have created a custom command you should use similar config as shown above in cc-usr example with a level of 0 or the required level including lockdown configuration        
+
+When a command is created it will automatically be locked to level 100 permissions and within the admin channel only. From here if required you can leak the individual commands out as follows.  
 E.g. of command called showjokes
 
 ```yaml

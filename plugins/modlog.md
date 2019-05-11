@@ -69,7 +69,7 @@ The modlog plugin provides a mechanisim for logging various events and actions t
 
 ## Configuration Example
 
-```yaml
+```text
   modlog:
     channels:
       289494042000228352:
@@ -77,20 +77,17 @@ The modlog plugin provides a mechanisim for logging various events and actions t
         timezone: Etc/GMT-8
         exclude: []
         include: []
-    ignored_users: [202217402635780096]
+    ignored_users: [84912325282254848]
     new_member_threshold: 86400
     custom:
-      MESSAGE_EDIT:
-        emoji: pencil
+      MEMBER_WARNED:
+        emoji: warning
         format: |-
-          **{e.author!s}'s** (**ID:** {e.author.id}) messages was edited in **{e.channel.mention}** ({e.channel} | {e.channel.id}):
-          **B:**
-          ```
-          {before!s}
-          ```
-          **A:**
-          ```
-          {after!s}
+          WARNING
+          **User**: {member!s} | <@{member.id}>
+          **Moderator**: {actor!s}
+          **ID**: {member.id}
+          **Reason**: {reason!s}
 ```
 
 ## Custom Mod Log Format
@@ -161,7 +158,7 @@ After you have run the `@HepBoat#0361 setup` command you will need to contact a 
 
 ## Example Custom Mod Log Configuration
 
-```yaml
+```text
     custom:
       CENSORED:
         emoji: no_entry_sign
