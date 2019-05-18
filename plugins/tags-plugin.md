@@ -9,8 +9,9 @@ A tag can also be run directly with its name and the guild prefix such as `!myta
 
 | Name | Description | Default Level | Usage |
 | :--- | :--- | :--- | :--- |
-| `!tags create` | Adds a warning infraction to a user | Trusted | `!tags add yes yes` OR `!tags create wow oh yes` |
-| `!tags show {tag}` | Get the content of a tag | Trusted | `!tags show popcorn`   OR `!tags popcorn` |
+| `!tags create` | Creates a tag | Trusted | `!tags add yes Yes hello friend` OR `!tags create wow oh yes` |
+| `!tags show {tag}` | Get the content of a tag and how many uses it has | Trusted | `!tags show popcorn`   OR `!tags popcorn` |
+| `!tags edit {tag} {new content}` | Edit content of existing tag | Moderator | `!tags edit owo More OWO!` |
 | `!tags remove {tag}` | Remove tag by name | Trusted | `!tags remove popcorn` |
 | `!tags info {tag}` | Get information on a tag | Trusted | `!tags info popcorn` |
 | `!tags all` | List all tags for the server | Trusted | `!tags all` |

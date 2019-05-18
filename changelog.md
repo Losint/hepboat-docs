@@ -1,5 +1,13 @@
 # Changelog
 
+#### 18 May 2019
+
+* Added more badges for roles based in our control server. Join with the link above!
+* Added being able to edit tags with !tags edit name for example.
+* Better logging and less deleting of helpful messages.
+* Colorful embeds that were all kinda blue before.
+* Informational commands.
+
 #### 9 May 2019
 
 * Huge amount of bug fixes and improvements
