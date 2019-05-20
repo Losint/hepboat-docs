@@ -5,8 +5,9 @@
 ```text
 web:
   80351110224678912: admin #b1nzy
-  108598213681922048: editor #JakeyPrime
-  84912325282254848: viewer #Alchameth
+  108598213681922048: editor # JakeyPrime
+  84912325282254848: viewer # Alchameth
+  189990173222764545: viewer # Bunnerz
 ```
 
 Web determines which users are able to view the configuration dashboard for the server. Commenting a line with the Username above each ID helps with organization.
