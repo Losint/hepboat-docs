@@ -17,6 +17,7 @@ The Reddit plugin provides a feed of new posts on specified subreddits.
 | nsfw | Whether to include NSFW posts | bool | false |
 | include\_stats | Whether to include stats for each thread | bool | false |
 | notify\_role | Role to notify of posts to this subreddit | snowflake | empty |
+| delay_sec: | Number of seconds to delay the post feed | int in seconds | 0
 
 ## Configuration Example
 
@@ -27,7 +28,7 @@ The Reddit plugin provides a feed of new posts on specified subreddits.
         channel: 281855195095236608
         mode: pretty
         nsfw: false
+        delay_sec: 120
         include_stats: true
         notify_role: 148516565858385920
 ```
-

@@ -1,5 +1,10 @@
 # Changelog
 
+#### 20 May 2019
+
+* Added delay_sec to Reddit plugin to delay posting things until they are at least x seconds old, so that it doesn't post things that may get removed by a bot or even your own mods.
+* Bug fixes, more auto deletes have been removed, and stability improvements.
+
 #### 18 May 2019
 
 * Added more badges for roles based in our control server. Join with the link above!
