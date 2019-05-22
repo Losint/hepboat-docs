@@ -54,7 +54,7 @@ By enabling Hepboat's advanced censor plugin, you will be able to choose from a 
   * Ignoring and filtering of specific channels \(helpful for moderation only channels\)
   * Highlighting newly created accounts on join
   * Support for automatic batching during high-throughput periods \(user purges, raids, cleans, etc\) prevents log messages from backing up
-  * Support for fully customized moderation log format
+  * Support for either fully customized moderation log format or embedded format
 * Reddit
   * Support for multiple subreddit sources and channel destinations
   * Support for including post stats

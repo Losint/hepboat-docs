@@ -7,7 +7,7 @@ The admin plugin provides a set of administrator commands that help in moderatin
 | Name | Description | Default Level | Usage |
 | :--- | :--- | :--- | :--- |
 | `!join / add / give {role}` | Assigns a role if it's listed in the group\_roles config setting | Default | `!join PC` OR `!add Console` OR `!give Tabletop` |
-| `!leave / remove / take {role}` | Removes a group role from a user | Default | `!leave PC` OR `!remove Console` OR `!take Tabletop` |
+| `!leave / remove / take {role}` | Removes a group role from a user if it's listed in the group\_roles config setting| Default | `!leave PC` OR `!remove Console` OR `!take Tabletop` |
 | `!temprole {user} {role ID} {duration} [reason]` | Temporarily applies a role to a user | Moderator | `!temprole 232921983317180416 295646805650046977 7d Trial Mod` OR `!temprole @rowboat#0001 295646805650046977 24h Member of the Day` |
 | `!roles` | Returns a list of ids/names for all roles on the server. Useful for configuring other rowboat plugins | Moderator | `!roles` |
 | `!role add {user} {role} [reason]` | Adds a role to a user | Moderator | `!role add 232921983317180416 Moderator Promotion from Member` OR `!role add rowboat#0001 Admin Pretty good Moderator` |

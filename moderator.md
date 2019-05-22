@@ -11,7 +11,6 @@
 | `!kick {user} [reason]` | Kicks the user from the server | Moderator | `!kick 232921983317180416 spamming` OR `!kick @rowboat#0001 spamming` |
 | `!ban {user} [reason]` | Bans a user from the server | Moderator | `!ban 232921983317180416 spamming` OR `!ban @rowboat#0001 spamming` |
 | `!unban {user} [reason]` | Unbans a user | Moderator | `!unban 232921983317180416` |
-| `!forceban {User ID} [reason]` | Force bans a user who is not currently in the server | Moderator | `!forceban 232921983317180416 spamming` |
 | `!softban {user} [reason]` | Softbans \(bans/unbans\) a user and deletes the user's messages sent within the last 7 days | Moderator | `!softban 232921983317180416 spamming` OR `!softban @rowboat#0001 spamming` |
 | `!tempban {user} {duration} [reason]` | Temporarily bans a user | Moderator | `!tempban 232921983317180416 5h spamming` OR `!tempban @rowboat#0001 5h spamming` |
 
@@ -42,7 +41,7 @@
 | `!inf info {inf#}` | Presents information on the given infraction | Moderator | `!inf info 1274` |
 | `!inf duration {inf#} {duration}` | Updates the duration of the given infraction. Duration starts from time of initial action | Moderator | `!inf duration 1274 5h` |
 | `!inf reason {inf#} {reason}` | Updates the reason of a given infraction | Moderator | `!inf reason 1274 rude behaviour towards staff` |
-| `!inf reason {inf#} {reason}` | Delete an infraction | Admin | `!inf delete 1274` |
+| `!inf delete {inf#} {reason}` | Delete an infraction | Admin | `!inf delete 1274` |
 
 ## Starboard
 

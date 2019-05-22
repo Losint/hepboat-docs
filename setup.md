@@ -10,7 +10,7 @@ HepBoat is only available to servers that meet certain criteria:
 
 ## How to Set Up
 
-Firstly, you will need to be on the whitelist, there is a link above that lets you send me a message to get you added. If you invite the bot, and you aren't on the whitelist it will immediately leave.
+Firstly, you will need to be on the whitelist, there is a link above that lets you send me a message to get you added. If you invite the bot, and you aren't on the whitelist, it will immediately leave.
 
 Once the bot is in your server, go into a chat the bot has access to, and do `@hepboat setup` it should reply with a pass and fail message, ignore this, you're good to go!
 Then, go to [https://mod.teamhydra.dev//](https://mod.teamhydra.dev/) to edit your server's configuration. Use the sidebar to read about each plugin, then use the example below along with the information in the sidebar to set up your own customized HepBoat configuration.

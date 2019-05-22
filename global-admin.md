@@ -65,3 +65,4 @@ These are in ascending order based on what label they would appear under, etc.
 | HepBoat Server Owner | N/A | Owns a HepBoat run server | RDB | Own a HepBoat run server | 
 | HepBoat User | N/A | Role for being in a HepBoat Config | RDB | Be part of a HepBoat Run Server | 
 | HepBoat Tester | N/A | Being in a part of a HBB test guild | RDB | Be part of a test server config |
+| HepBoat Volunteer Helper | N/A | Role for volunteer to actively take part in the bot development | 

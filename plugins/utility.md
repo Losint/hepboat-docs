@@ -60,6 +60,8 @@ The utility plugin provides a number of useful and fun commands
 
 Donor - Base donor tier to show donor section profile, added when people donate
 
+Nitro Booster - For the booster peeps once it launchers, given when someone boosts the server
+
 ![Donor 1](https://cdn.discordapp.com/attachments/466804131965829130/576683732740866048/575971423269683200.png) - Tiers of one time donations, separate from premium program SoonTM
  
 ![Donor 2](https://cdn.discordapp.com/attachments/466804131965829130/576683731603947521/575971422204067840.png) - Tiers of one time donations, separate from premium program SoonTM  
@@ -71,12 +73,6 @@ Donor - Base donor tier to show donor section profile, added when people donate
 ![Donor 5](https://cdn.discordapp.com/attachments/466804131965829130/576683727221030912/575972858514112512.png) - Tiers of one time donations, separate from premium program SoonTM  
   
 ![Sponsor](https://cdn.discordapp.com/attachments/466804131965829130/576683727221030912/575972858514112512.png) - Sponsor; Someone who greatly contributes towards the bot
-
-![Zira Premium](https://cdn.discordapp.com/attachments/466804131965829130/576683724259983370/549209441220952064.png) - User that is part of the Premium Zira program
-
-Helper - HepBoat Helper - Not Staff
-
-Guru - HepBoat Guru - Not Staff
 
 ### Automatic
 
@@ -90,7 +86,15 @@ Guru - HepBoat Guru - Not Staff
 
 Server Owner - Owner of a server using HepBoat        
 
-User - User of HepBoat      
+User - User of HepBoat    
+
+HepBoat Tester - Beta Testers for hepboat, automatically given when in a beta config.
+
+![HepBoat Design Team](https://cdn.discordapp.com/attachments/576329728441581568/580774469212307456/575946300638625792.png) - For Team Hydra designers
+
+HepBoat Volunteer Helper - For users that volunteer to help with the development of the bot
+
+
 
 
 ## Autoclean  Configuration Options
