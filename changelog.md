@@ -2,8 +2,16 @@
 
 #### 20 May 2019
 
+* Huge feature! Now, you can now have embeds for your logs! Just enable it with modlog `mode: pretty`
 * Added delay_sec to Reddit plugin to delay posting things until they are at least x seconds old, so that it doesn't post things that may get removed by a bot or even your own mods.
+* Add subreddit name and time posted in footer for reddit feed posts in pretty format. 
 * Bug fixes, more auto deletes have been removed, and stability improvements.
+* Added more information to footer embeds for Reddit, to show the sub it's coming from, and the time it was posted.
+* Fixed tags to be a little faster and not completely stop working whenever it feels like it.
+* Adjusted !server info details to be more verbose.
+* !info only shows 25 roles max for a user for those spicy guilds that broke the info command with 200 roles. *You know who you are*
+* Blocked words censor works on message attachment names.
+
 
 #### 18 May 2019
 
@@ -61,7 +69,7 @@
 
 #### 15 Feb 2019
 
-* Twitch plugin!! xD
+* Twitch plugin!! 
 
 #### 14 Feb 2019
 
