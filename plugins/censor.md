@@ -4,7 +4,7 @@ The censor plugin provides administrators and moderators a simple way to filter 
 
 * Invite Links
 * URLs
-* Inappropriate or Offensive words
+* Inappropriate or Offensive words, which includes attachment names as well!
 
 This, combined with the Spam plugin can result in a very robust automatic abuse-prevention system.
 

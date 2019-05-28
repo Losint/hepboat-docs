@@ -1,6 +1,6 @@
 # Twitch Plugin
 
-## Twitch Plugin is currently not working correctly. This will be fixed as soon as possible, and in the meantime, has been disabled. Sorry for any inconvenience caused!
+## Twitch plugin is now working again! Yay!
 
 The twitch plugin provides an advanced system to announce twitch streams within your guild. Two major options exist where the first is the traditional method of defining a list of streams to announce when they are live, the second method allows for dynamic stream announcements based off members of your guild who are streaming.
 

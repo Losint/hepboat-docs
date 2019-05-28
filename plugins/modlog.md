@@ -27,6 +27,7 @@ The modlog plugin provides a mechanisim for logging various events and actions t
 | timestamps | Whether to render timestamps along with loglines | bool | false |
 | timezone | The timezone that timestamps are rendered in. [Supported timezones](https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568) | timezone | US/Eastern |
 | custom | Change the logging format if the `CUSTOM` flag is on for the guild | dict | empty |
+| mode | mode: pretty will allow for embeds to be like other modlog bots, in pretty embeds. | dict | empty | 
 
 ## Actions
 
@@ -69,10 +70,11 @@ The modlog plugin provides a mechanisim for logging various events and actions t
 
 ## Configuration Example
 
-```text
+```yaml
   modlog:
     channels:
       289494042000228352:
+        mode: pretty
         timestamps: true
         timezone: Etc/GMT-8
         exclude: []
@@ -158,7 +160,7 @@ After you have run the `@HepBoat#0361 setup` command you will need to contact a 
 
 ## Example Custom Mod Log Configuration
 
-```text
+```yaml
     custom:
       CENSORED:
         emoji: no_entry_sign

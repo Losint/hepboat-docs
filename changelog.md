@@ -1,5 +1,12 @@
 # Changelog
 
+#### 27 May 2019
+
+* Tags can now be used in certain channels or ping users with flags. Such as !tagname !c CHANNELID !u USERID
+* Twitch plugin is working again! Or actually, for the first time!
+* Autolevel fixes and improvements.
+* Infraction improvements and fixes.
+
 #### 20 May 2019
 
 * Huge feature! Now, you can now have embeds for your logs! Just enable it with modlog `mode: pretty`
@@ -11,7 +18,6 @@
 * Adjusted !server info details to be more verbose.
 * !info only shows 25 roles max for a user for those spicy guilds that broke the info command with 200 roles. *You know who you are*
 * Blocked words censor works on message attachment names.
-
 
 #### 18 May 2019
 

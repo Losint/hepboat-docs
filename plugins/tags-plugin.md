@@ -16,12 +16,19 @@ A tag can also be run directly with its name and the guild prefix such as `!myta
 | `!tags info {tag}` | Get information on a tag | Trusted | `!tags info popcorn` |
 | `!tags all` | List all tags for the server | Trusted | `!tags all` |
 
+## Tag Flags
+| Flag(s) | Description | Usage |
+| :--- | :--- | :--- |
+| -c | Allows to send tag into another channel | !owo -c 532576772164812820 |
+| -u | Allows to send tag in current channel but ping a certain user before it's contents. | !owo -u 148359099782791168 |
+| -c -u | Allows to send tag in another channel and ping a member in the same tag | !owo -c 532576772164812820 -u 148359099782791168 |
+
 ## Configuration Options
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
 | max\_tag\_length | Maximum length for a tag | int | \* |
-| max\_level\_remove\_others | Minimum level required to remove someone else's tag | int | 50 |
+| min\_level\_remove\_others | Minimum level required to remove someone else's tag | int | 50 |
 
 ## Configuration Example
 
@@ -52,7 +59,7 @@ commands:
   lockdown:
   - name: tags-usr
     out:
-      channels: [384869993789128704]
+      channels: [532709830767542303]
 ```
 
 If you want to leak channels you can leak the name as the override or lockdown such as below
@@ -72,9 +79,9 @@ commands:
   lockdown:
   - name: tags-usr
     out:
-      channels: [384869993789128704]
+      channels: [532709830767542303]
   - name: mytag
     out:
-      channels: [987230980342345423]
+      channels: [532709830767542303]
 ```
 
