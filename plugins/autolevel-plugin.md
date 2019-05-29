@@ -129,14 +129,15 @@ The HepBoat autoleveling system also provides a means to have multiple guild lev
         </p>
       </td>
       <td style="text-align:left">
-        <p>Global</p>
-        <p>+ Admin</p>
+        <p>Global Admin</p>
       </td>
       <td style="text-align:left"><code>!alevel import tatsumaki 76685590585671680  [index]</code>
       </td>
     </tr>
   </tbody>
 </table>
+
+The import command is only available to Global Admins, please join our support guild above and ask us to import your levels for you.
 
 ## Configuration Options
 

@@ -15,7 +15,6 @@ description: >-
 | overrides | Command overrides  | dict | empty |
 | exclude\_msg\_user | Ignore logging for users | snowflake list | empty |
 | dm\_denied | Whether or not to DM a user when their command is denied | bool | True |
-| global\_blacklist | A list of users ignored from using the bot globally. Only applies if set in the control guild, not per-server. | list | empty |
 | local\_blacklist | A list of users ignored from using the bot on this server. | list | empty |
 
 ## Lockdown Configuration Options
@@ -84,9 +83,6 @@ description: >-
           - 510415911560282132
           - 511870279157284874
     dm_denied: true
-    global_blacklist:
-      - 76012696633348096
-      - 76685590585671680
     local_blacklist:
       - 132256368353607681
       - 324841099090853888
