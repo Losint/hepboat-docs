@@ -28,6 +28,7 @@ The modlog plugin provides a mechanisim for logging various events and actions t
 | timezone | The timezone that timestamps are rendered in. [Supported timezones](https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568) | timezone | US/Eastern |
 | custom | Change the logging format if the `CUSTOM` flag is on for the guild | dict | empty |
 | mode | mode: pretty will allow for embeds to be like other modlog bots, in pretty embeds. | dict | empty | 
+| exclude_category | channel will not log any actions made under an excluded category | dict | empty | 
 
 ## Actions
 
@@ -35,6 +36,8 @@ The modlog plugin provides a mechanisim for logging various events and actions t
 | :--- | :--- |
 | CHANNEL\_CREATE | A channel is created |
 | CHANNEL\_DELETE | A channel is deleted |
+| CATEGORY\_CREATE | A category is created | 
+| CATEGORY\_DELETE | A category is deleted |
 | GUILD\_MEMBER\_ADD | A member joins |
 | GUILD\_MEMBER\_REMOVE | A member leaves \(or gets kicked\) |
 | GUILD\_ROLE\_CREATE | A role is created |

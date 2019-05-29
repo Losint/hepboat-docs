@@ -285,6 +285,18 @@ The HepBoat autoleveling system also provides a means to have multiple guild lev
   </tbody>
 </table>
 
+## Announce_msg Configuration options
+
+The announce message can have the following options as values and  will trigger when a new role is assigned.
+
+| Option | Description | 
+| :--- | :--- |
+| {user} | mentions the user
+| {c532372609476591628} | for the channel to be posted in | 
+| {channel} | for the current channel | 
+| {server} | for the server
+| {new_role} | when a new role is assigned |
+
 ##  Multiplier Sub Configuration
 
 | Option | Description | Type | Default |
