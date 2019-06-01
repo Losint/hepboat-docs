@@ -72,23 +72,25 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
 | :--- | :--- | :--- | :--- |
 | filter\_zalgo | Whether to filter zalgo text from messages | bool | true |
 | filter\_invites | Whether to filter invite links from messages | bool | true |
-| invites\_guild\_whitelist | A list of whitelisted guild IDs for invite codes | list | empty |
-| invites\_whitelist | A list of whitelisted invite codes or vanities | list | empty |
-| invites\_blacklist | A list of blacklisted invite codes or vanities | list | empty |
+| invites\_guild\_whitelist | A list of whitelisted guild IDs for invite codes | list(str) | empty |
+| invites\_whitelist | A list of whitelisted invite codes or vanities | list(str) | empty |
+| invites\_blacklist | A list of blacklisted invite codes or vanities | list(str) | empty |
 | filter\_domains | Whether to filter the domains contained within URLs. Enables or disables domain filtering functionality. | bool | true |
-| domains\_whitelist | A whitelist of domain names | list | empty |
-| domains\_blacklist | A blacklist of domain names | list | empty |
-| blocked\_tokens | A list of tokens \(can appear in the middle of words\) that are blacklisted | list | empty |
-| blocked\_words | A list of words \(must be seperated by a boundary\) that are blacklisted | list | empty |
-| blocked\_nicknames | A list of names \(can appear in the middle of nicknames\) that are blacklisted | list | empty |
+| domains\_whitelist | A whitelist of domain names | list(str) | empty |
+| domains\_blacklist | A blacklist of domain names | list(str) | empty |
+| blocked\_tokens | A list of tokens \(can appear in the middle of words\) that are blacklisted | list(str) | empty |
+| blocked\_words | A list of words \(must be seperated by a boundary\) that are blacklisted. | list(str) | empty |
+| blocked\_mentions | A list of mentions that are blacklisted. Can work for channels, roles, or users. `c572876188918349857` for channel mention censor, `u84912325282254848` for user mention censor, `r579304983896391680` for role mention censor. | list(str) | empty | 
+| blocked\_nicknames | A list of names \(can appear in the middle of nicknames\) that are blacklisted | list(str) | empty |
 | block\_zalgo\_nicknames | Whether to filter nicknames with zalgo text | bool | false |
 |  message\_char\_limit | Maximum allowed message length | int | 0 |
 | warn\_on\_censor | Whether to automatically warn a user when their name or message is censored | bool | false |
-| zalgo\_channel\_whitelist | Array of channels to whitelist for zalgo messages | id array | empty |
-| invites\_channel\_whitelist | Array of channels to whitelist for invites | id array | empty |
-| domains\_channel\_whitelist | Array of channels to whitelist for domains | id array | empty |
-| words\_channel\_whitelist | Array of channels to whitelist for blocked words | id array | empty |
-| char\_limit\_channel\_whitelist | Array of channels to whitelist for character limit | id array | empty |
+| zalgo\_channel\_whitelist | Array of channels to whitelist for zalgo messages | list(snowflake) | empty |
+| invites\_channel\_whitelist | Array of channels to whitelist for invites | list(snowflake) | empty |
+| domains\_channel\_whitelist | Array of channels to whitelist for domains | list(snowflake) | empty |
+| words\_channel\_whitelist | Array of channels to whitelist for blocked words | list(snowflake) | empty |
+| mention\_channel\_whitelist | Array of channels to whitelist for blocked mentions | list(snowflake) | empty | 
+| char\_limit\_channel\_whitelist | Array of channels to whitelist for character limit | list(snowflake) | empty |
 | mute\_violations | This is the only option that needs to be set to enable the feature. Mute a user after so many violations  | bool | false |
 | mute\_violations\_count | Amount of violations before muting | int | 3 |
 | mute\_violations\_interval | How much time the count of violations must occur within for the mute to be enforced | int | 10 |
@@ -118,32 +120,37 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
           - 205769246008016897 # Guild 1
           - 272885620769161216 # Guild 2
         invites_whitelist: 
-          -  discord-developers
-          -  discord-testers
-          -  discord-api
-          -  events
-          -  discord-linux
-          -  gamenight
-          -  discord-feedback
+          - discord-developers
+          - discord-testers
+          - discord-api
+          - events
+          - discord-linux
+          - gamenight
+          - discord-feedback
         invites_blacklist: []
         filter_domains: true
         domains_whitelist: []
         domains_blacklist: 
-          -  website.com
-          -  weirdlink.net
+          - website.com
+          - weirdlink.net
         blocked_tokens: 
-          -  token1
-          -  token2
+          - token1
+          - token2
         blocked_words: 
-          -  word1
-          -  word2
-          -  word3
+          - word1
+          - word2
+          - word3
+        blocked_mentions: 
+          - u84912325282254848
+          - r579304983896391680
+          - c572876188918349857
         blocked_nicknames: [blurb]
         zalgo_channel_whitelist: [510413274060161024]
         invites_channel_whitelist: [510413274060161024]
         domains_channel_whitelist: [510413274060161024]
         words_channel_whitelist: [510413274060161024]
         char_limit_channel_whitelist: [510413274060161024]
+        mention_channel_whitelist: [510413274060161024]
         mute_violations: true
         mute_violations_count: 5
         mute_violations_interval: 15

@@ -46,6 +46,7 @@ By enabling Hepboat's advanced censor plugin, you will be able to choose from a 
   * User nickname filtering
   * Automated mute based on word censoring
   * Raid Prevention
+  * User, Role, and channel mention spam prevention
 * Mod Log
   * Granular logging of events
   * Support for multiple channels
@@ -59,6 +60,7 @@ By enabling Hepboat's advanced censor plugin, you will be able to choose from a 
   * Support for multiple subreddit sources and channel destinations
   * Support for including post stats
   * Support for filtering nsfw content
+  * Support for moderator feeds function
   * Ability to ping role per post
 * Spam
   * Highly configurable spam thresholds which can help block:

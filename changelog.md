@@ -1,5 +1,12 @@
 # Changelog
 
+#### 1 June 2019
+
+* Reddit plugin now has moderator feeds.
+* Censor plugin can now censor user, role, and channel mentions.
+* `exclude_category` as well as Category Create/Delete logs in Modlog Plugin.
+* Cleaned up content in `!tags all`
+
 #### 27 May 2019
 
 * Tags can now be used in certain channels or ping users with flags. Such as !tagname !c CHANNELID !u USERID
