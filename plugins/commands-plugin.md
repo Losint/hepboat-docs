@@ -7,6 +7,9 @@ description: >-
 
 Plugin name: `commands`
 
+**Note that this plugin should *not* be under `plugins:` but in the main level configuration.**
+See [General Configuration](general.md) for details.
+
 ## Configuration Options
 
 | Option | Description | Type | Default |
@@ -111,10 +114,9 @@ Blacklists are respected over whitelists in a conflict.
 ## Example configuration
 
 ```yaml
-plugin:
-  commands:
-    prefix: '!'
-    overrides:
+commands:
+  prefix: '!'
+  overrides:
     - name: tempmute
       out:
         level: 40
@@ -144,9 +146,9 @@ plugin:
         channels: 
           - 510415911560282132  # Channel ID
           - 511870279157284874  # Channel ID
-    dm_denied: true
-    local_blacklist:
-      - 132256368353607681  # User ID
-      - 324841099090853888  # User ID
+  dm_denied: true
+  local_blacklist:
+    - 132256368353607681  # User ID
+    - 324841099090853888  # User ID
 ```
 

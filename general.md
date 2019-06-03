@@ -24,8 +24,6 @@ Adding any users to your config will grant you the "Verified HepBoat User" role 
 which you can join by clicking the `Support Server` link at the top of the page. This will give you access to a 
 Discord server where you can talk with other HepBoat users and get support from our amazing HepBoat support team.
 
-**This stanza must be at the top of your configuration page.**
-
 ## Nickname
 
 ```yaml
