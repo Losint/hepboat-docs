@@ -1,54 +1,117 @@
 ---
 description: >-
-  Controls usage of commands by level, channel, etc. There is a special case for
-  the name, which controls all tag usage.
+  Controls usage of commands by level, channel, etc.
 ---
 
 # Commands Plugin
+
+Plugin name: `commands`
 
 ## Configuration Options
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
-| lockdown | A mapping of commands and channels to whitelist | dict | empty |
-| prefix | A mapping of channels to Censor Configurations | dict | empty |
-| overrides | Command overrides  | dict | empty |
-| exclude\_msg\_user | Ignore logging for users | snowflake list | empty |
-| dm\_denied | Whether or not to DM a user when their command is denied | bool | True |
-| local\_blacklist | A list of users ignored from using the bot on this server. | list | empty |
-
-## Lockdown Configuration Options
-
-| Option | Description | Type | Default |
-| :--- | :--- | :--- | :--- |
-| name | Name of the command to whitelist | string | empty |
-| group | Command group to  whitelist | string | empty |
-| plugin.name | Name of the plugin to whitelist | string | empty |
-| out | Output options | dict | empty |
-| out -&gt; channels | list of channels to whitelist | snowflake list | empty |
-| out -&gt; category | list of channel categories to whitelist | snowflake list | empty |
-| out -&gt; roles | list of roles to whitelist | snowflake list | empty |
-| out -&gt; exclude\_channels | list of channels to blacklist | snowflake list | empty |
-| out -&gt; exclude\_category | list of channel categories to blacklist | snowflake list | empty |
-| out -&gt; roles | whitelisted roles | snowflake list | empty |
-
-`name` allows for a command name, custom command/tag name, or `tags-usr` to represent the level for all tags.
-
-`tags-usr-allowed-roles` allows specification for a role to be able to run tags in general
+| prefix | The prefix to use for HepBoat commands in the server. | str | '' |
+| overrides | A mapping of commands and override configurations.  | dict | empty |
+| lockdown | A mapping of commands and channel lockdown configurations. | dict | empty |
+| dm\_denied | DM a user when their command is denied. | bool | True |
+| local\_blacklist | Blacklisted users that HepBoat will ignore all commands from. | list(snowflake) | empty |
+| exclude\_msg\_user | Users that will not be logged by HepBoat. | list(snowflake) | empty |
 
 ## Overrides Configuration Options
 
+Overrides are useful for overriding the default level permissions on commands.
+
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
-| name | Name of the command to override | string | empty |
-| group | Command group to  override | string | empty |
-| plugin.name | Name of the plugin to override | string | empty |
+| name | A command name (default, custom, or short tag) | string | empty |
+| group | A command group name | string | empty |
+| plugin.name | A plugin name | string | empty |
 | out | Output options | dict | empty |
-| out -&gt; level | level to restrict command to | snowflake array | empty |
+| out &rarr; level | Minimum level (inclusive) to use commands | int | 0 |
+| out &rarr; disabled | *For command names only.* Disable the command entirely. | bool | False |
 
+Command group names include commands that start with a common command. e.g. `group: tags` would include tags such as
+`!tags add` and `!tags edit`.
 
+Plugin names include commands that are located under a certain plugin. e.g. `plugin.name: utilities` would include all
+its commands such as `!bunny` and `!emoji`. Please see individual plugin documentation for specific plugin names.
+
+The hierarchy of overrides is
+```txt
+1. name
+2. group
+3. plugin.name
+```
+meaning that the overrides for a specific command name will override the overrides for a command group, etc.
+
+### Special Overrides Command Names
+
+| Command name | Description |
+| :--- | :--- | 
+| `cc-usr`| Users that can trigger custom command commands. |
+| `cc-usr-allowed-roles`| Allows roles to run custom commands anywhere regardless of other override or lockdown settings. |
+| `tags-usr`| Users that can trigger tag calls. |
+| `tags-usr-allowed-roles`| Allows roles to run tags anywhere regardless of other override or lockdown settings. |
+
+The hierarchy of overrides for custom command calls for example would be
+```txt
+1. cc-usr-allowed-roles
+2. name
+3. cc-usr
+```
+meaning that the overrides for a specific custom command trigger will override the overrides for `cc-user`.
+  
+Example configuration setup:
+```yaml
+plugin:
+  commands:
+    overrides:
+      - name: tags-usr
+        out:
+          level: 10
+      - name: tags-usr-allowed-roles
+        out:
+          roles:
+            - 9872389732498023409
+      - name: cc-usr
+        out:
+          level: 60
+      - name: tags-cc-allowed-roles
+        out:
+          roles:
+              - 9872389732498023409
+```
+
+## Lockdown Configuration Options
+
+Lockdowns are useful for hardening commands to only work in certain channels, categories, and by certain roles.
+
+| Option | Description | Type | Default |
+| :--- | :--- | :--- | :--- |
+| name | A command name (default, custom, or short tag) | string | empty |
+| group | A command group | string | empty |
+| plugin.name | A plugin name | string | empty |
+| out | Output options | dict | empty |
+| out &rarr; channels | Whitelisted channels | list(snowflake) | empty |
+| out &rarr; category | Whitelisted categories | list(snowflake) | empty |
+| out &rarr; roles | Whitelisted roles | list(snowflake) | empty |
+| out &rarr; exclude\_channels | Blacklisted channels | list(snowflake) | empty |
+| out &rarr; exclude\_category | Blacklisted channel categories | list(snowflake) | empty |
+
+Blacklists are respected over whitelists in a conflict.
+
+### Special Lockdown Command Names
+
+| Command name | Description |
+| :--- | :--- | 
+| `cc-usr`| Users that can trigger custom command commands. |
+| `tags-usr`| Users that can trigger tag calls. |
+
+## Example configuration
 
 ```yaml
+plugin:
   commands:
     prefix: '!'
     overrides:
@@ -58,9 +121,6 @@ description: >-
     - name: mute
       out:
         level: 40
-    - name: info
-      out:
-        level: 50
     - group: role
       out:
         level: 60
@@ -68,23 +128,25 @@ description: >-
     - name: info
       out:
         channels: 
-          - 510415911560282132
-          - 511870279157284874
-    - group: infractions
+          - 510415911560282132  # Channel ID
+          - 511870279157284874  # Channel ID
+    - group: tags
       out:
         channels: 
-          - 510415911560282132 
-          - 511870279157284874
-        category: [32498723498049874]
-        roles: [9872389732498023409]
+          - 510415911560282132  # Channel ID
+          - 511870279157284874  # Channel ID
+        category:
+          - 32498723498049874  # Category ID
+        roles: 
+          - 9872389732498023409  # Role ID
     - plugin.name: admin
       out:
         channels: 
-          - 510415911560282132
-          - 511870279157284874
+          - 510415911560282132  # Channel ID
+          - 511870279157284874  # Channel ID
     dm_denied: true
     local_blacklist:
-      - 132256368353607681
-      - 324841099090853888
+      - 132256368353607681  # User ID
+      - 324841099090853888  # User ID
 ```
 
