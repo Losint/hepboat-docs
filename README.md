@@ -3,34 +3,49 @@
 ## Quick Start Guide
 Hey there, thanks for checking out HepBoat.
 
-This site will show you the ropes on how to get started with HepBoat, and this page will serve as a central check-in to direct you to certain parts of this site depending on how comfortable you are with Rowboat (HepBoat). 
+This site will show you the ropes on how to get started with HepBoat, and this page will serve as a central check-in to
+direct you to certain parts of this site depending on how comfortable you are with Rowboat (HepBoat). 
 
 Below are certain "experience levels" and will show you which page to start at to learn the ropes of the bot.
 
-### I Don't Have The Bot Yet, And I Have No Idea What I'm Doing!
+### I don't have the bot yet!
 
-No problem! You should probably just click the button at the bottom of this page that will bring you to the next page, and keep reading and repeating, it will give you the rundown on how to get the bot, and show you how to use it! It will also provide all the resources to keep learning once you've mastered the content on this site.
+No problem! Check out [What is Hepboat](src.md) for basic details on what the bot can do and the 
+[Setting Up HepBoat](setup.md) page for details on server criteria.
 
-### Getting Set Up
+In order to start using the bot, you will need to first submit a whitelist application for your Discord server. 
+You may do this [in this Google form](https://teamhydra.dev/hepboat-whitelist/). You will be contacted after applying 
+with more information and the results of the application. 
+ 
+If your server has not been whitelisted and you try to invite the bot, it will automatically leave your server.
 
-In order to start using the bot, you would first have to submit a whitelist application for your discord server. You may do this [HERE, CLICK ME.](https://teamhydra.dev/hepboat-whitelist/). You will be contacted after applying with more information and the results of the application. Should your Whitelist application be accepted, you will need to invite the bot to your discord server, and get it set up. More info about setting up in [Setting Up HepBoat](https://hepboat.imjake.me/setup) page.
+### I've been whitelisted; what do I do now?
 
-### I Have The Bot! But What Do I Do Now?
+If your whitelist application has been accepted, you can invite the bot to your discord server and get it set up. 
+You can find the `Invite Bot` link at the top of this page or click [here](http://u.imjake.me/hepboat). More 
+information on how to set up the bot can be found in [Setting Up HepBoat](setup.md).
 
-Thanks for adding the bot! Now you're probably going to want to start with the [What is HepBoat](src.md) page, and scroll down a bit to the sample config, this will show you the basics on how to start using the configuration tool in the dashboard (as well as how to even *get* to the dashboard!).
+### I have the bot; how do I set it up?
 
-### I've Worked With YAML Before And Know How To Configure!
+Thanks for adding the bot! You will want to start with the [Setting Up HepBoat](setup.md) page, and check out the sample 
+config at the bottom of the page. This will show you the basics on how to start using the configuration tool in the 
+dashboard. You can also reach the dashboard at https://mod.imjake.me/ or with the `Bot Dashboard` link at the very 
+top of the page.
 
-Perfect! Then you can probably fast forward to the [General Configuration](general.md) and continue from there, this will show you how to start enabling features of the bot and get it working in your server! Once you're done, you can now skip to the finer controls and enabling other plugins, you can view the [plugins here.](plugins/README.md)
+### I've worked with YAML before and know what to do!
 
-### I've Used Rowboat Before And Know What I'm Doing.
+Perfect! Then you can probably fast forward to the [General Configuration](general.md) and continue from there. This 
+will show you how to start enabling features of the bot and get it working in your server! Once you're done, you can 
+now skip to the finer controls and enabling other plugins. You can view the
+[plugins documentation here.](plugins/README.md)
 
-In that case, you're free to cruise through the docs at your own speed. Learn how to add the bot and access the dashboard [here](setup.md).
+### I've used rowboat before and know what I'm doing!
 
-### I'm Staff On A Server With Your Bot!
+In that case, you're free to cruise through the docs at your own speed. Learn how to add the bot and access the
+dashboard with the [Setting Up HepBoat](setup.md) guide.
 
-No worries, you can see a list of all staff commands [here](moderator.md), and if your server admins/ owner have granted you dashboard access, you can login [here](https://mod.teamhydra.dev/)
+### I'm staff on a server with your bot.
 
-
-
-### Please See The Links In The Top Bar For Immediate Assistance.
+No worries, you can see an overview list of all staff commands at [Moderator Command Quick-Reference](moderator.md), 
+and if your server admins/owner have granted you dashboard access, you can login at https://mod.teamhydra.dev/ to 
+view or edit your server configuration.
