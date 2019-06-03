@@ -252,8 +252,10 @@ All commands in custom commands are configured to ADMIN \(level 100\) due to how
 | :--- | :--- |
 | reactall &lt;channelid&gt; &lt;emoji\_id&gt; | Will react to everything in the defined channel with the emoji. The emoji\_id must include the name such as `smile:501155013431787530` |
 | replyall &lt;channelid&gt; \[reply\] | Will reply to everything in the defined channel with the reply message. |
-| react &lt;searchstr&gt; &lt;emoji\_id&gt; | Will react to all instances of &lt;searchstr&gt; with the emoji. The emoji\_id must include the name such as `smile:501155013431787530` |
+| react &lt;searchstr&gt; &lt;emoji\_id&gt; | Will react to all instances of &lt;searchstr&gt; with the emoji. The emoji\_id must include the name such as `smile:501155013431787530` . &lt;searchstr&gt; can include multiple words, if surrounded by quotes e.g. `haha xd` is a valid str. |
 | reply &lt;searchstr&gt; \[reply\] | Will reply to all instances of &lt;searchstr&gt; with the reply message. |
+| replycmd `cmd search str` `msg` | Will reply to all instances of !cmd with the reply message. e.g. `!!cc create cmd_tagsowo_reply listen MessageCreate replycmd 'tags owo' :rabbit:` |
+| reactcmd `cmd search str` `emoji` | Will react to all instances of !cmd with the react emoji |
 
 ## Configuration Options
 
