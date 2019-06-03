@@ -1,10 +1,9 @@
 # Table of contents
 
 * [Home](README.md)
-* [What is HepBoat](src.md)
-* [General Configuration](general.md)
-* [Moderator Command Quick-Reference](moderator.md)
+* [What is HepBoat?](src.md)
 * [Setting Up HepBoat](setup.md)
+* [General Configuration](general.md)
 * [Plugins](plugins/README.md)
   * [Admin Plugin](plugins/admin.md)
   * [Autolevelling Plugin](plugins/autolevel-plugin.md)
@@ -19,4 +18,5 @@
   * [Tags Plugin](plugins/tags-plugin.md)
   * [Twitch Plugin](plugins/twitch-plugin.md)
   * [Utility Plugin](plugins/utility.md)
+* [Moderator Command Quick-Reference](moderator.md)
 * [Change Log](changelog.md)
