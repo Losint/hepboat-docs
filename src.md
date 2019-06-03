@@ -1,8 +1,8 @@
-# What is HepBoat
+# What is HepBoat?
 
-HepBoat is a fork of b1nzy's rowboat, a utilitarian and administration assistant for Discord. It iss a bot that was built to be highly configurable and allow server admins to modify functionality based on the requirements of individual servers. 
+HepBoat is a fork of b1nzy's rowboat, a utilitarian and administration assistant for Discord. It is a bot that was built to be highly configurable and allow server admins to modify functionality based on the requirements of individual servers. 
 
-The freely-hosted Hepboat is private and closed-source. It is only added on high-traffic servers. Rowboat is open-source with public code.
+The freely-hosted HepBoat is private and closed-source. It is only added on high-traffic servers. Rowboat is open-source with public code but does not work out-of-the-box.
 
 ## Use Cases
 
@@ -16,7 +16,7 @@ By turning on spam prevention, HepBoat takes a huge burden off moderators and en
 
 #### Censoring 
 
-By enabling Hepboat's advanced censor plugin, you can choose from a wide array of options to filter certain types of malicious and offensive content, such as invite links, domains, and inappropriate or offensive words. When combined with the spam plugin, it is a very capable automated moderation system. 
+By enabling HepBoat's advanced censor plugin, you can choose from a wide array of options to filter certain types of malicious and offensive content, such as invite links, domains, and inappropriate or offensive words. When combined with the spam plugin, it is a very capable automated moderation system. 
 
 ## User Testimonials
 
