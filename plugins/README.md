@@ -1,6 +1,9 @@
 # Plugins
 
-The bot has many modular plugins that can be enabled or disabled completely, or you can disable certain parts. You can view how to use and configure all of the included plugins by clicking the links below.
+The bot has many modular plugins that can be enabled or disabled in parts or completely. You 
+can view how to use and configure all of the included plugins by clicking the links below.
+
+Any plugins that belong under the `plugins:` configuration need to be explicitly enabled.
 
   * [Admin Plugin](admin.md)
   * [Autolevelling Plugin](autolevel-plugin.md)
