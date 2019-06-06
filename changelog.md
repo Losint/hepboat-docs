@@ -1,5 +1,12 @@
 # Changelog
 
+#### 6 June 2019
+
+* Custom Command bug fixes, yay!
+* Added ability for mentions in tag and custom command bodies, read the respective plugin pages to learn more
+* Added hepboat ban info in modlog for a user on join
+* Added modlog feed option for reddit moderators
+
 #### 1 June 2019
 
 * Reddit plugin now has moderator feeds.

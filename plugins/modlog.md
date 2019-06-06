@@ -67,9 +67,10 @@ The modlog plugin provides a mechanisim for logging various events and actions t
 | COMMAND\_USED | A user uses a rowboat command |
 | SPAM\_DEBUG | A user triggered spam protection |
 | CENSORED | A user posted a message that was censored by the bot |
-|  ADD\_NOTE | A note added on a user |
+| ADD\_NOTE | A note added on a user |
 | SLOWMODE\_ON | Slowmode is enabled \(or altered\) in a channel |
 | SLOWMODE\_OFF | Slowmode is disabled in a channel |
+| MODLOG | Reddit Moderator Feed | 
 
 ## Configuration Example
 
@@ -157,7 +158,13 @@ After you have run the `@HepBoat#0361 setup` command you will need to contact a 
     </tr> 
       <td style="text-align:left">{expires} </td>
       <td style="text-align:left">
-        <p>expiration date</p>     
+        <p>expiration date</p>   
+      </td>  
+    </tr> 
+      <td style="text-align:left">{ban_info} </td>
+      <td style="text-align:left">
+        <p>ban info for user on join</p>   
+      </td>                
   </tbody>
 </table>
 
