@@ -1,19 +1,14 @@
 # Censor Plugin
 
+Plugin name: `censor`
+
 The censor plugin provides administrators and moderators a simple way to filter certain types of malicious and offensive content, such as:
 
 * Invite Links
 * URLs
-* Inappropriate or Offensive words, which includes attachment names as well!
+* Inappropriate or offensive words (attachment names included)
 
-This, combined with the Spam plugin can result in a very robust automatic abuse-prevention system.
-
-## Configuration Options
-
-| Option | Description | Type | Default |
-| :--- | :--- | :--- | :--- |
-| levels | A mapping of levels to Censor Configurations. This will match any user with a level that is equal or lower | dict | empty |
-| channels | A mapping of channels to Censor Configurations | dict | empty |
+This plugin combined with the Spam plugin can result in a very robust automatic abuse-prevention system.
 
 ## Commands
 
@@ -29,13 +24,13 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
   <tbody>
     <tr>
       <td style="text-align:left">
-        <p><code>!antiraid </code>
+        <p><code>!antiraid</code>
         </p>
         <p>OR</p>
         <p><code>!raid</code>
         </p>
       </td>
-      <td style="text-align:left">Without arguments antiraid/raid will show if antiraid measures are active.</td>
+      <td style="text-align:left">Show if antiraid measures are active.</td>
       <td
       style="text-align:left">Moderator</td>
         <td style="text-align:left">
@@ -52,19 +47,21 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
         <p><code>!antiraid disable</code>
         </p>
       </td>
-      <td style="text-align:left">Remove the measures and remove the raidrole role from all members.</td>
+      <td style="text-align:left">Disable antiraid and remove the raidrole role from all members.</td>
       <td
       style="text-align:left">Moderator</td>
         <td style="text-align:left"><code>!raid disable</code>
         </td>
     </tr>
   </tbody>
-</table>## Configuration Options
+</table>
+
+## Configuration Options
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
-| levels | A mapping of levels to Censor Configurations. This will match any user with a level that is equal or lower | dict | empty |
-| channels | A mapping of channels to Censor Configurations | dict | empty |
+| levels | A mapping of levels to Censor Configurations. This will match any user with a level that is equal or lower. | dict | empty |
+| channels | A mapping of channels to Censor Configurations. | dict | empty |
 
 ### Censor Configuration
 
@@ -78,12 +75,12 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
 | filter\_domains | Enables or disables domain filtering functionality. only `domains_whitelist` or only `domain_blacklist` will be checked. whitelist over blacklist. | bool | true |
 | domains\_whitelist | A whitelist of domain names | list(str) | empty |
 | domains\_blacklist | A blacklist of domain names | list(str) | empty |
-| blocked\_tokens | A list of tokens \(can appear in the middle of words\) that are blacklisted | list(str) | empty |
-| blocked\_words | A list of words \(must be seperated by a boundary\) that are blacklisted. | list(str) | empty |
-| blocked\_mentions | A list of mentions that are blacklisted. Can work for channels, roles, or users. `c572876188918349857` for channel mention censor, `u84912325282254848` for user mention censor, `r579304983896391680` for role mention censor. | list(str) | empty | 
+| blocked\_tokens | A list of tokens \(can appear in the middle of words\) that are blacklisted. Also includes attachment names. | list(str) | empty |
+| blocked\_words | A list of words \(must be separated by a boundary\) that are blacklisted. Also includes attachment names. | list(str) | empty |
+| blocked\_mentions | A list of blacklisted mentions. Can work for channels, roles, or users. `c572876188918349857` for channel mention censor, `u84912325282254848` for user mention censor, `r579304983896391680` for role mention censor. | list(str) | empty | 
 | blocked\_nicknames | A list of names \(can appear in the middle of nicknames\) that are blacklisted | list(str) | empty |
 | block\_zalgo\_nicknames | Whether to filter nicknames with zalgo text | bool | false |
-|  message\_char\_limit | Maximum allowed message length | int | 0 |
+| message\_char\_limit | Maximum allowed message length | int | 0 |
 | warn\_on\_censor | Whether to automatically warn a user when their name or message is censored | bool | false |
 | zalgo\_channel\_whitelist | Array of channels to whitelist for zalgo messages | list(snowflake) | empty |
 | invites\_channel\_whitelist | Array of channels to whitelist for invites | list(snowflake) | empty |
@@ -95,22 +92,32 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
 | mute\_violations\_count | Amount of violations before muting | int | 3 |
 | mute\_violations\_interval | How much time the count of violations must occur within for the mute to be enforced | int | 10 |
 | mute\_violations\_duration | How long to temp mute for in seconds | int | 300 |
-| antiraid | Antiraid subconfig | dict | None |
+| antiraid | Antiraid configuration | dict | None |
 
 ### Antiraid Configuration
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
-| count | Number of members that must join guild within the 'duration' to trigger antiraid | int | 5 |
-| interval | Time period within which the "count" of members trigger the antiraid in seconds | int | 60 |
-| key\_duration | How many seconds a user that has joined is remembered. This is used when antiraid is triggered and will apply the 'raidrole' to. This should be larger than the interval e.g 300 seconds / 600 seconds etc | int | 600 |
-| lockdown\_duration | How many seconds after antiraid has been enabled should all further members that join the server have the 'raidrole' applied. | int | 600 |
-| raidrole | Snowflake value of a role that should be applied first to all users currently in 'key\_duration' then subsequent members joining within 'lockdown\_duration'  | snowflake | empty |
-| notifyrole | Snowflake value of a role that should be notified when antiraid is automatically triggered | snowflake | empty |
+| count | Number of members that must join guild within `interval` to trigger antiraid. | int | 5 |
+| interval | Seconds within which the `count` of members trigger the antiraid. | int | 60 |
+| key\_duration | Seconds a user is remembered after joining. This should be larger than `interval`. | int | 600 |
+| lockdown\_duration | Seconds that guild should be locked down with antiraid measures. | int | 600 |
+| raidrole | Role ID applied to all users during antiraid measures.  | snowflake | empty |
+| notifyrole | Role ID that should be notified when antiraid is automatically triggered | snowflake | empty |
+
+**How antiraid works**
+1. Antiraid measures are enabled once more then `count` number of joins are detected within `interval` seconds.
+1. All users in the join table for the `key_duration` have the raidrole retroactively applied.
+1. All users that join during `lockdown_duration` have the raidrole applied.
+1. Antiraid measures will expire once less than `count` number of joins are detected within `interval` for  `lockdown_duration`.
+1. Moderators will need to manually run `!raid disable` to remove all raid roles from remaining users.
+
+The [modlogs plugin](modlog.md) will need to be configured with `RAID` logs for proper `notifyrole` alerts.
 
 ## Configuration Example
 
 ```yaml
+plugin:
   censor:
     levels:
       50:
@@ -167,4 +174,4 @@ This, combined with the Spam plugin can result in a very robust automatic abuse-
         blocked_words: [word4]  
 ```
 
-Note: Every censor configuration setting can be applied to either `levels` or `channels`
+NOTE: Every censor configuration setting can be applied to either `levels` or `channels`
