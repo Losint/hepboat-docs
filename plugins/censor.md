@@ -106,6 +106,7 @@ This plugin combined with the Spam plugin can result in a very robust automatic 
 | notifyrole | Role ID that should be notified when antiraid is automatically triggered | snowflake | empty |
 
 **How antiraid works**
+
 1. Antiraid measures are enabled once more then `count` number of joins are detected within `interval` seconds.
 1. All users in the join table for the `key_duration` have the raidrole retroactively applied.
 1. All users that join during `lockdown_duration` have the raidrole applied.
