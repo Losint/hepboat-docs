@@ -27,6 +27,14 @@ The Reddit plugin provides a feed of new posts on specified subreddits.
 | channels | mapping of channels to mod feed channel configs | dict | empty | 
 | mod_hash | The username's private feed hash key. See instructions below.  | str | empty | 
 | channels -> `enable_mod_listings:` | list of feeds to enable in the channel. Options: `SPAM`, `REPORTS`, `NEW_MODMAIL` | list(str) | empty
+| enable_clean | enables the option to delete or archive(if channel is set) | bool | true 
+| archive_channel | sets the channel for feeds to be archived in | dict | empty
+
+If `enable_clean` is true, a clipboard reation is added to every report. Reacting to the clipboard will make a checkmark and a x pop up. Timeout is 30sec.
+
+If checkmark is reacted, the report will be deleted if `archive_channel` is not set, and archived into the archive_channel if it is.
+
+If the X is selected, the checkmark and x disappear and only the clipboard is left.
 
 ### Mod_hash Setup
 
@@ -54,4 +62,6 @@ reddit:
               - REPORTS
               - SPAM
               - NEW_MODMAIL
+        enable_clean: true
+        archive_channel: 583887225733968463
 ```

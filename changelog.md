@@ -1,5 +1,18 @@
 # Changelog
 
+#### 15 July 2019
+
+* Fixed a bug with antiraid logs
+* Added ability to cleaan and/or archive reports from reddit mod feeds.
+* A single multi-reddit feed is now allowed in your reddit config to get around the maximum number of a single subreddit feeds (currently 3)
+
+#### 13 July 2019 
+
+* Fixed `shut`, `unshut`, `cease`, `uncease` and `report` commands.
+* Bug fixes with `Antiraid` configuration
+* Custom Commands and Short Tags are now logged
+* Twitch plugin fixes; it should now be fully working and announcing. 
+
 #### 6 June 2019
 
 * Custom Command bug fixes, yay!
