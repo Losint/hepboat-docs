@@ -1,5 +1,10 @@
 # Changelog
 
+#### 17 July 2019
+
+* Added all caps filter in censor plugin. Read the doc page to learn more.
+
+
 #### 15 July 2019
 
 * Fixed a bug with antiraid logs

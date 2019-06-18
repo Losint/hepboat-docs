@@ -68,6 +68,7 @@ This plugin combined with the Spam plugin can result in a very robust automatic 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
 | filter\_zalgo | Whether to filter zalgo text from messages | bool | true |
+| filter_all_caps | Whether to filter messages that are all capital letters | bool | false /\
 | filter\_invites | Whether to filter invite links from messages | bool | true |
 | invites\_guild\_whitelist | A list of whitelisted guild IDs for invite codes | list(str) | empty |
 | invites\_whitelist | A list of whitelisted invite codes or vanities | list(str) | empty |
@@ -81,6 +82,7 @@ This plugin combined with the Spam plugin can result in a very robust automatic 
 | blocked\_nicknames | A list of names \(can appear in the middle of nicknames\) that are blacklisted | list(str) | empty |
 | block\_zalgo\_nicknames | Whether to filter nicknames with zalgo text | bool | false |
 | message\_char\_limit | Maximum allowed message length | int | 0 |
+| all_caps_min_char_length | minimum length of all caps to filter | int | 5 |
 | warn\_on\_censor | Whether to automatically warn a user when their name or message is censored | bool | false |
 | zalgo\_channel\_whitelist | Array of channels to whitelist for zalgo messages | list(snowflake) | empty |
 | invites\_channel\_whitelist | Array of channels to whitelist for invites | list(snowflake) | empty |
@@ -88,6 +90,7 @@ This plugin combined with the Spam plugin can result in a very robust automatic 
 | words\_channel\_whitelist | Array of channels to whitelist for blocked words | list(snowflake) | empty |
 | mention\_channel\_whitelist | Array of channels to whitelist for blocked mentions | list(snowflake) | empty | 
 | char\_limit\_channel\_whitelist | Array of channels to whitelist for character limit | list(snowflake) | empty |
+| all_caps_channel_whitelist | Array of channels to whitelist for character limit | list(snowflake) | empty | 
 | mute\_violations | This is the only option that needs to be set to enable the feature. Mute a user after so many violations  | bool | false |
 | mute\_violations\_count | Amount of violations before muting | int | 3 |
 | mute\_violations\_interval | How much time the count of violations must occur within for the mute to be enforced | int | 10 |
