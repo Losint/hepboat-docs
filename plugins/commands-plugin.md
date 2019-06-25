@@ -67,23 +67,22 @@ meaning that the overrides for a specific custom command trigger will override t
   
 Example configuration setup:
 ```yaml
-plugin:
-  commands:
-    overrides:
-      - name: tags-usr
-        out:
-          level: 10
-      - name: tags-usr-allowed-roles
-        out:
-          roles:
-            - 9872389732498023409
-      - name: cc-usr
-        out:
-          level: 60
-      - name: tags-cc-allowed-roles
-        out:
-          roles:
-              - 9872389732498023409
+commands:
+  overrides:
+    - name: tags-usr
+      out:
+        level: 10
+    - name: tags-usr-allowed-roles
+      out:
+        roles:
+          - 9872389732498023409
+    - name: cc-usr
+      out:
+        level: 60
+    - name: tags-cc-allowed-roles
+      out:
+        roles:
+          - 9872389732498023409
 ```
 
 ## Lockdown Configuration Options
