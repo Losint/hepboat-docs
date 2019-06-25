@@ -29,7 +29,7 @@ The Reddit plugin provides a few various Reddit feeds including new posts on spe
 | :--- | :--- | :--- | :--- | 
 | mod_hash | The username's private feed hash key. See instructions below. | str | empty | 
 | channels |  A mapping of channels to mod feed channel configs. | dict | empty | 
-| channels -> `enable_mod_listings:` | A list of private moderation feeds to enable. Options: `SPAM`, `REPORTS`, `NEW_MODMAIL`, `MODLOG` | list(str) | empty
+| channels &rarr; enable_mod_listings | A list of private moderation feeds to enable. Options: `SPAM`, `REPORTS`, `NEW_MODMAIL`, `MODLOG` | list(str) | empty
 | enable_clean | Enables option to delete or archive reports. | bool | false 
 | archive_channel | Archive channel for reports. | snowflake | empty
 

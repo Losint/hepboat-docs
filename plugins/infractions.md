@@ -2,7 +2,7 @@
 
 Plugin name: `infractions`
 
-The infractions plugin provides a set of useful moderator commands. These commands are intended to be used together and help handle/track misbehaving users over time.
+The infractions plugin provides a set of useful moderator commands. These commands should be used together with the configuration to help handle and track misbehaving users over time.
 
 ## Commands
 
@@ -54,9 +54,13 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 | `!inf search {query}` | Searches infractions database for given query. | Moderator | `!inf search 520047158104424488` OR `!inf search HepBoat#0361` OR `!inf search spamming` |
 | `!inf info {inf#}` | Presents information on the given infraction. | Moderator | `!inf info 1274` |
 | `!inf delete {inf#}` | Delete infraction. | Administrator | `!inf delete 1274` |
+| `!inf cleanall {user}` | Clean out all infractions (excluding notes) for the given user in the guild. | Moderator | `!inf cleanall 520047158104424488` |
 | `!inf duration {inf#} {duration}` | Updates the duration of the given infraction. Duration starts from time of initial action. | Moderator | `!inf duration 1274 5h` |
 | `!inf reason {inf#} {reason}` | Updates the reason of a given infraction. | Moderator | `!inf reason 1274 rude behaviour towards staff` |
-| `!inf recent {# recent}` | Get recent infractions. | Moderator | `!inf recent 5` |
+| `!inf recent {count}` | Get recent `count` infractions. Default `count` is 10. | Moderator | `!inf recent 5` |
+| `!inf active {count}` | Get recent `count` active infractions. Default `count` is 10. | Moderator | `!inf active 5` |
+| `!inf mutes {count}` | Get recent `count` mute infractions. Default `count` is 10. | Moderator | `!inf mutes 5` |
+| `!inf bans {count}` | Get recent `count` ban infractions. Default `count` is 10. | Moderator | `!inf bans 5` |
 | `!note add {user} {note}` | Add a note on a user. | Moderator | `!note add 222617379421683712 omaiwamo shinderu` |
 | `!note delete {inf#}` | Delete note on user. | Administrator | `!note delete 1275` |
 | `!note info {inf#}` | Get full details on a note. | Moderator | `!note info 1275` |
@@ -68,8 +72,8 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
-| confirm\_actions | Whether to confirm actions with a message reply. | bool | True |
-| confirm\_actions\_reaction | Whether to confirm actions with a checkmark reaction on the command. | bool | False |
+| confirm\_actions | Whether to confirm actions with a message reply. | bool | true |
+| confirm\_actions\_reaction | Whether to confirm actions with a checkmark reaction on the command. | bool | false |
 | confirm\_actions\_expiry | Seconds after which to delete the confirmed action message. If zero the message will never be deleted. | int | 0 |
 | mute\_role | Role ID added for muted users. | snowflake | empty |
 | hard\_mute\_role | Role ID added for hard-muted users. | snowflake | empty |
@@ -78,9 +82,9 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 | duration\_edit\_level | Minimum level for users to edit infraction durations made by other users. | int | 100 |
 | report\_channel | Channel ID for report collection. | snowflake | empty |
 | report\_role | Role ID to ping for reports. | snowflake | empty |
-| vc\_mute | Whether or not to attempt to move a muted voice user to a guild-defined AFK channel. | bool | False |
+| vc\_mute | Whether or not to attempt to move a muted voice user to a guild-defined AFK channel. | bool | false |
 | vc\_mute\_channel | Override channel ID for guild-defined AFK channel. | snowflake | empty |
-| selfmute | Whether to allow selfmutes. | bool | False |
+| selfmute | Whether to allow selfmutes. | bool | false |
 | selfmute_max | Maximum seconds for a selfmute duration.  | int | 1209600 (2 weeks) |
 | selfmute\_role | Role ID assigned to self-mute users. | snowflake | empty |
 | notify | Dictionary of infraction types to notify configurations. | dict | empty |
