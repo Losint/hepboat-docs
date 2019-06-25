@@ -27,9 +27,9 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | Name | Description | Default Level | Usage |
 | :--- | :--- | :--- | :--- |
 | `!mute {user} [reason]` | Mutes a user. `mute_role` must be set in the config. | Moderator | `!mute 520047158104424488 spamming` OR  `!tempmute @HepBoat#0361 60m spamming` |
-| `!mmute {users] -r [reason]` | Mutes multiple users on the server. | Moderator | `!mmute 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
+| `!mmute {users} -r [reason]` | Mutes multiple users on the server. | Moderator | `!mmute 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
 | `!unmute {user}` | Unmutes a user | Moderator | `!unmute 520047158104424488` |
-| `!munmute {users] -r [reason]` | Unmute multiple users on the server. | Moderator | `!munmute 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
+| `!munmute {users} -r [reason]` | Unmute multiple users on the server. | Moderator | `!munmute 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
 | `!tempmute {user} {duration} [reason]` | Temporarily mutes a user. `mute_role` must be set in the config. | Moderator | `!tempmute 520047158104424488 30m spamming` OR `!tempmute @HepBoat#0361 30m spamming` |
 | `!hardmute enable {user} [reason]` | Hard-mutes a user. `hard_mute_role` must be set in the config. | Moderator | `!hardmute enable @user1 being really silly` |
 | `!hardmute temp {user} {duration} [reason]` | Hard-mutes a user temporarily. `hard_mute_role` must be set in the config. | Moderator | `!hardmute temp @user1 6h being really silly` |
@@ -42,9 +42,9 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 #### User
 | Name | Description | Default Level | Usage |
 | :--- | :--- | :--- | :--- |
-| `!report {message}` | Send a report to a report channel. `report_channel` must be configured. | Default | `!report @Tobiah is being a meanie` |
+| `!report [reason]` | Send a report to a report channel. `report_channel` must be configured. | Default | `!report @Tobiah is being a meanie` |
 | `!timeleft` | Allow a muted user to check their remaining time in their mute. | Default | `!timeleft` |
-| `!selfmute` OR `!muteself {duration}` | Self mutes for the given duration. `selfmute` and `mute_role` must be enabled in the config. | Default | `!selfmute 2m` |
+| `!selfmute {duration}` OR `!muteself {duration}` | Self mutes for the given duration. `selfmute` and `mute_role` must be enabled in the config. | Default | `!selfmute 2m` |
 
 ### Miscellaneous commands
 
@@ -57,16 +57,16 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 | `!inf cleanall {user}` | Clean out all infractions (excluding notes) for the given user in the guild. | Moderator | `!inf cleanall 520047158104424488` |
 | `!inf duration {inf#} {duration}` | Updates the duration of the given infraction. Duration starts from time of initial action. | Moderator | `!inf duration 1274 5h` |
 | `!inf reason {inf#} {reason}` | Updates the reason of a given infraction. | Moderator | `!inf reason 1274 rude behaviour towards staff` |
-| `!inf recent {count}` | Get recent `count` infractions. Default `count` is 10. | Moderator | `!inf recent 5` |
-| `!inf active {count}` | Get recent `count` active infractions. Default `count` is 10. | Moderator | `!inf active 5` |
-| `!inf mutes {count}` | Get recent `count` mute infractions. Default `count` is 10. | Moderator | `!inf mutes 5` |
-| `!inf bans {count}` | Get recent `count` ban infractions. Default `count` is 10. | Moderator | `!inf bans 5` |
-| `!note add {user} {note}` | Add a note on a user. | Moderator | `!note add 222617379421683712 omaiwamo shinderu` |
+| `!inf recent [num]` | Get recent `num` infractions. Default `num` is 10. | Moderator | `!inf recent 5` |
+| `!inf active [num]` | Get recent `num` active infractions. Default `num` is 10. | Moderator | `!inf active 5` |
+| `!inf mutes [num]` | Get recent `num` mutes. Default `num` is 10. | Moderator | `!inf mutes 5` |
+| `!inf bans [num]` | Get recent `num` bans. Default `num` is 10. | Moderator | `!inf bans 5` |
+| `!note add {user} [reason]` | Add a note on a user. | Moderator | `!note add 222617379421683712 omaiwamo shinderu` |
 | `!note delete {inf#}` | Delete note on user. | Administrator | `!note delete 1275` |
 | `!note info {inf#}` | Get full details on a note. | Moderator | `!note info 1275` |
 | `!note search {query}` | Search for a note with the specified query. | Moderator | `!note search @user1` |
 | `!note archive` | Creates a CSV file of all notes on the server. | Administrator | `!note archive` |
-| `!temprole {user} {role} {duration} {reason}` | Adds a role temporarily to a user. | Moderator | `!temprole @user1 StronkRole 1h stronk for 1h` |
+| `!temprole {user} {role} {duration} [reason]` | Adds a role temporarily to a user. Will be logged as an note. | Moderator | `!temprole @user1 StronkRole 1h stronk for 1h` |
 
 ## Configuration Options
 

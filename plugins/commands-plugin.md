@@ -23,7 +23,7 @@ See [General Configuration](general.md) for details.
 
 ## Overrides Configuration Options
 
-Overrides are useful for overriding the default level permissions on commands.
+Overrides are useful for overriding the default level permissions on commands. Level overrides are checked before any channel lockdowns for commands.
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
@@ -60,10 +60,10 @@ meaning that the overrides for a specific command name will override the overrid
 The hierarchy of overrides for custom command calls for example would be
 ```txt
 1. cc-usr-allowed-roles
-2. name
+2. cc.name
 3. cc-usr
 ```
-meaning that the overrides for a specific custom command trigger will override the overrides for `cc-user`.
+meaning that the overrides for a specific custom command trigger will override the overrides for `cc-usr`.
   
 Example configuration setup:
 ```yaml
@@ -87,7 +87,7 @@ commands:
 
 ## Lockdown Configuration Options
 
-Lockdowns are useful for hardening commands to only work in certain channels, categories, and by certain roles.
+Lockdowns are useful for hardening commands to only work in certain channels, categories, and by certain roles. Lockdown configurations work together with default comamnd levels and overrides configurations.
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
