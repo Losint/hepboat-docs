@@ -54,7 +54,7 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 | `!inf search {query}` | Searches infractions database for given query. | Moderator | `!inf search 520047158104424488` OR `!inf search HepBoat#0361` OR `!inf search spamming` |
 | `!inf info {inf#}` | Presents information on the given infraction. | Moderator | `!inf info 1274` |
 | `!inf delete {inf#}` | Delete infraction. | Administrator | `!inf delete 1274` |
-| `!inf cleanall {user}` | Clean out all infractions (excluding notes) for the given user in the guild. | Moderator | `!inf cleanall 520047158104424488` |
+| `!inf clearall {user}` | Clear out all infractions (excluding notes and temproles) for the given user in the guild. | Moderator | `!inf cleanall 520047158104424488` |
 | `!inf duration {inf#} {duration}` | Updates the duration of the given infraction. Duration starts from time of initial action. | Moderator | `!inf duration 1274 5h` |
 | `!inf reason {inf#} {reason}` | Updates the reason of a given infraction. | Moderator | `!inf reason 1274 rude behaviour towards staff` |
 | `!inf recent [num]` | Get recent `num` infractions. Default `num` is 10. | Moderator | `!inf recent 5` |

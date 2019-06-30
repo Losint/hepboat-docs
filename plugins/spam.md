@@ -29,10 +29,10 @@ The spam plugin allows administrators and moderators to limit spam and enforce p
 | max\_links | Max `count` of links that can be sent in `interval`. Requires a check subconfiguration.| dict | empty |
 | max_upper_case | Max `count` of upper case letters (does not have to be consecutive) that can be sent in `interval`. Requires a check subconfiguration.| dict | empty |
 | max\_emojis | Max `count` of emojis that can be sent in `interval`. Requires a check subconfiguration.| dict | empty |
-| max\_newlines | Max `count` of new lines/line breaks that can be sent in `interval`. Requires a check subconfiguration.| dict | empty |
+| max\_newlines | Max `count` of new lines/line breaks that can be sent in `interval. Requires a check subconfiguration.| dict | empty |
 | max\_attachments | Max `count` of attachments that can be sent in `interval`. Requires a check subconfiguration.| dict | empty |
-| max\_duplicates | Max `count` of duplicate messages that can be sent in `interval`. Requires a check subconfiguration. dict | empty |
-| punishment | Sets a punishment when spam detection is triggered. Options are: `NONE, MUTE, TEMPMUTE, BAN, TEMPBAN, KICK` | str | NONE |
+| max\_duplicates | Max `count` of duplicate messages that can be sent in `interval`. Requires a check subconfiguration. | dict | empty |
+| punishment | Sets a punishment when spam detection is triggered. Options: `NONE, MUTE, TEMPMUTE, BAN, TEMPBAN, KICK` | str | `NONE` |
 | punishment_duration | Required for `TEMPBAN` and `TEMPMUTE` punishments. Seconds that a punishment should last. | int | 300 |
 | channel_whitelist | List of whitelisted channels that will not trigger spam detection for the action. | list(snowflake) | [] |
 | clean | Whether or not messages that triggered the spam filter should be deleted. | bool | false |
@@ -46,7 +46,7 @@ NOTE: The [`censor` plugin](censor.md) also has an `all_caps` filter similar to 
 | :--- | :--- | :--- | :--- |
 | count | Number of times an action is performed in `interval` to trigger the punishment. | int | N/A |
 | interval | Seconds within which a user with over `count` actions will trigger a punishment. | int | N/A |
-| punishment | Sets a punishment when spam detection is triggered. Options are: `NONE, MUTE, TEMPMUTE, BAN, TEMPBAN, KICK` | str | NONE |
+| punishment | Sets a punishment when spam detection is triggered. Options: `NONE, MUTE, TEMPMUTE, BAN, TEMPBAN, KICK` | str | `NONE` |
 | punishment_duration | Required for `TEMPBAN` and `TEMPMUTE` punishments. Seconds that a punishment should last. | int | 300 |
 | channel_whitelist | List of whitelisted channels that will not trigger spam detection for the action. | list(snowflake) | [] |
 

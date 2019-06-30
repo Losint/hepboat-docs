@@ -27,14 +27,16 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | `!archive all [count]` OR `!archive here [count]`| Archives the latest `count` messages in the current channel. Default `count` value is 50. | Administrator | `!archive all 50` OR `!archive here 50` |
 | `!archive user {user} [count]` | Archives the latest `count` messages from a given user in the guild. Default `count` value is 50. | Administrator | `!archive user 232921983317180416 100` OR `!archive user @rowboat#0001 100` |
 | `!archive channel {channel} [count]` | Archives the latest `count` messages in the given channel. | Administrator | `!archive channel 289482554250100736 20` |
-| `!clean all [count]` OR `!clear [count]` | Cleans the latest `count` messages in the current channel. Default `count` value is 25. | Moderator | `!clean all 20` OR `!clear 20`|
-| `!clean user {user} [count]` | Cleans the latest `count` messages from a given user in the current channel. Default `count` value is 25. | Moderator | `!clean user 232921983317180416 50` |
-| `!clean bots [count]` | Cleans the latest `count` messages sent by bots in the current channel. | Moderator | `!clean bots 30` |
-| `!clean cancel` | Cancels any cleaning commands running in current channel. | Moderator | `!clean cancel` |
-| `!cease` OR `!cease channel`| Remove send message permissions for @everyone in the current channel. | Moderator | `!cease` |
-| `!uncease` OR `!uncease channel`| Restore send message permissions for @everyone in the current channel to the default. | Moderator | `!uncease` |
-| `!shut` | Restricts the speak and use voice activation permissions for @everyone in the current voice channel of calling user. (Due to a Discord bug, this does not immediately mute everyone, but forces everyone to Push-to-Talk) | Moderator | `!shut` |
-| `!unshut` | Removes restrictions for @everyone on speak and voice activation detection in the current voice channel of calling user. | Moderator | `!unshut` |
+| `!clean all [count]` OR `!clear [count]` | Cleans the latest `count` messages in the current channel. Only works for messages that are sent after Hepboat has joined the channel. Default `count` value is 25. | Moderator | `!clean all 20` OR `!clear 20`|
+| `!clean user {user} [count]` | Cleans the latest `count` messages from a given user in the current channel. Only works for messages that are sent after Hepboat has joined the channel. Default `count` value is 25. | Moderator | `!clean user 232921983317180416 50` |
+| `!clean bots [count]` | Cleans the latest `count` messages sent by bots in the current channel. Only works for messages that are sent after Hepboat has joined the channel. | Moderator | `!clean bots 30` |
+| `!nuke [count]` OR `!nuke here [count]` | Nukes the latest `count` messages in the current channel. Default `count` value is 10,000. | Administrator | `!nuke 20` OR `!nuke here 20`|
+| `!nuke channel {channel} [count]` | Nukes the latest `count` messages from a given channel. Default `count` value is 10,0000. | Administrator | `!nuke channel 580894715705294869` |
+| `!clean cancel` | Cancels any `clean` or `nuke` commands running in current channel. | Moderator | `!clean cancel` |
+| `!cease` OR `!cease channel`| Remove send message permissions for `@everyone` in the current channel. | Moderator | `!cease` |
+| `!uncease` OR `!uncease channel`| Restore send message permissions for `@everyone` in the current channel to the default. | Moderator | `!uncease` |
+| `!shut` | Restricts the speak and use voice activation permissions for `@everyone` in the current voice channel of calling user. (Due to a Discord bug, this does not immediately mute everyone, but forces everyone to Push-to-Talk) | Moderator | `!shut` |
+| `!unshut` | Removes restrictions for `@everyone` on speak and voice activation detection in the current voice channel of calling user. | Moderator | `!unshut` |
 | `!slowmode {duration} [reason]` OR `!slowmode here {duration} [reason]` | Sets the slowmode time in the current channel. A duration of `0` will turn off slowmode in the channel. Default integer durations are parsed in minutes.| Moderator | `!slowmode 10` OR `!slowmode 5h` |
 | `!slowmode channel {duration} [reason]` | Sets the slowmode time in the given channel. A duration of `0` will turn off slowmode in the channel. Default integer durations are parsed in minutes.| Moderator | `!slowmode channel 289482554250100736 10` OR `!slowmode channel 289482554250100736 5h` |
 

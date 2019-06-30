@@ -46,6 +46,8 @@ This plugin combined with the Spam plugin can result in a very robust automatic 
 | mention\_channel\_whitelist | Array of channels to whitelist for blocked mentions. | list(snowflake) | empty | 
 | filter_all_caps | Whether to filter messages that contain a certain number of consecutive all capital letters. Spaces in messages are ignored when counting. | bool | false |
 | all_caps_min_char_length | Minimum length of consecutive all capital letters to censor. | int | 5 |
+| all_caps_min_message_count  | Minimum number of violating messages in `all_caps_interval` trigger the censor. | int | 3 |
+| all_caps_interval  | Seconds in which over `all_caps_min_message_count` of messages will trigger the censor. | int | 30 |
 | all_caps_channel_whitelist | Array of channels to whitelist for all caps filter. | list(snowflake) | empty | 
 | blocked\_nicknames | A list of names \(can appear in the middle of nicknames\) that are blacklisted | list(str) | empty |
 | block\_zalgo\_nicknames | Whether to filter nicknames with zalgo text | bool | false |

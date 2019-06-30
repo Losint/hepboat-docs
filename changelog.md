@@ -1,31 +1,40 @@
 # Changelog
 
-#### 17 July 2019
+#### 29 Jun 2019
+* Added a `nuke` command for administrators in the admin plugin. 
+* Change the all caps filter in the censor plugin to also count number of messages before triggering.
+* Update comment links in Reddit modfeeds to use context.
+* Kicks actually notify users now if enabled in infractions plugin.
+* Added an `infractions clearall` command in infractions plugin.
+* The `slowmode` command now defaults to minute durations and can now read human-readable durations as well and be sent remotely for another channel.
+* General bug fixes.
+
+#### 17 Jun 2019
 
 * Added all caps filter in censor plugin. Read the doc page to learn more.
 
 
-#### 15 July 2019
+#### 15 Jun 2019
 
 * Fixed a bug with antiraid logs
 * Added ability to cleaan and/or archive reports from reddit mod feeds.
 * A single multi-reddit feed is now allowed in your reddit config to get around the maximum number of a single subreddit feeds (currently 3)
 
-#### 13 July 2019 
+#### 13 Jun 2019 
 
 * Fixed `shut`, `unshut`, `cease`, `uncease` and `report` commands.
 * Bug fixes with `Antiraid` configuration
 * Custom Commands and Short Tags are now logged
 * Twitch plugin fixes; it should now be fully working and announcing. 
 
-#### 6 June 2019
+#### 6 Jun 2019
 
 * Custom Command bug fixes, yay!
 * Added ability for mentions in tag and custom command bodies, read the respective plugin pages to learn more
 * Added hepboat ban info in modlog for a user on join
 * Added modlog feed option for reddit moderators
 
-#### 1 June 2019
+#### 1 Jun 2019
 
 * Reddit plugin now has moderator feeds.
 * Censor plugin can now censor user, role, and channel mentions.
@@ -66,7 +75,7 @@
 * Added some "HepBoat is typing" indicators for commands that may run for a long time
 * An entire badge system? Check your local info command today!
 
-#### 6 March 2019
+#### 6 Mar 2019
 
 * `v-snap` command for mods to get list of users currently in voice chat with them. \(helpful for checking later when there's issues going on\)
 
