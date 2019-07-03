@@ -87,24 +87,23 @@ NOTE: If an action is in both include and exclude lists, the action will be excl
 ### Infraction actions
 | Action | Description |
 | :--- | :--- |
-| MEMBER\_MUTED | A mute is added |
-| MEMBER\_UNMUTED | A mute is removed |
-| MEMBER\_HARD\_MUTED | A hard mute is added |
-| MEMBER\_HARD\_UNMUTED | A hard mute is removed |
-| MEMBER\_HARD\_TEMP_MUTED | A hard temp-mute is added |
-| MEMBER\_TEMP\_MUTED | A temp-mute is added |
-| MEMBER_TEMPMUTE_EXPIRE | A temp-mute expired |
-| MEMBER\_KICK | A member is kicked |
-| MEMBER\_BAN | A ban \(with a reason\) is added |
-| MEMBER\_SOFTBAN | A softban is added |
-| MEMBER\_TEMPBAN | A tempban is added |
-| MEMBER_TEMPBAN_EXPIRE | A tempban expired |
-| MEMBER\_WARNED | A warning is added |
+| MEMBER\_MUTED | A mute is added for a user|
+| MEMBER\_UNMUTED | A mute is removed for a user |
+| MEMBER\_HARD\_MUTED | A hard mute is added for a user |
+| MEMBER\_HARD\_UNMUTED | A hard mute is removed for a user |
+| MEMBER\_HARD\_TEMP_MUTED | A hard temp-mute is added for a user |
+| MEMBER\_TEMP\_MUTED | A temp-mute is added for a user |
+| MEMBER_TEMPMUTE_EXPIRE | A temp-mute expired for a user |
+| MEMBER\_KICK | A member is kicked for a user |
+| MEMBER\_BAN | A ban \(with a reason\) is added for a user |
+| MEMBER\_SOFTBAN | A softban is added for a user |
+| MEMBER\_CLEANBAN | A cleanban is added for a user |
+| MEMBER\_TEMPBAN | A tempban is added for a user |
+| MEMBER_TEMPBAN_EXPIRE | A tempban expired for a user |
+| MEMBER\_WARNED | A warning is added for a user |
 | ADD\_NOTE | A note added on a user |
-| GUILD\_BAN\_ADD | A ban is added |
-| GUILD\_SOFTBAN\_ADD | A softban is added |
-| GUILD_TEMPBAN_ADD | A tempban is added |
-| GUILD_BAN_REMOVE | A ban is removed |
+| GUILD\_BAN\_ADD | A ban is added to the guild |
+| GUILD_BAN_REMOVE | A ban is removed from the guild|
 | RAID | Potential raid detected |
 | RAID_MEMBER | Raid role applied to user |
 
