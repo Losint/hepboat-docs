@@ -19,7 +19,22 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | `!roles` | Returns a list of IDs and names for all roles on the server. Useful for configuring other plugins. | Moderator | `!roles` |
 | `!roleinfo {role}` | Display details about a role. | Moderator | `!roleinfo  274266640403791873` |
 | `!tracking` | Displays number of members of roles in `tracking` config. | Moderator | `!tracking` |
+| `!mention {role_id} {message}` OR `!mention here {role_id} {message}` | Posts a message in the current channel that will mention the given role where the token `{role}` is located. Will not work on roles that are already mentionable. | Moderator | `!mention 580569953065893899 {role}, here!`|
+| `!mention channel {channel} {role_id} {message}` | Posts a message in the given channel that will mention the given role where the token `{role}` is located. Will not work on roles that are already mentionable. | Moderator | `!mention channel #chat 580569953065893899 {role}, here!`|
+| `!mention enable {role_id}` OR `!mention disable {role_id}`|  Will enable or disable mention ability for the given role. | Moderator | `!mention enable 580569953065893899`|
 
+#### Role Mention Message Tokens
+The following tokens can be used in mention messages to dynamically generate content.
+
+| Token | Description |
+| :--- | :--- |
+| {user} | Will mention the calling user. |
+| {role} | Will mention the mentioned role. |
+| {server} | Will include the server name. |
+| {channel} | Will mention the current channel. |
+| {r&lt;snowflake&gt;} | Will mention the specified role. |
+| {c&lt;snowflake&gt;} | Will mention the specified channel. |
+| {u&lt;snowflake&gt;} | Will mention the specified user. |
 
 ### Channels
 | Name | Description | Default Level | Usage |

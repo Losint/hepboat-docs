@@ -15,7 +15,7 @@ A tag can also be called directly with its name and the guild prefix (e.g. `!myt
 | `!tags edit {name} {new content}` | Edit content of existing tag. | Moderator | `!tags edit owo More OWO!` |
 | `!tags remove {name}` OR `!tags rm {name}` OR `!tags del {name}` | Remove tag by name. | Trusted | `!tags remove popcorn` |
 | `!tags info {name}` | Get detailed info on a tag. | Trusted | `!tags info popcorn` |
-| `!tags all` | List all tags in the server. | Trusted | `!tags all` |
+| `!tags all` OR `!tags list`| List all tags in the server. | Trusted | `!tags all` |
 
 ### Tag Flags
 When calling a tag using its short name (e.g. `!mytag`), you may add the following arguments in any combination.

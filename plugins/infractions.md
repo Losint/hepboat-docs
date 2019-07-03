@@ -18,6 +18,7 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | `!mkick {users} -r [reason]` | Kicks multiple users from the server. | Moderator | `!mkick 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
 | `!ban {user} [reason]` | Bans a user from the server. | Moderator | `!ban 520047158104424488 spamming` OR `!ban @HepBoat#0361 spamming` |
 | `!mban {users] -r [reason]` | Bans multiple users from the server | Moderator | `!mban 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
+| `!cleanban {days} {user} [reason]` | Bans a user from the server and cleans the given number of days worth of past messages. Valid `days` values are 0-7. | Moderator | `!cleanban 2 520047158104424488 goodbye` OR `!cleanban 2 @HepBoat#0361 goodbye` |
 | `!unban {user} [reason]` | Unbans a user from the server. | Moderator | `!unban 520047158104424488` |
 | `!softban {user} [reason]` | Softbans (bans/unbans) a user and deletes any of their messages that were sent within the last 7 days. | Moderator | `!softban 520047158104424488 spamming` OR `!softban @HepBoat#0361 spamming` |
 | `!tempban {user} {duration} [reason]` | Temporarily bans a user. | Moderator | `!tempban 520047158104424488 5h spamming` OR `!tempban @HepBoat#0361 5h spamming` |

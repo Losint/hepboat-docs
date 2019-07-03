@@ -1,5 +1,11 @@
 # Changelog
 
+#### 03 Jul 2019
+* Added `mention` commands in the admin plugin.
+* Added a `cleanban` command in the infractions plugin.
+* `tags all` now outputs in alphabetical order. `tags list` is also an alias for the command now.
+* General bug fixes.
+
 #### 29 Jun 2019
 * Added a `nuke` command for administrators in the admin plugin. 
 * Change the all caps filter in the censor plugin to also count number of messages before triggering.
@@ -12,7 +18,6 @@
 #### 17 Jun 2019
 
 * Added all caps filter in censor plugin. Read the doc page to learn more.
-
 
 #### 15 Jun 2019
 
