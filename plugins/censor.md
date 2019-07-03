@@ -92,7 +92,7 @@ The [modlogs plugin](modlog.md) will need to be configured with `RAID` logs for 
 ## Configuration Example
 
 ```yaml
-plugin:
+plugins:
   censor:
     levels:
       50:

@@ -110,7 +110,7 @@ NOTE: If an action is in both include and exclude lists, the action will be excl
 ## Configuration Example
 
 ```yaml
-plugin:
+plugins:
   modlog:
     channels:      
       289494042000228352:
@@ -144,7 +144,7 @@ NOTE: If configured improperly, your logs may be missing and lost. Customize at 
 ### Example Custom Mod Log Configuration
 
 ```yaml
-plugin:
+plugins:
   modlog:
     custom:
       CENSORED:

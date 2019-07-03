@@ -112,14 +112,15 @@ The reaction role function was removed due to high load on the bot. However, if 
 ## Configuration Example
 
 ```yaml
-utilities:
-  announce:
-    32490583480348083409:
-      webhook_id: 304958304934209534
-      webhook_color: 0xffffff
-      webhook_name: HepBoat
-      webhook_avatar: http://i.imjake.me/files/xoi30.png
-  auto_clean:
-    32490583480348083409:
-      timeout: 3600
+plugins:
+  utilities:
+    announce:
+      32490583480348083409:
+        webhook_id: 304958304934209534
+        webhook_color: 0xffffff
+        webhook_name: HepBoat
+        webhook_avatar: http://i.imjake.me/files/xoi30.png
+    auto_clean:
+      32490583480348083409:
+        timeout: 3600
 ```

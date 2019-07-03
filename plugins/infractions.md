@@ -104,7 +104,7 @@ NOTE: The [`modlog` plugin](modlog.md) needs to be enabled for notifications to 
 ## Configuration Example
 
 ```yaml
-plugin:
+plugins:
   infractions:
     confirm_actions: false
     mute_role: 289494296703533058
@@ -169,7 +169,7 @@ plugin:
 ### Custom Format Configuration Example
 
 ```yaml
-plugin:
+plugins:
   infractions:
     notify:
       WARN:

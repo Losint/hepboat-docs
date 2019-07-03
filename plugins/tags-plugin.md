@@ -47,7 +47,7 @@ The following tokens can be used in tag contents to dynamically generate content
 ## Configuration Example
 
 ```yaml
-plugin:
+plugins:
   tags:
     max_tag_length: 100
     min_level_remove_others: 55

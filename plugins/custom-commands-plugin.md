@@ -303,7 +303,7 @@ This should also be channel locked as a recommendation:
 commands:
 
 ```yaml
-lockdown
+lockdown:
   - name: cc-usr
     out:
       channels: [504782681263964162] # Admin commands channel

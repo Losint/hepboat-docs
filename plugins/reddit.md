@@ -67,7 +67,7 @@ For an example multireddit feed with the URL `https://www.reddit.com/user/reddit
 ## Configuration Example
 
 ```yaml
-plugin:
+plugins:
   reddit:
     subs:
       aww: # Subreddit name

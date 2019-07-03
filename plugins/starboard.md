@@ -37,6 +37,7 @@ The starboard plugin provides an ongoing board of highlighted messages through c
 ## Configuration Example
 
 ```yaml
+plugins:
   starboard:
     channels:
       301118039326457867:

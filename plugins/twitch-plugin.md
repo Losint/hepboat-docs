@@ -151,18 +151,19 @@ The following example is based off the following conditions:
 * A specific role is added when streaming
 
 ```yaml
-twitch:
-  configs:
-    297917022300274688:
-      stream_role: 146691885363232769 # everyone role
-      ignore_roles:
-        - 748393947474923485 # Naughty people
-      add_roles:
-        - 544172349474340868 # Currently Streaming
-      game_re: 'warframe'
-      message: |-
-        {r1234567890122334} {user} is being totally awesome and
-        streaming right now you should check it out!!
+plugins:
+  twitch:
+    configs:
+      297917022300274688:
+        stream_role: 146691885363232769 # everyone role
+        ignore_roles:
+          - 748393947474923485 # Naughty people
+        add_roles:
+          - 544172349474340868 # Currently Streaming
+        game_re: 'warframe'
+        message: |-
+          {r1234567890122334} {user} is being totally awesome and
+          streaming right now you should check it out!!
 ```
 
 It should be noted that it is also possible to specify the configs as a unicode string thus allowing multiple configurations for the same channel as follows:

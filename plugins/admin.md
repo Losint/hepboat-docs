@@ -120,6 +120,7 @@ The following tokens can be used in mention messages to dynamically generate con
 ## Configuration Example
 
 ```yaml
+plugins:
   admin:
     persist:
       roles: true
