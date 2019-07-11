@@ -13,6 +13,8 @@ The spam plugin allows administrators and moderators to limit spam and enforce p
 * Duplicate Messages
 * Upper case letters
 
+This plugin should be enabled in conjunction with the [infractions plugin](infractions.md) for punishment implementation.
+
 ## Configuration Options
 
 | Option | Description | Type | Default |
@@ -39,7 +41,7 @@ The spam plugin allows administrators and moderators to limit spam and enforce p
 | clean_count | Maximum number of messages to be deleted. | int | 100 |
 | clean_duration | Duration in seconds in which messages should be deleted. | int | 900 |
 
-NOTE: The [`censor` plugin](censor.md) also has an `all_caps` filter similar to the `max_upper_case` spam filter that is more configurable.
+NOTE: The [censor plugin](censor.md) also has an `all_caps` filter similar to the `max_upper_case` spam filter that is more configurable.
 
 ### Check Subconfiguration
 | Option | Description | Type | Default |
@@ -53,7 +55,7 @@ NOTE: The [`censor` plugin](censor.md) also has an `all_caps` filter similar to 
 ## Configuration Example
 
 ```yaml
-plugin:
+plugins:
   spam:
     levels:
       49:
@@ -79,5 +81,7 @@ plugin:
         max_mentions:
           count: 3
           interval: 30
+  infractions:
+    mute_role: 579398816072073246
 ```
 

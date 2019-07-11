@@ -87,7 +87,7 @@ commands:
 
 ## Lockdown Configuration Options
 
-Lockdowns are useful for hardening commands to only work in certain channels, categories, and by certain roles. Lockdown configurations work together with default comamnd levels and overrides configurations.
+Lockdowns are useful for hardening commands to only work in certain channels, categories, and by certain roles. Lockdown configurations work together with default command levels and overrides configurations.
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |

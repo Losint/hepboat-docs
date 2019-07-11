@@ -51,6 +51,7 @@ NOTE: If an action is in both include and exclude lists, the action will be excl
 | GUILD\_ROLE\_DELETE | A role is deleted |
 | SLOWMODE\_ON | Slowmode is enabled or altered in a channel |
 | SLOWMODE\_OFF | Slowmode is disabled in a channel |
+| BOT_DEBUG | A command failed |
 
 ### User actions
 | Action | Description |
@@ -64,7 +65,7 @@ NOTE: If an action is in both include and exclude lists, the action will be excl
 | GUILD_MEMBER_ROLES_RMV | A role is removed from a user |
 | MEMBER\_RESTORE | A user rejoined and had their roles/nickname/etc restored |
 | MEMBER\_ROLE\_ADD | A role is added to a user by command |
-| MEMBER\_ROLE\_RMV | A role is removed from a user by command |
+| MEMBER_ROLE_REMOVE | A role is removed from a user by command |
 | VOICE\_CHANNEL\_JOIN | A user joins a voice channel |
 | VOICE\_CHANNEL\_LEAVE | A user leaves a voice channel |
 | VOICE\_CHANNEL\_MOVE | A user moves voice channels |

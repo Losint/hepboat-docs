@@ -348,7 +348,7 @@ autolevel:
         10000: 324590834509853450985
       keep_previous: true
       seconds_per_point: 15
-      announce_msg: {user} has leveled up!! yeet!
+      announce_msg: '{user} has leveled up!! yeet!'
       announce_chan: 3454908448974987444
     2394823904823487897:
       exclude_channels:

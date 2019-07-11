@@ -1,5 +1,15 @@
 # Changelog
 
+#### 11 Jul 2019
+* Fixed `MEMBER_ROLE_REMOVE` action name in modlog documentation.
+* Added `BOT_DEBUG` action to modlog plugin to log command failure reasons.
+* Added `role spray`, `role nuke`, and `role cancel` commands to admin plugin.
+* Users that DM HepBoat with an invite link will now collect infractions.
+* Listen-type custom commands can now be configured in lockdown in the commands plugin.
+* Anti-raid notify role now properly notifies in pretty mode modlogs.
+* Rewrote custom commands plugin documentation and fixed custom commands.
+* General bug fixes.
+
 #### 03 Jul 2019
 * Added `mention` commands in the admin plugin.
 * Added a `cleanban` command in the infractions plugin.
@@ -237,8 +247,6 @@
 * Track role counts
 * Avatar command for checking user avatar
 * Increase info timeout
-
-#### 
 
 #### 16 November 2018
 

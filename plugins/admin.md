@@ -16,6 +16,8 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | `!role add {user} {role} [reason]` | Adds a role to a user. | Moderator | `!role add 232921983317180416 Moderator Promotion from Member` OR `!role add rowboat#0001 Admin Pretty good Moderator` |
 | `!role remove {user} {role} [reason]` | Removes a role from a user .| Moderator | `!role remove 232921983317180416 Administrator Demoted for being bad at job` OR `!role remove rowboat#0001 Mod Terrible moderator` |
 | `!role unlock {role}` | Unlocks a role listed in the `locked_roles` config setting for 5 minutes, allowing for permission updates. | Administrator | `!role unlock 346471724126044160` |
+| `!role spray {role} [reason]` | Assigns the given role to all users in the guild. | Administrator | `!role spray 346471724126044160` |
+| `!role nuke {role} [reason]` | Removes the given role from all users in the guild. | Administrator | `!role nuke 346471724126044160` |
 | `!roles` | Returns a list of IDs and names for all roles on the server. Useful for configuring other plugins. | Moderator | `!roles` |
 | `!roleinfo {role}` | Display details about a role. | Moderator | `!roleinfo  274266640403791873` |
 | `!tracking` | Displays number of members of roles in `tracking` config. | Moderator | `!tracking` |

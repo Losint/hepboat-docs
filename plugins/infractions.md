@@ -173,27 +173,36 @@ plugins:
   infractions:
     notify:
       WARN:
-        emoji: warning
+        emoji: rotating_light
         format: |-
-          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+          You have been **{action!s}** in {guild.name}.
+          **Reason**: {reason!s}
       TEMPMUTE:
         emoji: no_mouth
         format: |-
-          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}` until **{expires}** GMT+0.
+          You have been **{action!s}** in {guild.name}.
+          **Expires**: {expires} GMT+0
+          **Reason**: {reason!s}      
       MUTE:
         emoji: no_mouth
         format: |-
-          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+          You have been **{action!s}** in {guild.name}.
+          **Expires**: {expires} GMT+0
+          **Reason**: {reason!s}    
       TEMPBAN:
         emoji: tools
         format: |-
-          You have been **{action!s}** until **{expires} GMT+0 in **{guild.name}** by **{actor!s}** for `{reason!s}`.
+          You have been **{action!s}** from {guild.name}.
+          **Expires**: {expires} GMT+0
+          **Reason**: {reason!s}    
       BAN:
         emoji: tools
         format: |-
-          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`
-      KICK:
-        emoji: boot
+          You have been **{action!s}** from {guild.name}.
+          **Expires**: {expires} GMT+0
+          **Reason**: {reason!s}      
+      KICK:  
+        emoji: tools
         format: |-
-          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`.
-          ```
+          You have been **{action!s}** from {guild.name}.
+          **Reason**: {reason!s}    
