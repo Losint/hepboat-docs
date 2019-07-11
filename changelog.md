@@ -8,6 +8,8 @@
 * Listen-type custom commands can now be configured in lockdown in the commands plugin.
 * Anti-raid notify role now properly notifies in pretty mode modlogs.
 * Rewrote custom commands plugin documentation and fixed custom commands.
+* Fixed `filter_invites` and `filter_domains` in censor plugin to filter everything by default if neither whitelists or blacklists are set.
+* Fixed looping blocked nickname bug in censor plugin.
 * General bug fixes.
 
 #### 03 Jul 2019

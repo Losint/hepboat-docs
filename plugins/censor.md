@@ -8,7 +8,7 @@ The censor plugin provides administrators and moderators a simple way to filter 
 * URLs
 * Inappropriate or offensive words (attachment names included)
 
-This plugin combined with the Spam plugin can result in a very robust automatic abuse-prevention system.
+This plugin combined with the [spam plugin](spam.md) can result in a very robust automatic abuse-prevention system. This plugin should be enabled in conjunction with the [infractions plugin](infractions.md) for punishment implementation. 
 
 ## Commands
 
@@ -111,9 +111,7 @@ plugins:
           - discord-linux
           - gamenight
           - discord-feedback
-        invites_blacklist: []
         filter_domains: true
-        domains_whitelist: []
         domains_blacklist: 
           - website.com
           - weirdlink.net
@@ -149,4 +147,6 @@ plugins:
     channels:
       290923757399310337:
         blocked_words: [word4]  
+  infractions:
+    mute_role: 579398816072073246
 ```
