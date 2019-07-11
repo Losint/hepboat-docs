@@ -205,4 +205,5 @@ plugins:
         emoji: tools
         format: |-
           You have been **{action!s}** from {guild.name}.
-          **Reason**: {reason!s}    
+          **Reason**: {reason!s}
+```

@@ -18,7 +18,94 @@ The bot will not do anything out of the box, you'll have to continue below to en
 
 Below is a blank configuration example with web, utilities, admin, infractions, modlog, spam, and censor set up. While you can simply copy-paste this to your own server's configuration and fill in the blanks to have a perfectly usable rowboat, it's highly encouraged that you read through the full documentation to understand each component and customize rowboat to your server's needs.
 
-## Example HepBoat Configuration
+## Example HepBoat Configurations
+
+### Skeleton Configuration
+
+```yaml
+web:
+  148359099782791168: admin # JakeyPrime - Change This
+​
+levels:
+  148359099782791168: 100 # Your role id or individual admin ID's
+
+commands:
+  prefix: '!'
+​
+plugins:
+  utilities: {}
+```
+
+### Minimal Configurations
+
+```yaml
+web:
+  148359099782791168: admin      # JakeyPrime - Change This
+
+commands:
+  prefix: '!'
+  overrides: # Custom commands hardening. See custom commands plugin page for more details.
+  - group: cc
+    out:
+      roles:
+        - 00000000000000000  # Admin
+  - name: cc-usr
+    out:
+      roles:
+        - 00000000000000000  # Admin        
+  lockdown: 
+  - group: cc
+    out:
+      channels: [000000000000000000]        # Admin commands channel
+
+levels:
+  180768265633660928: 100   # Server Admin Role Id
+  131682843326808064: 99    # server admin bot Role Id
+  274266640403791873: 60    # Senior Moderator Role Id
+  77190254141911040: 50     # Moderator Role Id
+  335114792820015106: 10    # Bot Role Id
+
+nickname: H4PB0AT
+
+plugins:
+  admin:
+    persist:
+      roles: true
+      role_ids:  # Roles to recover after leaving and joining back 
+      - 000000000000000000      #  Muted Role
+      nickname: true
+      voice: true
+        Your server log
+  infractions:
+    confirm_actions: true
+    confirm_actions_reaction: true
+    mute_role: 000000000000000000       # Muted Role
+    hard_mute_role: 000000000000000000       # Muted Role
+    reason_edit_level: 100
+    report_channel: 535051955639418890 # Channel for reports to go to 
+    notify:
+      WARN:
+        format: true
+      BAN:
+        format: true
+      TEMPMUTE:
+        format: true
+      MUTE:
+        format: true
+      TEMPBAN:
+         format: true
+    
+  modlog:
+    channels:
+      171383278048247808: # Server Log Channel
+        exclude: []
+        mode: pretty
+
+  utilities: {}
+  tags: {}
+```
+
+### Standard Basic Configuration
 
 ```yaml
 web: 
@@ -27,7 +114,7 @@ web:
 
 commands:
   prefix: '!'
-  overrides: # In the overrides below I have included lockdowns and restrictions for the custom commands plugin; you're advised to keep it as is whether you use it or not. Make sure to also override any commands you create that you do not want users to be using. 
+  overrides: # Custom commands hardening. See custom commands plugin page for more details.
   - group: cc
     out:
       roles:
@@ -58,8 +145,8 @@ plugins:
   admin:
     persist:
       roles: true
-      role_ids:         # Roles to recover after leaving and joining back 
-      - 000000000000000000      #  MAKE SURE TO INCLUDE THE MUTED ROLE IN HERE
+      role_ids:  # Roles to recover after leaving and joining back 
+      - 000000000000000000      #  Muted Role
       nickname: true
       voice: true
   
@@ -71,8 +158,7 @@ plugins:
         invites_whitelist: []
         invites_blacklist: []
         filter_domains: true
-        domains_whitelist: []
-        domains_blacklist: [] 
+        domains_whitelist: ['000000']  # Add gibberish to filter all domains by default
         blocked_tokens: [] 
         blocked_words: []
         blocked_nicknames: []
@@ -109,12 +195,9 @@ plugins:
   infractions:
     confirm_actions: true
     confirm_actions_reaction: true
-    confirm_actions_expiry: 5
     mute_role: 000000000000000000       # Muted Role
-    tempmute_role: 000000000000000000       # Muted Role
+    hard_mute_role: 000000000000000000       # Muted Role
     reason_edit_level: 100
-    show_moderator: true
-    silence_level: 100
     report_channel: 535051955639418890 # Channel for reports to go to    
     notify: # 
       WARN:
@@ -136,13 +219,13 @@ plugins:
       BAN:
         emoji: tools
         format: |-
-          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}` 
+          You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}` .
       KICK:
         emoji: boot
         format: |-
           You have been **{action!s}** in **{guild.name}** by **{actor!s}** for `{reason!s}`. 
  
-modlog: # This plugin is for logging events on your discord. The current setup is a message log channel, a user join/leave channel and a channel for all other actions, as well as a public action log. Delete a category below if you don't want it included. If you're not sure, ping Alchameth#8808 on discord.
+modlog: # See modlog plugin documentation for more actions to explicitly include.
     channels:
       000000000000000000:     # Message Logs
         exclude: []
@@ -153,7 +236,7 @@ modlog: # This plugin is for logging events on your discord. The current setup i
           - CENSORED
         timestamps: true
         timezone: GMT+0
-      000000000000000000:     #Server Logs
+      000000000000000000:     # Server Logs
         exclude: 
           - MESSAGE_DELETE
           - MESSAGE_DELETE_BULK
@@ -187,73 +270,3 @@ modlog: # This plugin is for logging events on your discord. The current setup i
     max_tag_length: 1000 # Set it as long as you want or remove
     min_level_remove_others: 50 # To allow only level 50 and above to remove (in this config, moderators)   
 ```
-
-## Example Minimum config
-
-```yaml
-web:
-  148359099782791168: admin      # JakeyPrime - Change This
-
-commands:
-  prefix: '!'
-  overrides: {}
-
-levels:
-  180768265633660928: 100   # Server Admin Role Id
-  131682843326808064: 99    # server admin bot Role Id
-  274266640403791873: 60    # Senior Moderator Role Id
-  77190254141911040: 50     # Moderator Role Id
-  335114792820015106: 10    # Bot Role Id
-
-nickname: H4PB0AT
-
-plugins:
-  admin:
-    confirm_actions: true
-    confirm_actions_reaction: true
-        
-  infractions:
-    confirm_actions: true
-    confirm_actions_expiry: 10
-    confirm_actions_reaction: true
-    mute_role: 335132902025330688 # Mute Role Id
-    reason_edit_level: 60
-    temp_mute_role: 335132902025330688 # Mute Role Id
-    
-    notify:
-      WARN:
-        format: true
-      BAN:
-        format: true
-      TEMPMUTE:
-        format: true
-      MUTE:
-        format: true
-      TEMPBAN:
-         format: true
-    
-  modlog:
-    channels:
-      171383278048247808: # Your server log
-        exclude: []
-        compact: false
-        timestamps: true
-  utilities: {}
-```
-
-### Example just to get going
-
-```yaml
-commands:
-  prefix: '!'
-​
-levels:
-  148359099782791168: 100 # Your role id or individual admin ID's
-​
-plugins:
-  utilities: {}
-
-web:
-  148359099782791168: admin # JakeyPrime - Change This
-```
-

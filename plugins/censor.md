@@ -60,7 +60,9 @@ This plugin combined with the Spam plugin can result in a very robust automatic 
 | mute\_violations\_duration | Seconds to mute a user with sufficient violations. | int | 300 |
 | antiraid | A single antiraid configuration. | dict | None |
 
-When available, only whitelists or only blacklists will be checked. Whitelists will be checked first if both are configured. A user will accrue one violation for each message that triggers a censor deletion.
+When available, only whitelists or only blacklists will be checked. Whitelists will be checked first if both are configured.
+
+A user will accrue one violation for each message that triggers a censor deletion.
 
 ### Blocked Mention Tokens
 | Token | Description | Example |
