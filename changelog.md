@@ -1,5 +1,10 @@
 # Changelog
 
+#### 12 Jul 2019
+* Added `nick change` and `nick remove` commands in admin plugin.
+* Added `{duration}` and `{expire_time}` tokens for custom temporary infractions.
+* General bug fixes.
+
 #### 11 Jul 2019
 * Fixed `MEMBER_ROLE_REMOVE` action name in modlog documentation.
 * Added `BOT_DEBUG` action to modlog plugin to log command failure reasons.

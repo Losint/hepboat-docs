@@ -67,6 +67,8 @@ The following tokens can be used in mention messages to dynamically generate con
 | `!backups clear {user}` | Deletes all saved backups for a user. | Administrator | `!backups clear 232921983317180416` OR `!backups clear rowboat#0001` |
 | `!stats {user}` | Presents general message statistics for a given user. | Moderator | `!stats 232921983317180416` OR `!stats rowboat#0001` |
 | `!voice log {user}` | Displays all recent voice channel activity for a given user in guild. | Moderator | `!voice log 232921983317180416` OR `!voice log @rowboat#0001` |
+| `!nick change {user} {nickname}` OR `!nick add {user} {nickname}` | Adds or changes a nickname for the given user. Will also check the censor config if set. | Moderator | `!nick change 84912325282254848 newnick` OR `!nick add @Jakey newnick` |
+| `!nick remove {user}` OR `!nick rmv {user}` OR `!nick delete {user}` OR `!nick del {user}` | Removes a nickname from the given user. | Moderator | `!nick remove 84912325282254848 newnick` OR `!nick rmv @Jakey` |
 
 ### Server
 | Name | Description | Default Level | Usage |

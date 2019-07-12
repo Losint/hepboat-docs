@@ -124,9 +124,7 @@ plugins:
 
 ## Custom Mod Log Format
 
-After you have run the `@HepBoat#0361 setup` command you will need to contact a Global Administrator to enable custom 
-formats for PLAIN mode modlogs in your guild. You may then follow the configuration below to fully customize the modlog
- to your liking.
+After you have run the `@HepBoat#0361 setup` command you will need to contact a Global Administrator to enable custom formats for PLAIN mode modlogs in your guild. You may then follow the configuration below to fully customize the modlog to your liking.
 
 | Option | Description |
 | :--- | :--- |
@@ -142,7 +140,7 @@ formats for PLAIN mode modlogs in your guild. You may then follow the configurat
 
 NOTE: If configured improperly, your logs may be missing and lost. Customize at your own risk.
 
-### Example Custom Mod Log Configuration
+### Configuration Example
 
 ```yaml
 plugins:

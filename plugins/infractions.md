@@ -123,51 +123,20 @@ plugins:
         format: true
 ```
 
-## Custom Infractions Format
+## Custom Notify Format
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Option</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">{action!s}</td>
-      <td style="text-align:left">
-        <p>infraction action</p>
-      </td>
-    </tr>  
-    <tr>
-      <td style="text-align:left">{guild.name}</td>
-      <td style="text-align:left">
-        <p>guild name</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">{actor!s} </td>
-      <td style="text-align:left">
-        <p>command author (username#discriminator)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">{reason!s}</td>
-      <td style="text-align:left">
-        <p>infraction reason</p>
-      </td>
-    </tr> 
-    <tr>
-      <td style="text-align:left">{expires} </td>
-      <td style="text-align:left">
-        <p>expiration date</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Option | Description |
+| :--- | :--- |
+| {action!s} | infraction action |
+| {guild.name} | guild name |
+| {actor!s} | command author (username#discriminator) |
+| {reason!s} | infraction reason |
+| {expire_time} | infraction expiration timestamp |
+| {duration} | infraction duration |
 
-### Custom Format Configuration Example
+NOTE: If configured improperly, your notifications may not be sent. Customize at your own risk.
 
+### Configuration Example
 ```yaml
 plugins:
   infractions:
@@ -181,25 +150,23 @@ plugins:
         emoji: no_mouth
         format: |-
           You have been **{action!s}** in {guild.name}.
-          **Expires**: {expires} GMT+0
+          **Expires**: {expire_time} GMT+0 ({duration})
           **Reason**: {reason!s}      
       MUTE:
         emoji: no_mouth
         format: |-
           You have been **{action!s}** in {guild.name}.
-          **Expires**: {expires} GMT+0
           **Reason**: {reason!s}    
       TEMPBAN:
         emoji: tools
         format: |-
           You have been **{action!s}** from {guild.name}.
-          **Expires**: {expires} GMT+0
+          **Expires**: {expire_time} GMT+0 ({duration})
           **Reason**: {reason!s}    
       BAN:
         emoji: tools
         format: |-
           You have been **{action!s}** from {guild.name}.
-          **Expires**: {expires} GMT+0
           **Reason**: {reason!s}      
       KICK:  
         emoji: tools
