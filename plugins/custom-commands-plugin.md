@@ -70,10 +70,10 @@ For `listen` custom command types:
 
 | Command | Info | Usage |
 | :--- | :--- | :--- |
-| `reactall {channel_id} {emoji}` | Will react to every user message in the defined channel with the emoji. | `reactall 579304983896391682 :rabbit:` OR `react 579304983896391682 hydra:582615263422447637` OR `react 579304983896391682 <:hydra:582615263422447637>`|
+| `reactall {channel_id} {emoji}` | Will react to every user message in the defined channel with the emoji. | `reactall 579304983896391682 :rabbit:` OR `reactall 579304983896391682 hydra:582615263422447637` OR `reactall 579304983896391682 <:hydra:582615263422447637>`|
 | `replyall {channel_id} {reply_str}` | Will reply to every user message in the defined channel with `reply_str`. | `replyall 579304983896391682 OK` |
 | `react {search_str} {emoji}` | Will naively react to all instances of `search_str` with the emoji. This includes commands with the `search_str`. `search_str` can be multiple words, if surrounded by single quotes. | `react cat :cat:` OR `react 'good morning' :sunny:` | 
-| `reply {search_str} {reply_str}` | Will react to all instances of `search_str` with `reply_str`. `search_str` can be multiple words, if surrounded by single quotes. | `react cat dog` OR `react 'good morning' good night!` |
+| `reply {search_str} {reply_str}` | Will react to all instances of `search_str` with `reply_str`. `search_str` can be multiple words, if surrounded by single quotes. | `reply cat dog` OR `reply 'good morning' good night!` |
 | `reactcmd {cmd_str} {emoji}` | Will react to all instances of `!cmd_str` with the emoji. `cmd_str` can be multiple words, if surrounded by single quotes. | `reactcmd 'tags owo' :rabbit:` |
 | `replycmd {cmd_str} {reply_str}` | Will reply to all instances of `!cmd_str` with the reply message. `cmd_str` can be multiple words, if surrounded by single quotes. | `replycmd 'tags owo' BUNNY~` |
 
@@ -106,7 +106,7 @@ Create a custom command named `tempgroup_reason`. When triggered using the comma
 !!cc create tempgroup_reason cmd 0 notify|allowargs|addgrouptemp @blah 5s you're the best
 ```
 
-Create a custom command named `roles_setup`. When triggered using the command `!roles_setup`, the calling user will have the role with id `580897510780960768` temporarily added for 1 minute, have the role `@a` added, and the role `b` removed. HepBoat will confirm the role modifications with a response.
+Create a custom command named `roles_setup`. When triggered using the command `!roles_setup`, the calling user will have the role with id `580897510780960768` temporarily added for 1 minute, have the role `@a` added, and the role `b` removed. HepBoat will confirm each role modification with a distinct response.
 ```text
 !!cc create roles_setup  cmd 0 notify|addgrouptemp 580897510780960768 1m|addgroup a|removegroup b
 ```
@@ -116,6 +116,8 @@ Create a custom command named `roles_setup`. When triggered using the command `!
 ```yaml
 plugins:
   custcommands: {}
+  infractions:
+    mute_role: 579398816072073246
 ```
 
 ## Hardening
