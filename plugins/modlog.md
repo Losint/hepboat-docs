@@ -137,6 +137,8 @@ After you have run the `@HepBoat#0361 setup` command you will need to contact a 
 | `{actor!s}` | command author |
 | `{reason!s}` | infraction reason |
 | `{expires}` | expiration date |
+| `{expire_time}` | temporary infraction expiration timestamp |
+| `{duration}` | temporary infraction duraction |
 
 NOTE: If configured improperly, your logs may be missing and lost. Customize at your own risk.
 

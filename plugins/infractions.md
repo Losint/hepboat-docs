@@ -131,8 +131,7 @@ plugins:
 | {guild.name} | guild name |
 | {actor!s} | command author (username#discriminator) |
 | {reason!s} | infraction reason |
-| {expire_time} | infraction expiration timestamp |
-| {duration} | infraction duration |
+| {expires} | infraction expiration timestamp |
 
 NOTE: If configured improperly, your notifications may not be sent. Customize at your own risk.
 
@@ -150,7 +149,7 @@ plugins:
         emoji: no_mouth
         format: |-
           You have been **{action!s}** in {guild.name}.
-          **Expires**: {expire_time} GMT+0 ({duration})
+          **Expires**: {expires})
           **Reason**: {reason!s}      
       MUTE:
         emoji: no_mouth
@@ -161,7 +160,7 @@ plugins:
         emoji: tools
         format: |-
           You have been **{action!s}** from {guild.name}.
-          **Expires**: {expire_time} GMT+0 ({duration})
+          **Expires**: {expires})
           **Reason**: {reason!s}    
       BAN:
         emoji: tools
