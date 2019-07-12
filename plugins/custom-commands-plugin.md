@@ -21,7 +21,7 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | `!cc delete {name}` OR `!cc del {name}` OR `!cc remove {name}` OR `!cc rm {name}` | Deletes the given custom command | `!cc delete kittens` |
 | <code>!cc create {name} {type} {listen_type} &lt;command1&gt; &#124; &lt;command2&gt;</code> OR <code>!cc add {name} {type} {listen_type} &lt;command1&gt; &#124; &lt;command2&gt;</code>| Creates a custom command with defined attributes. | <code>!cc create testing cmd 0 notify  &#124; addgroup cats &#124; addgrouptemp dogs 20m</code> |
 
-### Custom Command Creation Options
+### Creation Options
 Arguments in `{}` are required. Arguments in `[]` are optional.
 
 #### `type` Options
@@ -44,7 +44,7 @@ For `listen` custom command types:
 | :--- | :--- |
 | MessageCreate | The custom command is triggered when a message is created and a specific defined trigger option is performed. |
 
-#### `cmd`-type Command Options
+#### `cmd`-type Options
 
 | Command | Info | Usage |
 | :--- | :--- | :--- |
@@ -64,7 +64,7 @@ For `listen` custom command types:
 | `tempmutehard {duration} [reason]` | Temporarily hard-mutes a user. `hard_mute_role` must be set in the `infractions` config. | `tempmutehard 2m` |
 | `mutevc [reason]` | Moves a voice user to a guild-defined AFK channel. | `mutevc` | 
 
-#### `listen`-type Command Options
+#### `listen`-type Options
 
 ##### `MessageCreate` Options
 
@@ -89,7 +89,7 @@ The following tokens can be used in `reply_str` contents to dynamically generate
 | {c&lt;snowflake&gt;} | Will mention the specified channel. |
 | {u&lt;snowflake&gt;} | Will mention the specified user. |
 
-### Custom Command Creation Examples
+### Creation Examples
 
 Create a custom command named `react_hydra` that listens to all messages and reacts to the string `ssss` with the `hydra:582615263422447637` emoji:
 ```text
@@ -143,7 +143,7 @@ The configuration above allows only admin-level users to call any `!cc` group an
 
 The special `cc-usr` command name applies to all `cmd` type custom commands. It is recommended to set this to a high level (at least moderator) as otherwise by default any create `cmd` type custom commands can be run by any user.
 
-### `cmd`-type Custom Commands Hardening
+### `cmd`-type Hardening
 
 If you would like to leak certain `cmd` type custom commands to different levels and channels, you can override each command individually. For instance, in the following example, if you would like to leak the `role_jokes` custom command to be used by any user in the user commands channel:
 
@@ -168,7 +168,7 @@ commands:
       channels: [504782681263964123] # User commands channel
 ```
 
-### `listen`-type Custom Commands Hardening
+### `listen`-type Hardening
 
 If you would like to restrict certain `listen`-type custom commands to certain channels or role triggers, you can override them by custom command name individually in the `lockdown` configuration. For instance, in the following example, if you would like only the `member` role to trigger the `reply_hello` `listen`-type custom commands in the #general channel: 
 

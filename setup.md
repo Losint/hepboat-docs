@@ -36,7 +36,7 @@ plugins:
   utilities: {}
 ```
 
-### Minimal Configurations
+### Minimal Configuration
 
 ```yaml
 web:
