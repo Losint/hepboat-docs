@@ -13,16 +13,11 @@ web:
   189990173222164545: viewer  # Bunnerz
 ```
 
-Web determines which users are able to view the configuration dashboard for the server. Commenting a line with the 
-username next each user ID helps with organization.
+Web determines which users are able to view the configuration dashboard for the server. Commenting a line with the username next each user ID helps with organization.
 
-User ID is used to assign ranks. There are three ranks you can assign: admin, editor, viewer. `Admin` can add more 
-users (including other Admins), edit, and view the dashboard. `Editor` can edit and view the dashboard. `Viewer` can 
-only view the configuration.
+User ID is used to assign ranks. There are three ranks you can assign: admin, editor, viewer. `Admin` can add more users (including other Admins), edit, and view the dashboard. `Editor` can edit and view the dashboard. `Viewer` can only view the configuration.
 
-Adding any users to your config will grant you the "Verified HepBoat User" role in our support guild, 
-which you can join by clicking the `Support Server` link at the top of the page. This will give you access to a 
-Discord server where you can talk with other HepBoat users and get support from our amazing HepBoat support team.
+Adding users to your config will grant them the "Verified HepBoat User" role in our support guild, which they can join by clicking the `Support Server` link at the top of the page. This will give them access to a Discord server where they can talk with other HepBoat users and get support from our amazing HepBoat support team.
 
 ## Nickname
 
@@ -31,8 +26,7 @@ Discord server where you can talk with other HepBoat users and get support from 
 nickname: H3PB0AT
 ```
 
-Set a nickname for the bot! Nickname is automatically applied upon the global reload of the bot. You may also give 
-the bot a custom nickname in the server directly in the meantime.
+Set a nickname for the bot! Nickname is automatically applied upon the global reload of the bot. You may also give the bot a custom nickname in the server directly in the meantime.
 
 ## Levels
 
@@ -43,8 +37,7 @@ levels:
   295472842935353345: 50 #Moderator
   298993418577703616: 10 #Trusted
 ```
-This is where you assign levels to each role in your server! Remember, the default level is 0 if a user does not have
-one of the explicitly listed roles. Users will have the highest level of their assigned roles.
+This is where you assign levels to each role in your server! Remember, the default level is 0 if a user does not have one of the explicitly listed roles. Users will have the highest level of their assigned roles.
 
 By default, some levels have a certain rank associated with it: 
 ```
@@ -56,8 +49,7 @@ By default, some levels have a certain rank associated with it:
 
 You can view the default rank required for each command by looking at the Commands section for each plugin.
 
-Levels can be set to any positive integer. Keep in mind the default permissions given for each command. You can override
-the default ranks for commands by using the command configuration explained below.
+Levels can be set to any positive integer. Keep in mind the default permissions given for each command. You can override the default ranks for commands by using the command configuration explained below.
 
 ## Commands and Overrides
 
