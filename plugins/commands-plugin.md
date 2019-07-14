@@ -20,6 +20,7 @@ See [General Configuration](general.md) for details.
 | dm\_denied | DM a user when their command is denied. | bool | True |
 | local\_blacklist | Blacklisted users that HepBoat will ignore all commands from. | list(snowflake) | empty |
 | exclude\_msg\_user | Users that will not be logged by HepBoat. | list(snowflake) | empty |
+| timezone | Timezone to use for localized timestamps in command outputs. [Supported timezones.](https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568) | str | `UTC` |
 
 ## Overrides Configuration Options
 

@@ -1,8 +1,19 @@
 # Changelog
 
+#### 14 Jul 2019
+* Added ability to set server timezone in the commands plugin to localize any timestamps in command outputs.
+* Added strict channel filter configurations in the utilities plugin. e.g. set image-only or text-only channels.
+* Added `notseen` command in utilities plugin.
+* Users that spam the bot with DMs will now be banned from the support guild.
+* `!roles` adds a `[M]` in output if the role is currently mentionable.
+* Added `unmute` as an option in custom commands.
+* Added `{emoji}`, `{duration}`, and `{expire_time}` tokens for custom temporary infraction notifies.
+* Added ability to place `{emoji}` and `{timestamp}` anywhere in custom plain text modlogs.
+* General bug fixes.
+
 #### 12 Jul 2019
 * Added `nick change` and `nick remove` commands in admin plugin.
-* Added `{duration}` and `{expire_time}` tokens for custom temporary infractions.
+* Added `{duration}` and `{expire_time}` tokens for custom temporary infraction modlogs.
 * General bug fixes.
 
 #### 11 Jul 2019

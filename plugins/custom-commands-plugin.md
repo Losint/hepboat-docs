@@ -59,6 +59,7 @@ For `listen` custom command types:
 | `ban [reason]` | Bans a user from the guild. | `ban` |
 | `warn [reason]` | Adds a warning infraction to a user. | `warn just because` |
 | `mute [reason]` | Mutes a user. `mute_role` must be set in the `infractions` config. | `mute` |
+| `unmute [reason]` | Unmutes a user. | `unmute` |
 | `mutehard [reason]` | Hard-mutes a user. `hard_mute_role` must be set in the `infractions` config. | `mutehard` |
 | `tempmute {duration} [reason]` |  Temporarily mutes a user. `mute_role` must be set in the `infractions` config. | `tempmute 5h` |
 | `tempmutehard {duration} [reason]` | Temporarily hard-mutes a user. `hard_mute_role` must be set in the `infractions` config. | `tempmutehard 2m` |

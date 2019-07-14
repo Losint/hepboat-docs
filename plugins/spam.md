@@ -43,6 +43,8 @@ This plugin should be enabled in conjunction with the [infractions plugin](infra
 
 NOTE: The [censor plugin](censor.md) also has an `all_caps` filter similar to the `max_upper_case` spam filter that is more configurable.
 
+Please note that the message deletion on the spam plugin if `clean` is enabled is different than the censor plugin. The spam plugin will delete **all** messages by the user in the `clean_duration` up to a max of `clean_count` once it is triggered, whether or not all messages were specifically violating the spam trigger. The censor plugin deletes more selectively with single messages that violate the censor.
+
 ### Check Subconfiguration
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |

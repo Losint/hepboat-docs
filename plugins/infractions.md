@@ -125,13 +125,16 @@ plugins:
 
 ## Custom Notify Format
 
-| Option | Description |
-| :--- | :--- |
-| {action!s} | infraction action |
-| {guild.name} | guild name |
-| {actor!s} | command author (username#discriminator) |
-| {reason!s} | infraction reason |
-| {expires} | infraction expiration timestamp |
+| Option | Description | Example output|
+| :--- | :--- | :--- |
+| `{emoji}` | The set emoji for infraction type. | :rotating_light: |
+| `{action!s}` | The infraction action. | "Kicked" | 
+| `{guild.name}` | The guild name. | |
+| `{actor!s}` | The command author. | JakeyPrime#0001 |
+| `{reason!s}` | The infraction reason. | |
+| `{expires}` | The expiration date. | 14-Jul-19 @ 18:23 GMT+0 (4 seconds) |
+| `{expire_time}` | The expiration timestamp for temporary infractions. | 14-Jul-19 @ 18:23 GMT+0 |
+| `{duration}` | The duration for temporary infractions. | 5 seconds |
 
 NOTE: If configured improperly, your notifications may not be sent. Customize at your own risk.
 

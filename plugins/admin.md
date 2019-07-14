@@ -18,7 +18,7 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | `!role unlock {role}` | Unlocks a role listed in the `locked_roles` config setting for 5 minutes, allowing for permission updates. | Administrator | `!role unlock 346471724126044160` |
 | `!role spray {role} [reason]` | Assigns the given role to all users in the guild. | Administrator | `!role spray 346471724126044160` |
 | `!role nuke {role} [reason]` | Removes the given role from all users in the guild. | Administrator | `!role nuke 346471724126044160` |
-| `!roles` | Returns a list of IDs and names for all roles on the server. Useful for configuring other plugins. | Moderator | `!roles` |
+| `!roles [query]` | Returns a list of IDs and names for all roles on the server or for roles that match the given query. A `[M]` tag is added for mentionable roles. Useful for configuring other plugins. | Moderator | `!roles` OR `!roles hepboat`|
 | `!roleinfo {role}` | Display details about a role. | Moderator | `!roleinfo  274266640403791873` |
 | `!tracking` | Displays number of members of roles in `tracking` config. | Moderator | `!tracking` |
 | `!mention {role_id} {message}` OR `!mention here {role_id} {message}` | Posts a message in the current channel that will mention the given role where the token `{role}` is located. Will not work on roles that are already mentionable. | Moderator | `!mention 580569953065893899 {role}, here!`|
@@ -54,8 +54,8 @@ The following tokens can be used in mention messages to dynamically generate con
 | `!uncease` OR `!uncease channel`| Restore send message permissions for `@everyone` in the current channel to the default. | Moderator | `!uncease` |
 | `!shut` | Restricts the speak and use voice activation permissions for `@everyone` in the current voice channel of calling user. (Due to a Discord bug, this does not immediately mute everyone, but forces everyone to Push-to-Talk) | Moderator | `!shut` |
 | `!unshut` | Removes restrictions for `@everyone` on speak and voice activation detection in the current voice channel of calling user. | Moderator | `!unshut` |
-| `!slowmode {duration} [reason]` OR `!slowmode here {duration} [reason]` | Sets the slowmode time in the current channel. A duration of `0` will turn off slowmode in the channel. Default integer durations are parsed in minutes.| Moderator | `!slowmode 10` OR `!slowmode 5h` |
-| `!slowmode channel {duration} [reason]` | Sets the slowmode time in the given channel. A duration of `0` will turn off slowmode in the channel. Default integer durations are parsed in minutes.| Moderator | `!slowmode channel 289482554250100736 10` OR `!slowmode channel 289482554250100736 5h` |
+| `!slowmode {duration} [reason]` OR `!slowmode here {duration} [reason]` | Sets the slowmode time in the current channel. A duration of `0` will turn off slowmode in the channel. Given integer durations are parsed in minutes.| Moderator | `!slowmode 10` OR `!slowmode 5h` |
+| `!slowmode channel {duration} [reason]` | Sets the slowmode time in the given channel. A duration of `0` will turn off slowmode in the channel. Given integer durations are parsed in minutes.| Moderator | `!slowmode channel 289482554250100736 10` OR `!slowmode channel 289482554250100736 5h` |
 
 `archive` command results will be DMed to the calling user or linked in the chat based on `archive_link_chat` config setting. `clean` command archives will be linked in the modlogs under `MESSAGE_DELETE_BULK` if configured.
 

@@ -20,7 +20,7 @@ The modlog plugin provides a mechanism for logging various events and actions to
 | ignored\_users | A list of user IDs which are ignored in the modlog. This is useful for ignoring bots that regularly delete or edit their messages | list(snowflake) | empty |
 | ignored\_channels | A list of channel IDs which are ignored in the modlog. This is useful for ignoring private or high-activity channels | list(snowflake) | empty |
 | new\_member\_threshold | The number of seconds an account is considered new. | int | 900 \(15 minutes\) |
-| channels | Mapping of channel names or ids to ModLog configurations | dict | empty |
+| channels | Mapping of channel names or IDs to ModLog configurations | dict | empty |
 | custom | Change the logging format if the `CUSTOM` flag is on for the guild. Only available for PLAIN mode logs. | dict | empty | 
 
 ### ModLog Configuration
@@ -124,21 +124,21 @@ plugins:
 
 ## Custom Mod Log Format
 
-After you have run the `@HepBoat#0361 setup` command you will need to contact a Global Administrator to enable custom formats for PLAIN mode modlogs in your guild. You may then follow the configuration below to fully customize the modlog to your liking.
+To enable custom PLAIN mode modlogs, please contact a HepBoat Global Administrator after you have set up your server.
 
-| Option | Description |
-| :--- | :--- |
-| `{e.author!s}`	| username#discriminator |
-| `{e.author.id}` | user id |
-| `{e.channel.mention}` | channel mention |
-| `{e.channel}` | channel name |
-| `{e.user!s}` | username#discriminator if they leave |
-| `{e.user.id}` | user id if they leave |
-| `{actor!s}` | command author |
-| `{reason!s}` | infraction reason |
-| `{expires}` | expiration date |
-| `{expire_time}` | temporary infraction expiration timestamp |
-| `{duration}` | temporary infraction duraction |
+| Option | Description |  Example output|
+| :--- | :--- | :--- |
+| `{e.author!s}` | username#discriminator | JakeyPrime#0001 |
+| `{e.author.id}` | user id | |
+| `{e.channel.mention}` | channel mention | |
+| `{e.channel}` | channel name | |
+| `{e.user!s}` | username#discriminator if they leave | |
+| `{e.user.id}` | user id if they leave | |
+| `{actor!s}` | The command author. | JakeyPrime#0001 |
+| `{reason!s}` | The infraction reason. | |
+| `{expires}` | The expiration date. | 14-Jul-19 @ 18:23 GMT+0 (4 seconds) |
+| `{expire_time}` | The expiration timestamp for temporary infractions. | 14-Jul-19 @ 18:23 GMT+0 |
+| `{duration}` | The duration for temporary infractions. | 5 seconds |
 
 NOTE: If configured improperly, your logs may be missing and lost. Customize at your own risk.
 
