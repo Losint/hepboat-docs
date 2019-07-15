@@ -8,7 +8,6 @@
 * `!roles` adds a `[M]` in output if the role is currently mentionable.
 * Added `unmute` as an option in custom commands.
 * Added `{emoji}`, `{duration}`, and `{expire_time}` tokens for custom temporary infraction notifies.
-* Added ability to place `{emoji}` and `{timestamp}` anywhere in custom plain text modlogs.
 * General bug fixes.
 
 #### 12 Jul 2019
