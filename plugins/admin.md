@@ -57,7 +57,9 @@ The following tokens can be used in mention messages to dynamically generate con
 | `!slowmode {duration} [reason]` OR `!slowmode here {duration} [reason]` | Sets the slowmode time in the current channel. A duration of `0` will turn off slowmode in the channel. Given integer durations are parsed in minutes.| Moderator | `!slowmode 10` OR `!slowmode 5h` |
 | `!slowmode channel {duration} [reason]` | Sets the slowmode time in the given channel. A duration of `0` will turn off slowmode in the channel. Given integer durations are parsed in minutes.| Moderator | `!slowmode channel 289482554250100736 10` OR `!slowmode channel 289482554250100736 5h` |
 
-`archive` command results will be DMed to the calling user or linked in the chat based on `archive_link_chat` config setting. `clean` command archives will be linked in the modlogs under `MESSAGE_DELETE_BULK` if configured.
+`archive` command results will be DMed to the calling user or linked in the chat based on `archive_link_chat` config setting. Archive results will also include deleted messages.
+
+`clean` command archives will be linked in the modlogs under `MESSAGE_DELETE_BULK` if configured.
 
 ### User
 | Name | Description | Default Level | Usage |
