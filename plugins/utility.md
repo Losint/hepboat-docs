@@ -72,15 +72,17 @@ NOTE: The [censor plugin](censor.md) and [infractions plugin](infractions.md) mu
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
-| allow_images | Whether to allow image uploads to the channel. | bool | True |
-| allow_text | Whether to allow plain text messages to the channel. | bool | True |
+| allow_images | Whether to allow image uploads to the channel. | bool | true |
+| allow_misc_files | Whether to allow non-image uploads to the channel. | bool | true |
+| need_caption | Whether to require captions on image/file uploads. | bool | false |
+| allow_text | Whether to allow plain text messages to the channel. | bool | true |
 | whitelist_text_regex | A whitelisting regex that is run on the text content of every message in the channel. | str | empty |
-| allow_misc_files | Whether to allow non-image uploads to the channel. | bool | True |
-| warn_on_censor | Whether to automatically DM a user when their name or message is censored. | bool | false |
-| mute\_violations | Enable ability to mute a user after a set number of violations.  | bool | false |
-| mute\_violations\_count | Number of violations that can be accrued in `mute_violations_interval` before muting. | int | 3 |
-| mute\_violations\_interval | Seconds within which a user with over `mute_violations_count` violations will trigger a mute. | int | 10 |
-| mute\_violations\_duration | Seconds to mute a user with sufficient violations. | int | 300 |
+| role_whitelist | A list of role IDs that will not have messages run through the filter. | list(snowflake) | empty |
+| warn_on_censor | Whether to automatically warn a user when their message is censored. | bool | false |
+| mute\_violations | Enable ability to mute a user after a set number of violations in the channel.  | bool | false |
+| mute\_violations\_count | Number of violations that can be accrued in the channel in `mute_violations_interval` before muting. | int | 3 |
+| mute\_violations\_interval | Seconds within which a user with over `mute_violations_count` violations in the channel will trigger a mute. | int | 10 |
+| mute\_violations\_duration | Seconds to mute a user with sufficient violations in the channel. | int | 300 |
 
 ### Reaction Role Configuration Options
 

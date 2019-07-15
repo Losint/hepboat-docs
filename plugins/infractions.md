@@ -91,14 +91,13 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 | notify | Dictionary of infraction types to notify configurations. | dict | empty |
 
 ### Notify Configuration Options
-
 Valid actions: `WARN`, `TEMPMUTE`, `MUTE`, `TEMPMUTEHARD`, `MUTEHARD`, `TEMPBAN`, `BAN`
 
 NOTE: The [`modlog` plugin](modlog.md) needs to be enabled for notifications to work properly.
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
-| format | Format for infraction DM notifications. If `true` is specified, it will use the default notify configuration. | str | None |
+| format | Format for infraction DM notifications. If `true` is specified, it will use the default notify configuration. If `false` is specified, no DM notification will be sent. | str | None |
 | emoji | Emoji to override for the config | str | no\_mouth |
 
 ## Configuration Example

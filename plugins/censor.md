@@ -53,7 +53,7 @@ This plugin combined with the [spam plugin](spam.md) can result in a very robust
 | block\_zalgo\_nicknames | Whether to filter nicknames with zalgo text | bool | false |
 | message\_char\_limit | Maximum allowed message length. If set to `0`, no limit is set. | int | 0 |
 | char\_limit\_channel\_whitelist | Array of channels to whitelist for message character limit. | list(snowflake) | empty |
-| warn\_on\_censor | Whether to automatically DM a user when their name or message is censored. | bool | false |
+| warn\_on\_censor | Whether to automatically warn a user when their name or message is censored. | bool | false |
 | mute\_violations | Enable ability to mute a user after a set number of violations.  | bool | false |
 | mute\_violations\_count | Number of violations that can be accrued in `mute_violations_interval` before muting. | int | 3 |
 | mute\_violations\_interval | Seconds within which a user with over `mute_violations_count` violations will trigger a mute. | int | 10 |
