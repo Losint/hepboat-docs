@@ -84,6 +84,23 @@ NOTE: The [censor plugin](censor.md) and [infractions plugin](infractions.md) mu
 | mute\_violations\_interval | Seconds within which a user with over `mute_violations_count` violations in the channel will trigger a mute. | int | 10 |
 | mute\_violations\_duration | Seconds to mute a user with sufficient violations in the channel. | int | 300 |
 
+#### Whitelisting regex examples
+
+To only allow messages that contain the phrase bunny somewhere:
+```text
+whitelist_text_regex: 'bunny'
+```
+
+To only allow single custom emote messages:
+```text
+whitelist_text_regex: '^<a?:\w+:[0-9]+>$'
+```
+
+To only allow messages consisting only of custom emotes and whitespace:
+```text
+whitelist_text_regex: '^(\s*<a?:\w+:[0-9]+>\s*)+$'
+```
+
 ### Reaction Role Configuration Options
 
 The reaction role configuration was removed due to high load on the bot. However, if you would still like to use reaction roles, our dedicated bot [Zira](https://zira.ovh/) is an amazing choice with rich features and fast responsiveness. Join the [Team Hydra Discord Server](https://discordapp.com/invite/2wP2yjy) to learn more.
