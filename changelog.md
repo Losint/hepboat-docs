@@ -1,5 +1,13 @@
 # Changelog
 
+#### 17 Jul 2019
+* Added ability to set infractions silently without dm, with forced dm, and with anonymous forced dm in the infraction plugin.
+* Added ability to set delayed auto roles on join in the utility plugin.
+* Added an anti-hoist nickname censor in censor plugin.
+* Added ability to set kick, tempban, and ban as antiraid actions instead of only assigning a raid role in the censor plugin.
+* Added 'ml' infraction identifier for "my last" infraction when using `inf reason`.
+* General bug fixes.
+
 #### 14 Jul 2019
 * Added ability to set server timezone in the commands plugin to localize any timestamps in command outputs.
 * Added strict channel filter configurations in the utilities plugin. e.g. set image-only or text-only channels.

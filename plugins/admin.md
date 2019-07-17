@@ -94,6 +94,8 @@ The following tokens can be used in mention messages to dynamically generate con
 | confirm\_actions | Confirm when actions are performed | bool | true |
 | mobile\_mod\_channel | Channel to send any mobile modding dialog. | snowflake | empty |
 | onjoin\_roles | List of roles automatically added to any new guild user. | list(snowflake) | empty |
+| onjoin_role_delay | Duration to wait before automatically adding all the roles in `onjoin_roles` to any new guild user. Durations can be integers which are parsed by seconds or duration strings. e.g. '10s', '2h5m', '3d4h1m' | str | 0 |
+| roles | Mapping of role IDs to role configurations | dict | empty
 | welcomes | Mapping of channel IDs to welcome configurations. | dict | empty |
 
 ### Member Persistence Configuration Options
@@ -104,6 +106,12 @@ The following tokens can be used in mention messages to dynamically generate con
 | role_ids | A list of role IDs which will be recovered if `roles` is true. | list(snowflake) | empty |
 | nickname | Whether to recover the nickname when a user rejoins the server. | bool | false |
 | voice | Whether to recover mute/deafen settings when a user rejoins the server. | bool | false |
+
+### Role Configuration Options
+
+| Option | Description | Type | Default |
+| :--- | :--- | :--- | :--- |
+| onjoin_role_delay | Duration to wait before automatically adding the role to any new guild user. Durations can be integers which are parsed by seconds or duration strings. e.g. '10s', '5m', '2h5m'| str | 0 |
 
 ### Welcome Configuration Options
 

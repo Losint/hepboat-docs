@@ -51,6 +51,7 @@ This plugin combined with the [spam plugin](spam.md) can result in a very robust
 | all_caps_channel_whitelist | Array of channels to whitelist for all caps filter. | list(snowflake) | empty | 
 | blocked\_nicknames | A list of names \(can appear in the middle of nicknames\) that are blacklisted | list(str) | empty |
 | block\_zalgo\_nicknames | Whether to filter nicknames with zalgo text | bool | false |
+| hoist_blacklist | A list of banned nickname prefixes. | list(str) | empty | 
 | message\_char\_limit | Maximum allowed message length. If set to `0`, no limit is set. | int | 0 |
 | char\_limit\_channel\_whitelist | Array of channels to whitelist for message character limit. | list(snowflake) | empty |
 | warn\_on\_censor | Whether to automatically warn a user when their name or message is censored. | bool | false |
@@ -63,6 +64,8 @@ This plugin combined with the [spam plugin](spam.md) can result in a very robust
 When available, only whitelists or only blacklists will be checked. Whitelists will be checked first if both are configured.
 
 A user will accrue one violation for each message that triggers a censor deletion.
+
+Censored nicknames will not accrue any violations. Bad nicknames will be reverted to the last appropriate version or assigned a random `censored name {int}` nickname. 
 
 ### Blocked Mention Tokens
 | Token | Description | Example |
@@ -80,16 +83,22 @@ A user will accrue one violation for each message that triggers a censor deletio
 | lockdown\_duration | Seconds that guild should be locked down with antiraid measures. | int | 600 |
 | raidrole | Role ID applied to all users during antiraid measures.  | snowflake | empty |
 | notifyrole | Role ID that should be notified when antiraid is automatically triggered | snowflake | empty |
+| raid_action | Action type to take on users when antiraid is triggered. Valid actions: `ROLE`, `KICK`, `TEMPBAN`, `BAN` | str | `ROLE` |
+| raid_action_duration | Duration of `raid_action TEMPBAN` punishment. Durations can be integers which are parsed by seconds or duration strings. e.g. '10s', '5m', '2h5m'| str | 300s |
+| raid_action_notify | Whether or not to send a DM to users with antiraid measures applied. | bool | False |
+| raid_action_reason | Reason sent by DM to users with antiraid measures applied. Notification formatting is taken from the notify config in the infractions plugin if set. | str | ANTIRAID |
 
 **How antiraid works**
 
-1. Antiraid measures are enabled once more then `count` number of joins are detected within `interval` seconds.
-1. All users in the join table for the `key_duration` have the raidrole retroactively applied.
-1. All users that join during `lockdown_duration` have the raidrole applied.
-1. Antiraid measures will expire once less than `count` number of joins are detected within `interval` for  `lockdown_duration`.
+1. Antiraid measures are enabled once more then `count` number of joins are detected within `interval` seconds. The `lockdown_duration` begins.
+1. All users in the join table for the `key_duration` will have the `raid_action`  retroactively applied.
+1. All users that join during `lockdown_duration` will have the `raid_action` applied.
+1. Antiraid measures will stop once the `lockdown_duration` expires.
 1. Moderators will need to manually run `!raid disable` to remove all raid roles from remaining users.
 
 The [modlogs plugin](modlog.md) will need to be configured with `RAID` logs for proper `notifyrole` alerts.
+
+NOTE: Please be mindful what level the antiraid configuration is added under especially if you auto assign join roles in the admin plugin.
 
 ## Configuration Example
 
@@ -127,6 +136,9 @@ plugins:
           - r579304983896391680
           - c572876188918349857
         blocked_nicknames: [blurb]
+        hoist_blacklist:
+          - '!'
+          - '?'
         zalgo_channel_whitelist: [510413274060161024]
         invites_channel_whitelist: [510413274060161024]
         domains_channel_whitelist: [510413274060161024]

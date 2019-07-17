@@ -13,7 +13,7 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 #### Punishments
 | Name | Description | Default Level | Usage |
 | :--- | :--- | :--- | :--- |
-| `!warn {user} [reason]` | Adds a warning infraction to a user. | Moderator | `!warn 520047158104424488 1st warning, spamming emoji` OR `!warn @HepBoat#0361 2nd warning, going off-topic` |
+| `!warn {user} {reason}` | Adds a warning infraction to a user. | Moderator | `!warn 520047158104424488 1st warning, spamming emoji` OR `!warn @HepBoat#0361 2nd warning, going off-topic` |
 | `!kick {user} [reason]` | Kicks a user from the server. | Moderator | `!kick 520047158104424488 spamming` OR `!kick @HepBoat#0361 spamming` |
 | `!mkick {users} -r [reason]` | Kicks multiple users from the server. | Moderator | `!mkick 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
 | `!ban {user} [reason]` | Bans a user from the server. | Moderator | `!ban 520047158104424488 spamming` OR `!ban @HepBoat#0361 spamming` |
@@ -24,6 +24,17 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | `!tempban {user} {duration} [reason]` | Temporarily bans a user. | Moderator | `!tempban 520047158104424488 5h spamming` OR `!tempban @HepBoat#0361 5h spamming` |
 | `!munban {users} -r [reason]` | Unbans multiple users from the server. | Moderator | `!munban 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
 
+The commands `warn`, `kick`, `ban`, `cleanban`, and `tempban` have notify configuration overriding versions. They can be called in a similar manner to the following warn example.
+
+| Name | Description | Default Level | Usage |
+| :--- | :--- | :--- | :--- |
+| `!warn {user} {reason}` OR `!warn n {user} {reason}`| Adds a warning infraction to a user. May send a DM to the offending user based on the `notify` configuration. | Moderator | `!warn 520047158104424488 1st warning, spamming emoji` |
+| `!qwarn {user} {reason}` OR `!warn quiet {user} {reason}`| Adds a warning infraction to a user without sending a DM. | Moderator | `!qwarn 520047158104424488 1st warning, spamming emoji` |
+| `!dmwarn {user} {reason}` OR `!warn dm {user} {reason}`| Adds a warning infraction to a user and attempts to send a DM to the offending user that also notes what moderator triggered the command. | Moderator | `!dmwarn 520047158104424488 1st warning, spamming emoji` |
+| `!awarn {user} {reason}` OR `!warn anon {user} {reason}`| Adds a warning infraction to a user and attempts to send a DM to the offending user without noting which moderator triggered the command. | Moderator | `!awarn 520047158104424488 1st warning, spamming emoji` |
+
+For kicks, the short commands would be `qkick`, `dmkick`, `akick`, and so on and so forth for the other commands.
+
 #### Mutes
 | Name | Description | Default Level | Usage |
 | :--- | :--- | :--- | :--- |
@@ -32,13 +43,15 @@ Arguments in `{}` are required. Arguments in `[]` are optional.
 | `!unmute {user}` | Unmutes a user | Moderator | `!unmute 520047158104424488` |
 | `!munmute {users} -r [reason]` | Unmute multiple users on the server. | Moderator | `!munmute 232921983317180416 80351110224678912 108598213681922048 -r spamming` |
 | `!tempmute {user} {duration} [reason]` | Temporarily mutes a user. `mute_role` must be set in the config. | Moderator | `!tempmute 520047158104424488 30m spamming` OR `!tempmute @HepBoat#0361 30m spamming` |
-| `!hardmute enable {user} [reason]` | Hard-mutes a user. `hard_mute_role` must be set in the config. | Moderator | `!hardmute enable @user1 being really silly` |
-| `!hardmute temp {user} {duration} [reason]` | Hard-mutes a user temporarily. `hard_mute_role` must be set in the config. | Moderator | `!hardmute temp @user1 6h being really silly` |
+| `!hardmute {user} [reason]` OR `!hardmute enable {user} [reason]` | Hard-mutes a user. `hard_mute_role` must be set in the config. | Moderator | `!hardmute enable @user1 being really silly` |
+| `!temphardmute {user} {duration} [reason]` OR `!hardmute temp {user} {duration} [reason]` | Hard-mutes a user temporarily. `hard_mute_role` must be set in the config. | Moderator | `!hardmute temp @user1 6h being really silly` |
 | `!hardmute disable {user}` | Disables an active hard-mute on a user. | Moderator | `!hardmute disable @user1` |
 
 A regular `mute` will apply the `mute_role` to a user. A `hardmute` will apply the `hard_mute_role` to the user AND remove all other roles from the user except the ones configured in `hard_mute_ignore`.
 
 Disabling a regular `mute` will remove the `mute_role` from the user. Disabling a `hard_mute_role` will remove the `hard_mute_role` AND restore all original roles before the hard-mute back to the user.
+
+The commands `mute`, `tempmute`, `hardmute`, and `temphardmute` have notify configuration overriding versions similar to the `warn` example in the Punishment section above. e.g. `amute`, `qmute`, `dmtempmute`, etc.
 
 #### User
 | Name | Description | Default Level | Usage |
@@ -57,7 +70,7 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 | `!inf delete {inf#}` | Delete infraction. | Administrator | `!inf delete 1274` |
 | `!inf clearall {user}` | Clear out all infractions (excluding notes and temproles) for the given user in the guild. | Moderator | `!inf clearall 520047158104424488` |
 | `!inf duration {inf#} {duration}` | Updates the duration of the given infraction. Duration starts from time of initial action. | Moderator | `!inf duration 1274 5h` |
-| `!inf reason {inf#} {reason}` | Updates the reason of a given infraction. | Moderator | `!inf reason 1274 rude behaviour towards staff` |
+| `!inf reason {inf#} {reason}` | Updates the reason of a given infraction. You may also use the identifier `ml` in `{inf#}` to edit the last infraction created by the calling user. | Moderator | `!inf reason 1274 rude behaviour towards staff` OR `!inf reason ml rude behaviour towards staff`|
 | `!inf recent [num]` | Get recent `num` infractions. Default `num` is 10. | Moderator | `!inf recent 5` |
 | `!inf active [num]` | Get recent `num` active infractions. Default `num` is 10. | Moderator | `!inf active 5` |
 | `!inf mutes [num]` | Get recent `num` mutes. Default `num` is 10. | Moderator | `!inf mutes 5` |
@@ -93,7 +106,15 @@ Disabling a regular `mute` will remove the `mute_role` from the user. Disabling 
 ### Notify Configuration Options
 Valid actions: `WARN`, `TEMPMUTE`, `MUTE`, `TEMPMUTEHARD`, `MUTEHARD`, `TEMPBAN`, `BAN`
 
+To set the anon actions: `WARN_ANON`, `TEMPMUTE_ANON`, `MUTE_ANON`, `TEMPMUTEHARD_ANON`, `MUTEHARD_ANON`, `TEMPBAN_ANON`.
+
 NOTE: The [`modlog` plugin](modlog.md) needs to be enabled for notifications to work properly.
+
+Actions configured in this section will have DMs sent to the offending user. If the action is not configured or has a format set to `'false'`, no DM will be sent by default.
+
+Default DM settings can be overridden by using specific `quiet`, `dm`, and `anon` commands. 
+
+If the default valid or anon formats are not configured and a command with forced DMs is called, it will use the server default template.
 
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
