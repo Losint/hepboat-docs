@@ -119,7 +119,9 @@ If the default valid or anon formats are not configured and a command with force
 | Option | Description | Type | Default |
 | :--- | :--- | :--- | :--- |
 | format | Format for infraction DM notifications. If `true` is specified, it will use the default notify configuration. If `false` is specified, no DM notification will be sent. | str | None |
-| emoji | Emoji to override for the config | str | no\_mouth |
+| emoji | Name of emoji to use in notify messages. | str | no\_mouth |
+
+NOTE: For the `emoji` configuration, you may also use custom emoji on your server by just calling its plain-text name. e.g. "hydra" Using external emojis not on the server of the configuration is currently not supported.
 
 ## Configuration Example
 
@@ -149,14 +151,14 @@ plugins:
 | :--- | :--- | :--- |
 | `{emoji}` | The set emoji for infraction type. | :rotating_light: |
 | `{action!s}` | The infraction action. | "Kicked" | 
-| `{guild.name}` | The guild name. | |
+| `{guild.name}` | The guild name. | Team Hydra |
 | `{actor!s}` | The command author. | JakeyPrime#0001 |
 | `{reason!s}` | The infraction reason. | |
 | `{expires}` | The expiration date. | 14-Jul-19 @ 18:23 GMT+0 (4 seconds) |
 | `{expire_time}` | The expiration timestamp for temporary infractions. | 14-Jul-19 @ 18:23 GMT+0 |
 | `{duration}` | The duration for temporary infractions. | 5 seconds |
 
-NOTE: If configured improperly, your notifications may not be sent. Customize at your own risk.
+NOTE: If configured improperly, your infraction commands may break and/or  notifications may not be sent. Customize at your own risk.
 
 ### Configuration Example
 ```yaml

@@ -1,11 +1,13 @@
 # Changelog
 
-#### 17 Jul 2019
+#### 19 Jul 2019
 * Added ability to set infractions silently without dm, with forced dm, and with anonymous forced dm in the infraction plugin.
-* Added ability to set delayed auto roles on join in the utility plugin.
+* Added ability to set delayed auto roles on join in the admin plugin.
 * Added an anti-hoist nickname censor in censor plugin.
 * Added ability to set kick, tempban, and ban as antiraid actions instead of only assigning a raid role in the censor plugin.
 * Added 'ml' infraction identifier for "my last" infraction when using `inf reason`.
+* `mention` command will now prepend a `{role}` to your message if the token is not found.
+* Infractions from any Rowboat clone can now be imported to HepBoat. Contact staff in the support server for assistance. 
 * General bug fixes.
 
 #### 14 Jul 2019
